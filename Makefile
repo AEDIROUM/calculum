@@ -1,6 +1,6 @@
 SRC=src
 LOCALPUB=public
-REMOTEPUB=calculum@albert:/srv/calculum/data
+REMOTEPUB=calculum@srv.aediroum.ca:/srv/calculum/html
 RACOENV=.penv
 RACOFLAGS=--batch --auto --skip-installed --no-docs
 
@@ -56,7 +56,7 @@ local:
 	    | grep --invert-match "^\." || true
 
 serve:
-	python -mhttp.server 1337 --directory ${LOCALPUB} 2> /dev/null
+	python3 -mhttp.server 1337 --directory ${LOCALPUB} 2> /dev/null
 
 watch:
 	@echo "Detecting operating system..."

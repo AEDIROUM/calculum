@@ -44,6 +44,13 @@
      (a ((href ,(string-append "#" target)))
        ,@contents)))
 
+;; Make a heading which can be linked to
+(provide non-id-link-h2)
+(define (non-id-link-h2 target . contents)
+  `(h2 ((id ,target))
+     (a ((href ,target) (target, "_blank"))
+       ,@contents)))
+
 (provide link-h3)
 (define (link-h3 target . contents)
   `(h3 ((id ,target))
