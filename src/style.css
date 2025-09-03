@@ -336,6 +336,27 @@ h3 {
     border-radius: var(--border-radius);
 }
 
+.box-highlight {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--highlight-color);
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.box-highlight p{
+    margin: 0
+}
+
+.box-highlight h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
 .post-list .upcoming header::before {
     content: "Prochaine activité";
     text-transform: uppercase;
