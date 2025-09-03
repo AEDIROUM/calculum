@@ -8,7 +8,7 @@
 
 ◊span[#:class "icon-before icon-calendar"]{
     Horaire:
-    (Lundi de 18h à 20h)
+    (TBD)
 }
  · ◊span[#:class "icon-before icon-pin"]{
     Local:
@@ -21,6 +21,11 @@ Que vous soyez simple curieux, débutant ou déjà aguerri, soyez les bienvenus 
 
 Questions, commentaires, suggestions:◊br{}
 ◊span[#:class "code"]{calculum [at] iro.umontreal.ca}
+
+◊div[#:class "box-highlight"]{
+    ◊h2{👼 Etes-vous un nouveau ? 👼}
+    ◊in-link["nouveau.html"]{Appuyez-ici!}
+}
 
 ◊h2{
     Activités
@@ -46,5 +51,5 @@ Questions, commentaires, suggestions:◊br{}
 
 ◊footer[#:class "site-footer"]{
     Généré à l’aide de ◊out-link["https://docs.racket-lang.org/pollen"]{Pollen}
-     · ◊span[#:class "icon-before icon-git"]{◊out-link["https://github.com/matteodelabre/calculum"]{Code source}}
+     · ◊span[#:class "icon-before icon-git"]{◊out-link["https://github.com/AEDIROUM/calculum"]{Code source}}
 }
