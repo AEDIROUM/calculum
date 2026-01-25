@@ -3,9 +3,9 @@ from django.contrib import admin
 from board.models import Meet, Problem, Session
 
 class CustomAdminSite(admin.AdminSite):
-	site_header = "Settings"
+	site_header = "Calculum Settings"
 	site_title = "Calculum Settings"
-	index_title = "Applications"
+	index_title = "Settings"
 	site_url = None
 	
 	def index(self, request, extra_context=None):

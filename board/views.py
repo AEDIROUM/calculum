@@ -5,7 +5,7 @@ from datetime import datetime
 import re
 
 
-def board(request: HttpRequest):
+def meets(request: HttpRequest):
     meets = Meet.objects.select_related('session').prefetch_related('problems').all()
     
     # Get all sessions
