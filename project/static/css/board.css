@@ -139,9 +139,32 @@
 .meet-description {
 	color: #bdc3c7;
 	font-size: 0.95rem;
-	margin-top: 0.8rem;
+	margin-top: 1rem;
 	margin-bottom: 0;
 	line-height: 1.5;
+}
+
+.contest-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+	color: white;
+	padding: 0.6rem 1.4rem;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+	white-space: nowrap;
+}
+
+.contest-button:hover {
+	background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+	color: white;
 }
 
 .problems-section {
