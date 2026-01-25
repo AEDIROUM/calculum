@@ -18,6 +18,8 @@ admin.site = CustomAdminSite()
 admin.site.register(Meet)
 
 class UserAdmin(admin.ModelAdmin):
+	list_display = ('username', 'first_name', 'last_name', 'email', 'is_staff', 'is_superuser')
+	
 	def get_queryset(self, request):
 		# Staff can only see themselves; superusers see all
 		qs = super().get_queryset(request)
@@ -32,14 +34,13 @@ class UserAdmin(admin.ModelAdmin):
 		return ['username', 'is_staff', 'is_superuser', 'is_active', 'groups', 'user_permissions', 'last_login', 'date_joined']
 	
 	def get_fieldsets(self, request, obj=None):
-		# Show limited fields to staff
-		fieldsets = super().get_fieldsets(request, obj)
+		# Show all fields to superusers
 		if request.user.is_superuser:
-			return fieldsets
+			return super().get_fieldsets(request, obj)
+		# Limited fields for staff (only their own profile)
 		return (
-			(None, {'fields': ('username', 'password')}),
+			(None, {'fields': ('username',)}),
 			('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
-			('Permissions', {'fields': ('is_staff', 'is_superuser', 'is_active'), 'classes': ('collapse',)}),
 		)
 
 admin.site.register(User, UserAdmin)
