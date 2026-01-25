@@ -333,13 +333,19 @@ def process_post(post):
             date=meet_date,
             defaults={
                 'theme': title,
-                'description': description
+                'description': description,
+                'contest_link': kattis_contest_url or '',
+                'get_problems': bool(kattis_contest_url)
             }
         )
         
-        # Update description if meet already exists
-        if not created and meet.description != description:
-            meet.description = description
+        # Update description and contest_link if meet already exists
+        if not created:
+            if meet.description != description:
+                meet.description = description
+            if meet.contest_link != (kattis_contest_url or ''):
+                meet.contest_link = kattis_contest_url or ''
+                meet.get_problems = bool(kattis_contest_url)
             meet.save()
         
         # Add managers to the meet
@@ -358,14 +364,12 @@ def process_post(post):
                 for manager in managers_list:
                     print(f"    └─ Manager: {manager.first_name} {manager.last_name}")
         
-        # Process problems: either from contest or individual links
+        # Process problems: only look for individual links if there's no contest link
         problems_count = 0
         
-        if kattis_contest_url:
-            # Process Kattis contest
-            problems_count = process_kattis_contest(kattis_contest_url, meet)
-        else:
-            # Look for individual problem links
+        if not kattis_contest_url:
+            # Only process individual problem links if no contest link exists
+            # (contest problems will be fetched automatically by Meet.save() via _fetch_kattis_problems)
             problems_count = process_individual_problems(soup, meet)
         
         if problems_count > 0 or created:
