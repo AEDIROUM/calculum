@@ -1,5 +1,6 @@
 
 from django.contrib import admin
+from django.contrib.auth.models import User
 from board.models import Meet, Problem, Session
 
 class CustomAdminSite(admin.AdminSite):
@@ -15,6 +16,8 @@ class CustomAdminSite(admin.AdminSite):
 admin.site = CustomAdminSite()
 
 admin.site.register(Meet)
+
+admin.site.register(User)
 
 class ProblemAdmin(admin.ModelAdmin):
 	search_fields = ['platform', 'link', 'solution_link']
