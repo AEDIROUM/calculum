@@ -18,14 +18,29 @@ admin.site = CustomAdminSite()
 admin.site.register(Meet)
 
 class UserAdmin(admin.ModelAdmin):
-	def has_add_permission(self, request):
-		return request.user.is_superuser
+	def get_queryset(self, request):
+		# Staff can only see themselves; superusers see all
+		qs = super().get_queryset(request)
+		if request.user.is_superuser:
+			return qs
+		return qs.filter(pk=request.user.pk)
 	
-	def has_change_permission(self, request, obj=None):
-		return request.user.is_superuser
+	def get_readonly_fields(self, request):
+		# Superusers can edit everything; staff cannot edit sensitive fields
+		if request.user.is_superuser:
+			return []
+		return ['username', 'is_staff', 'is_superuser', 'is_active', 'groups', 'user_permissions', 'last_login', 'date_joined']
 	
-	def has_delete_permission(self, request, obj=None):
-		return request.user.is_superuser
+	def get_fieldsets(self, request, obj=None):
+		# Show limited fields to staff
+		fieldsets = super().get_fieldsets(request, obj)
+		if request.user.is_superuser:
+			return fieldsets
+		return (
+			(None, {'fields': ('username', 'password')}),
+			('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
+			('Permissions', {'fields': ('is_staff', 'is_superuser', 'is_active'), 'classes': ('collapse',)}),
+		)
 
 admin.site.register(User, UserAdmin)
 
