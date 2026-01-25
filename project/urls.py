@@ -26,7 +26,7 @@ def favicon(request):
 
 urlpatterns = [
     path('favicon.ico', favicon),
-    path('settings/', admin.site.urls),
+    path('edit/', admin.site.urls),
     path('meets', include('board.urls')),
     path('cheatsheet', include('cheatsheet.urls')),
     path('events', include('events.urls')),

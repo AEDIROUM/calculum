@@ -3,8 +3,8 @@ from django.contrib import admin
 from board.models import Meet, Problem, Session
 
 class CustomAdminSite(admin.AdminSite):
-	site_header = "Calculum Settings"
-	site_title = "Calculum Settings"
+	site_header = "Edit website"
+	site_title = "Calculum Edit"
 	index_title = "Applications"
 	site_url = None
 	
