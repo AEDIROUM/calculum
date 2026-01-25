@@ -5,7 +5,7 @@ from board.models import Meet, Problem, Session
 class CustomAdminSite(admin.AdminSite):
 	site_header = "Calculum Settings"
 	site_title = "Calculum Settings"
-	index_title = "Settings"
+	index_title = "Applications"
 	site_url = None
 	
 	def index(self, request, extra_context=None):
