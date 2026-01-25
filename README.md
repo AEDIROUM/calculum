@@ -2,7 +2,7 @@
 
 Site web du club de programmation compétitive de l'Université de Montréal.
 
-🔗 **Live:** https://calculum.up.railway.app/
+🔗 **Live:** https://calculum.up.railway.app
 
 ## Structure
 
