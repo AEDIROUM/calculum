@@ -1,7 +1,7 @@
 // Change session via dropdown
 function changeSession(sessionId) {
 	if (sessionId) {
-		window.location.href = '/?session=' + sessionId;
+		window.location.href = '/meets?session=' + sessionId;
 	}
 }
 
