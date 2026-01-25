@@ -17,7 +17,17 @@ admin.site = CustomAdminSite()
 
 admin.site.register(Meet)
 
-admin.site.register(User)
+class UserAdmin(admin.ModelAdmin):
+	def has_add_permission(self, request):
+		return request.user.is_superuser
+	
+	def has_change_permission(self, request, obj=None):
+		return request.user.is_superuser
+	
+	def has_delete_permission(self, request, obj=None):
+		return request.user.is_superuser
+
+admin.site.register(User, UserAdmin)
 
 class ProblemAdmin(admin.ModelAdmin):
 	search_fields = ['platform', 'link', 'solution_link']
