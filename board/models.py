@@ -120,8 +120,13 @@ class Meet(models.Model):
         super().save(*args, **kwargs)
         
         # Auto-fetch problems from Kattis contest if get_problems is True
+        # Run in background to avoid blocking the save
         if self.get_problems and self.contest_link and 'kattis.com/contests/' in self.contest_link:
-            self._fetch_kattis_problems()
+            try:
+                self._fetch_kattis_problems()
+            except Exception as e:
+                # Log but don't fail the save
+                print(f"Warning: Failed to fetch Kattis problems for meet {self.id}: {str(e)}")
     
     def _fetch_kattis_problems(self):
         """Fetch problems from Kattis contest and create Problem objects"""
@@ -130,40 +135,58 @@ class Meet(models.Model):
         import re
         
         try:
+            if not self.contest_link:
+                return
+            
             # Extract contest ID from URL
             contest_match = re.search(r'/contests/([^/?]+)', self.contest_link)
             if not contest_match:
                 return
             
-            contest_id = contest_match.group(1)
-            response = requests.get(self.contest_link, timeout=10)
-            response.raise_for_status()
+            try:
+                response = requests.get(self.contest_link, timeout=10)
+                response.raise_for_status()
+            except requests.RequestException as e:
+                print(f"Network error fetching contest: {str(e)}")
+                return
             
-            soup = BeautifulSoup(response.text, 'html.parser')
+            try:
+                soup = BeautifulSoup(response.text, 'html.parser')
+            except Exception as e:
+                print(f"Error parsing HTML: {str(e)}")
+                return
             
             # Find all problem links in the contest page
             # Look for links that might be /problems/xxx or /contests/xxx/problems/xxx
             problem_links = soup.find_all('a', href=re.compile(r'/(?:contests/[^/]+/)?problems/[^/?]+'))
             
             for link in problem_links:
-                problem_url = link.get('href')
-                
-                # Remove contest context from URL - convert /contests/xxx/problems/yyy to /problems/yyy
-                problem_url = re.sub(r'/contests/[^/]+/problems/', '/problems/', problem_url)
-                
-                # Make sure it's a full URL
-                if not problem_url.startswith('http'):
-                    base_url = 'https://open.kattis.com' if 'open.kattis.com' in self.contest_link else 'https://kattis.com'
-                    problem_url = base_url + problem_url
-                
-                # Get or create the problem
-                Problem.objects.get_or_create(
-                    link=problem_url,
-                    defaults={
-                        'platform': 'Kattis',
-                        'done': self
-                    }
-                )
+                try:
+                    problem_url = link.get('href')
+                    if not problem_url:
+                        continue
+                    
+                    # Remove contest context from URL - convert /contests/xxx/problems/yyy to /problems/yyy
+                    problem_url = re.sub(r'/contests/[^/]+/problems/', '/problems/', problem_url)
+                    
+                    # Make sure it's a full URL
+                    if not problem_url.startswith('http'):
+                        base_url = 'https://open.kattis.com' if 'open.kattis.com' in self.contest_link else 'https://kattis.com'
+                        problem_url = base_url + problem_url
+                    
+                    # Get or create the problem
+                    Problem.objects.get_or_create(
+                        link=problem_url,
+                        defaults={
+                            'platform': 'Kattis',
+                            'done': self
+                        }
+                    )
+                except Exception as e:
+                    # Continue on individual problem creation errors
+                    print(f"Error creating problem: {str(e)}")
+                    continue
+                    
         except Exception as e:
             # Silent fail - don't break the save if fetching fails
             print(f"Failed to fetch Kattis problems: {e}")
