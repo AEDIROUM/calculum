@@ -142,10 +142,15 @@ class Meet(models.Model):
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # Find all problem links in the contest page
-            problem_links = soup.find_all('a', href=re.compile(r'/problems/[^/?]+$'))
+            # Look for links that might be /problems/xxx or /contests/xxx/problems/xxx
+            problem_links = soup.find_all('a', href=re.compile(r'/(?:contests/[^/]+/)?problems/[^/?]+'))
             
             for link in problem_links:
                 problem_url = link.get('href')
+                
+                # Remove contest context from URL - convert /contests/xxx/problems/yyy to /problems/yyy
+                problem_url = re.sub(r'/contests/[^/]+/problems/', '/problems/', problem_url)
+                
                 # Make sure it's a full URL
                 if not problem_url.startswith('http'):
                     base_url = 'https://open.kattis.com' if 'open.kattis.com' in self.contest_link else 'https://kattis.com'
