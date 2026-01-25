@@ -116,7 +116,8 @@ def get_or_create_manager(full_name):
             defaults={
                 'first_name': first_name,
                 'last_name': last_name,
-                'password': generate_random_password()
+                'password': generate_random_password(),
+                'is_staff': True
             }
         )
         return user
