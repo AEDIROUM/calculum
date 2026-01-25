@@ -1,5 +1,0 @@
-.penv
-/public
-/src/**/*.html
-/src/**/*.xml
-/src/**/compiled

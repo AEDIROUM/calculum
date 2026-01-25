@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Guide du Nouveau - Calculum{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{% static 'css/noob.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="noob-container">
+	<section class="welcome-section">
+		<h2>Bienvenue au Calculum</h2>
+		<p class="author">par Samuel Maltais</p>
+
+		<div class="guide-content">
+			<section class="guide-section">
+				<p>Chers membres du Calculum,</p>
+				<p>Nous vous souhaitons la bienvenue à cette une activité d'introduction à la programmation compétitive. Cette liste de questions est destinée à ceux qui n'ont jamais fait de programmation compétitive. Vous pouvez ne jamais avoir codé avant, et ce serait quand même faisable. L'objectif est de pratiquer, d'apprendre à votre rythme et de partager un moment convivial avec la communauté.</p>
+				<p><strong>Ensemble, faisons nos premiers pas — ou consolidons nos bases — dans l'univers passionnant des concours de programmation!</strong></p>
+			</section>
+
+			<section class="guide-section">
+				<h3>📋 Problèmes d'introduction</h3>
+				<p>Accédez à la liste complète des problèmes sur Kattis:</p>
+				<p><a href="https://open.kattis.com/contests/atwqtz" target="_blank" class="action-button">Voir les problèmes</a></p>
+			</section>
+
+			<section class="guide-section">
+				<h3>💡 Conseils pour débuter</h3>
+				<ul>
+					<li>Commencez par les problèmes les plus simples</li>
+					<li>N'ayez pas peur de poser des questions</li>
+					<li>Essayez de résoudre les problèmes avant de regarder les solutions</li>
+					<li>Collaborez avec d'autres membres du club</li>
+					<li>Pratiquez régulièrement</li>
+				</ul>
+			</section>
+
+			<section class="guide-section">
+				<h3>📖 En savoir plus</h3>
+				<p><a href="/">Voir la présentation complète du club</a></p>
+				<p><a href="/cheatsheet">Consulter l'aide-mémoire</a></p>
+			</section>
+
+			<div class="next-steps">
+				<p><a href="/board" class="action-button">Rencontres</a></p>
+				<p><a href="/" class="action-button">À propos du Club</a></p>
+			</div>
+		</div>
+	</section>
+</div>
+
+{% block extra_scripts %}
+	<script src="{% static 'js/noob.js' %}"></script>
+{% endblock %}
+{% endblock %}

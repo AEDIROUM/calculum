@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Aide-mémoire - Calculum{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/cheatsheet.css' %}">
+<script src="{% static 'js/cheatsheet.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="cheatsheet-container">
+	<div class="cheatsheet-header">
+		<h2>📚 Aide-mémoire</h2>
+		<p>Algorithmes de compétition - Calculum</p>
+	</div>
+	
+	{% if algos %}
+		<button class="print-button" id="print-btn">🖨️ Imprimer</button>
+		
+		<div class="columns-2">
+			{% for algo in algos %}
+			<div class="algo-section">
+				<h3>{{ algo.theme }}</h3>
+				<pre><code class="language-python">{{ algo.content }}</code></pre>
+			</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		<div class="no-algos">
+			<h3>Aucun algorithme disponible</h3>
+			<p>Les algorithmes apparaîtront ici une fois ajoutés.</p>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}

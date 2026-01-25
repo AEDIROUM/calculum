@@ -1,0 +1,98 @@
+.presentation-container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.presentation-section {
+	background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+	padding: 2.5rem;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.presentation-section h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: #3498db;
+	border-bottom: 3px solid #3498db;
+	padding-bottom: 0.5rem;
+}
+
+.presentation-section h3 {
+	font-size: 1.4rem;
+	margin-top: 1.5rem;
+	margin-bottom: 0.8rem;
+	color: #ecf0f1;
+}
+
+.presentation-section p {
+	margin-bottom: 1rem;
+	line-height: 1.7;
+	color: #d0d0d0;
+	font-size: 1.05rem;
+}
+
+.presentation-section ul {
+	margin-left: 2rem;
+	margin-bottom: 1rem;
+	line-height: 1.8;
+}
+
+.presentation-section li {
+	margin-bottom: 0.6rem;
+	color: #d0d0d0;
+}
+
+.info-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin: 1.5rem 0;
+}
+
+.info-card {
+	background: rgba(52, 152, 219, 0.1);
+	padding: 1.5rem;
+	border-radius: 8px;
+	border: 2px solid #3498db;
+	text-align: center;
+}
+
+.info-card h3 {
+	margin-top: 0;
+	color: #3498db;
+}
+
+.info-card p {
+	margin: 0;
+	font-size: 1.2rem;
+	color: #ecf0f1;
+	font-weight: 500;
+}
+
+.cta-section {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 2px solid rgba(52, 152, 219, 0.3);
+	text-align: center;
+}
+
+.cta-button {
+	display: inline-block;
+	background: #3498db;
+	color: #ffffff;
+	text-decoration: none;
+	padding: 0.8rem 1.5rem;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 1.1rem;
+	transition: all 0.3s ease;
+	border: 2px solid #3498db;
+}
+
+.cta-button:hover {
+	background: #2980b9;
+	border-color: #2980b9;
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}

@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rencontres - Calculum{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/board.css' %}">
+<script src="{% static 'js/board.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="board-header">
+	<h2>📋 Rencontres</h2>
+	
+	{% if sessions %}
+	<div class="session-selector">
+		<label for="session-select">Session:</label>
+		<select id="session-select" onchange="changeSession(this.value)">
+			{% for session in sessions %}
+			<option value="{{ session.id }}" {% if selected_session and session.id == selected_session.id %}selected{% endif %}>
+				{{ session.get_season_display }} {{ session.year }}
+			</option>
+			{% endfor %}
+		</select>
+	</div>
+	{% endif %}
+</div>
+
+{% if selected_session %}
+<div class="session-info-card">
+	<h3>{{ selected_session.get_season_display }} {{ selected_session.year }}</h3>
+	<div class="session-details">
+		📍 {{ selected_session.local }} • {{ selected_session.get_day_display }} • 🕐 {{ selected_session.time|time:"H:i" }}
+	</div>
+</div>
+{% endif %}
+
+{% if has_meets %}
+	{% for meet in meets %}
+	<div class="meet-card {% if forloop.first %}most-recent{% endif %}">
+		<div class="meet-header">
+			<div>
+				<div class="meet-title">Rencontre {{ meet.date|date:"d/m/Y" }}</div>
+				{% if meet.theme %}
+				<span class="meet-theme">{{ meet.theme }}</span>
+				{% endif %}
+				{% if meet.managers.all %}
+				<div class="meet-managers">
+					{% for manager in meet.managers.all %}
+					<span class="meet-manager">Animée par: {{ manager.first_name }} {{ manager.last_name }}</span>
+					{% endfor %}
+				</div>
+				{% endif %}
+				{% if meet.description %}
+				<p class="meet-description">{{ meet.description }}</p>
+				{% endif %}
+			</div>
+		</div>
+		
+		{% if meet.sorted_problems %}
+		<div class="problems-section">
+			<h4>Problèmes</h4>
+			{% for problem in meet.sorted_problems %}
+			<div class="problem-item">
+				<div class="problem-info">
+					<span class="problem-platform">{{ problem.platform }}</span>
+					{% if problem.extracted_title %}
+					<span class="problem-title">{{ problem.extracted_title }}</span>
+					{% endif %}
+				</div>
+				<div class="problem-links">
+					{% if "http" in problem.link %}
+					<a href="{{ problem.link }}" class="problem-link" target="_blank" rel="noopener">Problème</a>
+					{% else %}
+					<span class="problem-link no-link">{{ problem.link }}</span>
+					{% endif %}
+					
+					{% if problem.solution_link %}
+						{% if "http" in problem.solution_link %}
+						<a href="{{ problem.solution_link }}" class="solution-link has-solution" target="_blank" rel="noopener">Solution</a>
+						{% else %}
+						<span class="solution-link has-solution no-link">{{ problem.solution_link }}</span>
+						{% endif %}
+					{% else %}
+					<span class="solution-link no-solution">Pas de solution</span>
+					{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+		
+		{% if meet.get_algo_content %}
+		<button class="algo-toggle" data-meet-id="{{ meet.date }}">
+			<span class="toggle-icon">▶</span>
+			<span class="toggle-text">Afficher l'algorithme</span>
+		</button>
+		<div class="algo-content" id="algo-{{ meet.date }}">
+			<pre><code class="language-python">{{ meet.get_algo_content }}</code></pre>
+		</div>
+		{% endif %}
+	</div>
+	{% endfor %}
+{% else %}
+	<div class="no-meets">
+		<h3>Aucune rencontre pour cette session</h3>
+		<p>Les rencontres apparaîtront ici une fois créées.</p>
+	</div>
+{% endif %}
+{% endblock %}

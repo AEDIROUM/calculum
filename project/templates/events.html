@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Événements - Calculum{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
+<script src="{% static 'js/events.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="events-container">
+	<div class="events-header">
+		<h2>🎉 Événements</h2>
+		<p>Nos activités et moments marquants</p>
+	</div>
+	
+	{% if events %}
+		{% for event in events %}
+		<div class="event-card {% if forloop.first %}most-recent{% endif %}">
+			<div class="event-header">
+				<h3 class="event-title">{{ event.title }}</h3>
+				{% if forloop.first %}
+				<span class="event-badge">Récent</span>
+				{% endif %}
+			</div>
+			
+			<div class="event-body">
+				{% if event.start or event.end %}
+				<div class="event-dates">
+					{% if event.start and event.end %}
+						<span>Du {{ event.start|date:"d/m/Y" }} au {{ event.end|date:"d/m/Y" }}</span>
+					{% elif event.start %}
+						<span>Le {{ event.start|date:"d/m/Y" }}</span>
+					{% elif event.end %}
+						<span>Jusqu'au {{ event.end|date:"d/m/Y" }}</span>
+					{% endif %}
+				</div>
+				{% endif %}
+				<div class="event-summary">{{ event.summary }}</div>
+				
+				{% if event.medias.all %}
+				<div class="event-media">
+					{% for media in event.medias.all %}
+					<div class="media-item">
+						{% if ".mp4" in media.file.url or ".webm" in media.file.url or ".mov" in media.file.url %}
+							<video controls>
+								<source src="{{ media.file.url }}" type="video/mp4">
+								Votre navigateur ne supporte pas la lecture de vidéos.
+							</video>
+						{% else %}
+							<img src="{{ media.file.url }}" alt="{{ event.title }}" loading="lazy">
+						{% endif %}
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+	{% else %}
+		<div class="no-events">
+			<h3>Aucun événement pour le moment</h3>
+			<p>Les événements apparaîtront ici une fois créés.</p>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}
