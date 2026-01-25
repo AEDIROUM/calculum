@@ -57,7 +57,7 @@ class Meet(models.Model):
     
     description = models.TextField(
         null=False,
-        blank=False,
+        blank=True,
         default=''
     )
     
