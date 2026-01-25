@@ -1,6 +1,7 @@
 
 from django.contrib import admin
 from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from board.models import Meet, Problem, Session
 
 class CustomAdminSite(admin.AdminSite):
@@ -17,7 +18,20 @@ admin.site = CustomAdminSite()
 
 admin.site.register(Meet)
 
-admin.site.register(User)
+class UserAdmin(BaseUserAdmin):
+	def has_add_permission(self, request):
+		return request.user.is_superuser
+	
+	def has_change_permission(self, request, obj=None):
+		return request.user.is_superuser
+	
+	def has_delete_permission(self, request, obj=None):
+		return request.user.is_superuser
+	
+	def has_view_permission(self, request, obj=None):
+		return request.user.is_superuser
+
+admin.site.register(User, UserAdmin)
 
 class ProblemAdmin(admin.ModelAdmin):
 	search_fields = ['platform', 'link', 'solution_link']
