@@ -83,17 +83,6 @@ class Meet(models.Model):
     )
     
     def save(self, *args, **kwargs):
-        import os
-        from django.core.exceptions import ValidationError
-        algo_path = os.path.join(
-            os.path.dirname(__file__),
-            'meets',
-            str(self.date.year),
-            f"{self.date.month:02d}",
-            f"{self.date.day:02d}.py"
-        )
-        if not os.path.exists(algo_path):
-            raise ValidationError(f"Algo file does not exist: {algo_path}")
         # Auto-determine and get/create session
         if not self.session:
             month = self.date.month
@@ -192,7 +181,7 @@ class Meet(models.Model):
             print(f"Failed to fetch Kattis problems: {e}")
     
     def get_algo_content(self):
-        """Read and return the algo file content, or None if only comments/blanks"""
+        """Read and return the algo file content, or None if only comments/blanks or file doesn't exist"""
         import os
         algo_path = os.path.join(
             os.path.dirname(__file__),
@@ -215,15 +204,24 @@ class Meet(models.Model):
             # File only contains comments and blanks
             return None
         except FileNotFoundError:
-            return "# Algo non disponible"
+            return None
     
     class Meta:
         ordering = ['-date']
     
     def __str__(self):
+        import os
+        algo_path = os.path.join(
+            'board/meets',
+            str(self.date.year),
+            f"{self.date.month:02d}",
+            f"{self.date.day:02d}.py"
+        )
+        result = f"Rencontre {self.date.strftime('%d/%m/%Y')}"
         if self.theme:
-            return f"Rencontre {self.date.strftime('%d/%m/%Y')} - {self.theme}"
-        return f"Rencontre {self.date.strftime('%d/%m/%Y')}"
+            result += f" - {self.theme}"
+        result += f" [{algo_path}]"
+        return result
 
 
 class Problem(models.Model):
