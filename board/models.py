@@ -163,14 +163,15 @@ class Meet(models.Model):
                         base_url = 'https://open.kattis.com' if 'open.kattis.com' in self.contest_link else 'https://kattis.com'
                         problem_url = base_url + problem_url
                     
-                    # Get or create the problem
-                    Problem.objects.get_or_create(
+                    # Get or create the problem and add this meet to it
+                    problem, created = Problem.objects.get_or_create(
                         link=problem_url,
                         defaults={
-                            'platform': 'Kattis',
-                            'done': self
+                            'platform': 'Kattis'
                         }
                     )
+                    # Add this meet to the problem's meets
+                    problem.meets.add(self)
                 except Exception as e:
                     # Continue on individual problem creation errors
                     print(f"Error creating problem: {str(e)}")
@@ -231,10 +232,10 @@ class Problem(models.Model):
     
     platform = models.CharField()
     
-    done = models.ForeignKey(
+    meets = models.ManyToManyField(
         Meet,
         related_name="problems",
-        on_delete=models.PROTECT
+        blank=True
     )
     
     solution_link = models.CharField(

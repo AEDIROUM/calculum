@@ -185,10 +185,10 @@ def process_individual_problems(soup, meet):
                     problem, created = Problem.objects.get_or_create(
                         link=href,
                         defaults={
-                            'platform': 'Kattis',
-                            'done': meet
+                            'platform': 'Kattis'
                         }
                     )
+                    problem.meets.add(meet)
                     if created:
                         problems_count += 1
                 except Exception as e:
@@ -202,10 +202,10 @@ def process_individual_problems(soup, meet):
                     problem, created = Problem.objects.get_or_create(
                         link=href,
                         defaults={
-                            'platform': 'LeetCode',
-                            'done': meet
+                            'platform': 'LeetCode'
                         }
                     )
+                    problem.meets.add(meet)
                     if created:
                         problems_count += 1
                 except Exception as e:
@@ -257,10 +257,10 @@ def process_kattis_contest(kattis_url, meet):
                                 problem, created = Problem.objects.get_or_create(
                                     link=problem_url,
                                     defaults={
-                                        'platform': 'Kattis',
-                                        'done': meet
+                                        'platform': 'Kattis'
                                     }
                                 )
+                                problem.meets.add(meet)
                                 
                                 if created:
                                     problems_count += 1
