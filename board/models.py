@@ -73,7 +73,7 @@ class Meet(models.Model):
     )
     
     get_problems = models.BooleanField(
-        default=True
+        default=False
     )
     
     managers = models.ManyToManyField(
