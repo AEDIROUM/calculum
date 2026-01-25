@@ -1,7 +1,6 @@
 
 from django.contrib import admin
 from django.contrib.auth.models import User
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from board.models import Meet, Problem, Session
 
 class CustomAdminSite(admin.AdminSite):
@@ -18,31 +17,7 @@ admin.site = CustomAdminSite()
 
 admin.site.register(Meet)
 
-class UserAdmin(BaseUserAdmin):
-	def get_queryset(self, request):
-		# Staff can only see themselves; superusers see all
-		qs = super().get_queryset(request)
-		if request.user.is_superuser:
-			return qs
-		return qs.filter(pk=request.user.pk)
-	
-	def get_readonly_fields(self, request):
-		# Superusers can edit everything; staff cannot edit sensitive fields
-		if request.user.is_superuser:
-			return []
-		return ['username', 'is_staff', 'is_superuser', 'is_active', 'groups', 'user_permissions', 'last_login', 'date_joined']
-	
-	def get_fieldsets(self, request, obj=None):
-		# Show all fields to superusers
-		if request.user.is_superuser:
-			return super().get_fieldsets(request, obj)
-		# Limited fields for staff (only their own profile)
-		return (
-			(None, {'fields': ('username',)}),
-			('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
-		)
-
-admin.site.register(User, UserAdmin)
+admin.site.register(User)
 
 class ProblemAdmin(admin.ModelAdmin):
 	search_fields = ['platform', 'link', 'solution_link']
