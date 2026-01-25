@@ -72,10 +72,6 @@ class Meet(models.Model):
         null=False
     )
     
-    get_problems = models.BooleanField(
-        default=False
-    )
-    
     managers = models.ManyToManyField(
         User,
         blank=True,
@@ -108,9 +104,9 @@ class Meet(models.Model):
             )
         super().save(*args, **kwargs)
         
-        # Auto-fetch problems from Kattis contest if get_problems is True
+        # Auto-fetch problems from Kattis contest if contest_link exists
         # Run in background to avoid blocking the save
-        if self.get_problems and self.contest_link and 'kattis.com/contests/' in self.contest_link:
+        if self.contest_link and 'kattis.com/contests/' in self.contest_link:
             try:
                 self._fetch_kattis_problems()
             except Exception as e:

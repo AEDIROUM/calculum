@@ -334,8 +334,7 @@ def process_post(post):
             defaults={
                 'theme': title,
                 'description': description,
-                'contest_link': kattis_contest_url or '',
-                'get_problems': bool(kattis_contest_url)
+                'contest_link': kattis_contest_url or ''
             }
         )
         
@@ -345,7 +344,6 @@ def process_post(post):
                 meet.description = description
             if meet.contest_link != (kattis_contest_url or ''):
                 meet.contest_link = kattis_contest_url or ''
-                meet.get_problems = bool(kattis_contest_url)
             meet.save()
         
         # Add managers to the meet
