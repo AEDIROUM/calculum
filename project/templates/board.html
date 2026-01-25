@@ -54,6 +54,11 @@
 				{% if meet.description %}
 				<p class="meet-description">{{ meet.description }}</p>
 				{% endif %}
+				{% if meet.contest_link %}
+				<div class="contest-link-container">
+					<a href="{{ meet.contest_link }}" class="contest-button" target="_blank" rel="noopener">🏆 Aller au Contest</a>
+				</div>
+				{% endif %}
 			</div>
 		</div>
 		

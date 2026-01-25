@@ -6,3 +6,5 @@ python-dotenv==1.0
 psycopg2-binary>=2.9
 gunicorn==21.2.0
 whitenoise==6.11.0
+requests>=2.31
+beautifulsoup4>=4.12

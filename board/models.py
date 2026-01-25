@@ -66,6 +66,16 @@ class Meet(models.Model):
         blank=True
     )
     
+    contest_link = models.CharField(
+        default="",
+        blank=True,
+        null=False
+    )
+    
+    get_problems = models.BooleanField(
+        default=True
+    )
+    
     managers = models.ManyToManyField(
         User,
         blank=True,
@@ -108,6 +118,50 @@ class Meet(models.Model):
                 }
             )
         super().save(*args, **kwargs)
+        
+        # Auto-fetch problems from Kattis contest if get_problems is True
+        if self.get_problems and self.contest_link and 'kattis.com/contests/' in self.contest_link:
+            self._fetch_kattis_problems()
+    
+    def _fetch_kattis_problems(self):
+        """Fetch problems from Kattis contest and create Problem objects"""
+        import requests
+        from bs4 import BeautifulSoup
+        import re
+        
+        try:
+            # Extract contest ID from URL
+            contest_match = re.search(r'/contests/([^/?]+)', self.contest_link)
+            if not contest_match:
+                return
+            
+            contest_id = contest_match.group(1)
+            response = requests.get(self.contest_link, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Find all problem links in the contest page
+            problem_links = soup.find_all('a', href=re.compile(r'/problems/[^/?]+$'))
+            
+            for link in problem_links:
+                problem_url = link.get('href')
+                # Make sure it's a full URL
+                if not problem_url.startswith('http'):
+                    base_url = 'https://open.kattis.com' if 'open.kattis.com' in self.contest_link else 'https://kattis.com'
+                    problem_url = base_url + problem_url
+                
+                # Get or create the problem
+                Problem.objects.get_or_create(
+                    link=problem_url,
+                    defaults={
+                        'platform': 'Kattis',
+                        'done': self
+                    }
+                )
+        except Exception as e:
+            # Silent fail - don't break the save if fetching fails
+            print(f"Failed to fetch Kattis problems: {e}")
     
     def get_algo_content(self):
         """Read and return the algo file content, or None if only comments/blanks"""
