@@ -1,6 +1,7 @@
 
 from django.contrib import admin
 from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from board.models import Meet, Problem, Session
 
 class CustomAdminSite(admin.AdminSite):
@@ -17,9 +18,7 @@ admin.site = CustomAdminSite()
 
 admin.site.register(Meet)
 
-class UserAdmin(admin.ModelAdmin):
-	list_display = ('username', 'first_name', 'last_name', 'email', 'is_staff', 'is_superuser')
-	
+class UserAdmin(BaseUserAdmin):
 	def get_queryset(self, request):
 		# Staff can only see themselves; superusers see all
 		qs = super().get_queryset(request)
