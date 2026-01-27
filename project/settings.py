@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = _env_bool('DJANGO_DEBUG', True)
+DEBUG = _env_bool('DJANGO_DEBUG', False)
 
 domain = os.environ.get('DOMAIN', '').strip()
 
