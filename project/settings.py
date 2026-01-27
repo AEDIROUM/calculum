@@ -31,7 +31,6 @@ def _env_bool(name: str, default: bool) -> bool:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
-    'django-insecure-&x=+#4mtibra+#bakg2qrst!0@60b8!dvv)s2hkz36gpbq#ih%'
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
