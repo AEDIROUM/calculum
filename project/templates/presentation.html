@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Présentation - Calculum{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{% static 'css/presentation.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="presentation-container">
+	<section class="presentation-section">
+		<h2>À propos du Club</h2>
+		<p>Club d'algorithmique compétitive universitaire de l'Université de Montréal</p>
+		
+		<div class="info-grid">
+			<div class="info-card">
+				<h3>📅 Horaire</h3>
+				<p>(TBD)</p>
+			</div>
+			<div class="info-card">
+				<h3>📍 Local</h3>
+				<p>AA-3192</p>
+			</div>
+		</div>
+
+		<h3>Notre Mission</h3>
+		<p>Le club se réunit chaque semaine autour de nouveaux casse-têtes informatiques qui feront appel à vos connaissances en algorithmique, en logique et en programmation.</p>
+
+		<h3>Pourquoi Nous Rejoindre?</h3>
+		<ul>
+			<li>Outre le plaisir à les résoudre, ces casse-têtes offrent un entraînement aux compétitions de programmation</li>
+			<li>Préparation pour: ICPC, CS Games, Hacker Cup, Advent of Code, etc.</li>
+			<li>Entraînement aux questions posées en entrevue par les grandes compagnies</li>
+		</ul>
+
+		<h3>Pour Qui?</h3>
+		<p>Que vous soyez simple curieux, débutant ou déjà aguerri, soyez les bienvenus au Calculum!</p>
+
+		<h3>Nous Contacter</h3>
+		<p><strong>Email:</strong> calculum [at] iro.umontreal.ca</p>
+		<p><strong>Questions, commentaires, suggestions?</strong> N'hésitez pas à nous écrire!</p>
+
+		<div class="cta-section">
+			<p>👼 <a href="/noob" class="cta-button">Nouveau? Commencer Ici</a> 👼</p>
+			<p><a href="/meets" class="cta-button">Voir les Rencontres</a></p>
+		</div>
+	</section>
+</div>
+
+{% block extra_scripts %}
+	<script src="{% static 'js/presentation.js' %}"></script>
+{% endblock %}
+{% endblock %}

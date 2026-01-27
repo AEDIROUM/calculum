@@ -1,0 +1,5687 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2026-01-23T22:51:47.112Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/gettingthrough",
+            "object_repr": "Kattis - Gettingthrough",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Solution link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2026-01-23T22:54:03.305Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Automne 2025",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2026-01-23T23:02:01.515Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "ICPC 2026",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2026-01-23T23:05:22.462Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "ICPC 2026 - icpc_2026_nctqyo",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2026-01-23T23:45:39.923Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Hiver 2026",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Time\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2026-01-24T00:01:05.097Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "ICPC 2025",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Start\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2026-01-24T05:42:58.125Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "2",
+            "object_repr": "alexandre charland",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2026-01-24T05:42:58.129Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "guillaume tardif et samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2026-01-24T05:42:58.130Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "matteo delabre",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2026-01-24T05:42:58.132Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2026-01-24T05:44:57.835Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "Vic-Nas",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2026-01-24T05:47:30.509Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "2",
+            "object_repr": "alexandre charland",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2026-01-24T05:47:30.511Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "guillaume tardif et samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2026-01-24T05:47:30.512Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "matteo delabre",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2026-01-24T05:47:30.513Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2026-01-24T05:47:48.713Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "2",
+            "object_repr": "alexandre charland",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2026-01-24T05:47:48.714Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "4",
+            "object_repr": "guillaume tardif et samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2026-01-24T05:47:48.715Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "5",
+            "object_repr": "matteo delabre",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2026-01-24T05:47:48.716Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "3",
+            "object_repr": "samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2026-01-24T06:04:46.816Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Rencontre 21/01/2026 - Union-Find",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Managers\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2026-01-24T06:31:46.062Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "8",
+            "object_repr": "guillaume_tardif et samuel maltais",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2026-01-24T18:13:40.072Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/gettingthrough",
+            "object_repr": "Kattis - Gettingthrough",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2026-01-24T18:14:01.213Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/wheresmyinternet",
+            "object_repr": "Kattis - Wheresmyinternet",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2026-01-24T18:14:41.579Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/forestforthetrees",
+            "object_repr": "Kattis - Forestforthetrees",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2026-01-25T06:20:50.732Z",
+            "user": 1,
+            "content_type": 11,
+            "object_id": "1",
+            "object_repr": "ICPC 2025 - icpc_2025_qsayru",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"File\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2026-01-25T15:39:10.256Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/wheresmyinternet",
+            "object_repr": "Kattis - Wheresmyinternet",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2026-01-25T15:39:35.168Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/gettingthrough",
+            "object_repr": "Kattis - Gettingthrough",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2026-01-25T15:43:36.569Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Rencontre 21/01/2026 - Union-Find",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Contest link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2026-01-25T15:45:57.107Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/contests/rzj9tg/problems/forestforthetrees",
+            "object_repr": "Kattis - Forestforthetrees",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2026-01-25T15:46:21.814Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/contests/rzj9tg/problems/gettingthrough",
+            "object_repr": "Kattis - Gettingthrough",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2026-01-25T15:46:34.227Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/contests/rzj9tg/problems/wheresmyinternet",
+            "object_repr": "Kattis - Wheresmyinternet",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2026-01-25T15:49:00.335Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Rencontre 21/01/2026 - Union-Find",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2026-01-25T16:43:22.569Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "190",
+            "object_repr": "Rencontre 28/01/2026 - Minimax [board/meets/2026/01/28.py]",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2026-01-25T17:09:27.441Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/wheresmyinternet",
+            "object_repr": "Kattis - Wheresmyinternet",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Solution link\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2026-01-25T17:13:37.688Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/wheresmyinternet",
+            "object_repr": "Kattis - Wheresmyinternet",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Meets\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2026-01-25T17:17:04.075Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "190",
+            "object_repr": "Rencontre 28/01/2026 - Minimax [board/meets/2026/01/28.py]",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Get problems\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2026-01-25T17:21:25.924Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/gettingthrough",
+            "object_repr": "Kattis - Gettingthrough",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Meets\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2026-01-25T17:21:39.466Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "https://open.kattis.com/problems/forestforthetrees",
+            "object_repr": "Kattis - Forestforthetrees",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Meets\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2026-01-25T17:34:00.632Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "Vic-Nas",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2026-01-25T17:34:15.651Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "10",
+            "object_repr": "guillaume_tardif",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2026-01-25T17:34:34.515Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "9",
+            "object_repr": "matteo_delabre",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2026-01-25T17:42:22.933Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "6",
+            "object_repr": "alexandre_charland",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2026-01-25T17:42:45.210Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "7",
+            "object_repr": "samuel_maltais",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2026-01-25T19:40:28.874Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "Vic-Nas",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2026-01-25T19:41:10.619Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "10",
+            "object_repr": "guillaume_tardif",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Password\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 46,
+        "fields": {
+            "action_time": "2026-01-25T19:41:41.826Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "9",
+            "object_repr": "matteo_delabre",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Password\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2026-01-25T19:41:56.511Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "7",
+            "object_repr": "samuel_maltais",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Password\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2026-01-25T19:42:16.341Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "6",
+            "object_repr": "alexandre_charland",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Password\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2026-01-25T19:42:47.967Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "victorio_nascimento",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2026-01-25T19:46:58.892Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "12",
+            "object_repr": "oscar_parent",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2026-01-25T19:51:50.448Z",
+            "user": 1,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "victorio_nascimento",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2026-01-25T19:57:07.695Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "1",
+            "object_repr": "victorio_nascimento",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2026-01-25T19:57:24.780Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "6",
+            "object_repr": "alexandre_charland",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2026-01-25T19:57:35.597Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "10",
+            "object_repr": "guillaume_tardif",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2026-01-25T19:57:45.004Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "9",
+            "object_repr": "matteo_delabre",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2026-01-25T19:57:53.302Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "12",
+            "object_repr": "oscar_parent",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2026-01-25T19:58:01.131Z",
+            "user": 11,
+            "content_type": 4,
+            "object_id": "7",
+            "object_repr": "samuel_maltais",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add meet",
+            "content_type": 7,
+            "codename": "add_meet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change meet",
+            "content_type": 7,
+            "codename": "change_meet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete meet",
+            "content_type": 7,
+            "codename": "delete_meet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view meet",
+            "content_type": 7,
+            "codename": "view_meet"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add problem",
+            "content_type": 8,
+            "codename": "add_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change problem",
+            "content_type": 8,
+            "codename": "change_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete problem",
+            "content_type": 8,
+            "codename": "delete_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view problem",
+            "content_type": 8,
+            "codename": "view_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 9,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 9,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 9,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 9,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add event",
+            "content_type": 10,
+            "codename": "add_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change event",
+            "content_type": 10,
+            "codename": "change_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete event",
+            "content_type": 10,
+            "codename": "delete_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view event",
+            "content_type": 10,
+            "codename": "view_event"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add media",
+            "content_type": 11,
+            "codename": "add_media"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change media",
+            "content_type": 11,
+            "codename": "change_media"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete media",
+            "content_type": 11,
+            "codename": "delete_media"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view media",
+            "content_type": 11,
+            "codename": "view_media"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$jeFMP1uKE1nXKuXaXBngX4$MsmcmemVXx8n08+Ia2yBpZLzoeLwrSvj8SOBa63HFpA=",
+            "last_login": "2026-01-25T19:58:44.733Z",
+            "is_superuser": true,
+            "username": "victorio_nascimento",
+            "first_name": "Victorio",
+            "last_name": "Nascimento",
+            "email": "nasci.victorio@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-23T22:11:00Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 6,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "alexandre_charland",
+            "first_name": "Alexandre",
+            "last_name": "Charland",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-24T05:45:24Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 7,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "samuel_maltais",
+            "first_name": "Samuel",
+            "last_name": "Maltais",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-24T05:45:34Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 9,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "matteo_delabre",
+            "first_name": "Mattéo",
+            "last_name": "Delabre",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-24T05:45:50Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 10,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "guillaume_tardif",
+            "first_name": "Guillaume",
+            "last_name": "Tardif",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-24T05:55:24Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 11,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$zGjs6PPoPudoHbVb740ayp$KvjL/rmJee4VWCnR3l7zLSzZObL8OrrRy1OiZyT2sCY=",
+            "last_login": "2026-01-25T19:52:40.894Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@calculum.ca",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-25T17:33:24.049Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 12,
+        "fields": {
+            "password": "admin",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "oscar_parent",
+            "first_name": "Oscar",
+            "last_name": "Parent",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-25T19:46:11Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "board",
+            "model": "meet"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "board",
+            "model": "problem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "board",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "events",
+            "model": "event"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "events",
+            "model": "media"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "2iecd7yno2ujae9m3v5uw8vxrnbdpeif",
+        "fields": {
+            "session_data": ".eJxVjDEOwjAMRe-SGUWJKE7MyM4ZKjt2SQElUtNOiLtDpA6w_vfef5mRtjWPW9NlnMWcjTeH340pPbR0IHcqt2pTLesys-2K3Wmz1yr6vOzu30Gmlr91FABMJ3U4oKMjMsLgRcLkicQRB-0Gex8Ta-QgCRgmQWBiFwnM-wPwlTjQ:1vk6Fw:-9batj4grK7qMwC28pnzL8XaU7pcdOrApZnttkCgXr8",
+            "expire_date": "2026-02-08T19:58:44.735Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "djfmm99r4riafkjpo5kwfvs6nagizs70",
+        "fields": {
+            "session_data": ".eJxVjDEOwjAMRe-SGUWJKE7MyM4ZKjt2SQElUtNOiLtDpA6w_vfef5mRtjWPW9NlnMWcjTeH340pPbR0IHcqt2pTLesys-2K3Wmz1yr6vOzu30Gmlr91FABMJ3U4oKMjMsLgRcLkicQRB-0Gex8Ta-QgCRgmQWBiFwnM-wPwlTjQ:1vjWl4:CBi8wDVd_0rii2rwrDbRcs0bKpP4LW1DkfCrbKIjrEg",
+            "expire_date": "2026-02-07T06:04:30.911Z"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 1,
+        "fields": {
+            "season": "autumn",
+            "year": 2022,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 2,
+        "fields": {
+            "season": "autumn",
+            "year": 2023,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 3,
+        "fields": {
+            "season": "summer",
+            "year": 2023,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 4,
+        "fields": {
+            "season": "winter",
+            "year": 2023,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 5,
+        "fields": {
+            "season": "autumn",
+            "year": 2024,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 6,
+        "fields": {
+            "season": "winter",
+            "year": 2024,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 7,
+        "fields": {
+            "season": "summer",
+            "year": 2025,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 8,
+        "fields": {
+            "season": "winter",
+            "year": 2025,
+            "local": "AA-3189",
+            "time": "18:00:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.session",
+        "pk": 9,
+        "fields": {
+            "season": "winter",
+            "year": 2026,
+            "local": "AA-3189",
+            "time": "18:30:00",
+            "day": "wednesday"
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 1,
+        "fields": {
+            "date": "2026-01-21",
+            "session": 9,
+            "description": "",
+            "theme": "Union-Find",
+            "contest_link": "https://open.kattis.com/contests/rzj9tg",
+            "managers": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 143,
+        "fields": {
+            "date": "2025-06-09",
+            "session": 7,
+            "description": "Pratique pour ICPC",
+            "theme": "Pratique ICPC!",
+            "contest_link": "https://open.kattis.com/contests/w8rsxs",
+            "managers": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 144,
+        "fields": {
+            "date": "2025-06-02",
+            "session": 7,
+            "description": "Generation de mots !",
+            "theme": "Génération de noms!",
+            "contest_link": "https://open.kattis.com/contests/zi8h24",
+            "managers": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 145,
+        "fields": {
+            "date": "2025-05-26",
+            "session": 7,
+            "description": "Tournoi du 26 Mai",
+            "theme": "Pratique ICPC!",
+            "contest_link": "https://open.kattis.com/contests/uszvgm",
+            "managers": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 146,
+        "fields": {
+            "date": "2025-05-19",
+            "session": 7,
+            "description": "Tournoi du 19 Mai",
+            "theme": "Tournoi!",
+            "contest_link": "https://open.kattis.com/contests/go6bes",
+            "managers": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 147,
+        "fields": {
+            "date": "2025-03-11",
+            "session": 8,
+            "description": "Tournoi du 11 Mars",
+            "theme": "Tournoi!",
+            "contest_link": "https://open.kattis.com/contests/e9nyny",
+            "managers": [
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 148,
+        "fields": {
+            "date": "2025-01-21",
+            "session": 8,
+            "description": "Tournoi du 21 Janvier",
+            "theme": "Tournoi!",
+            "contest_link": "https://open.kattis.com/contests/g32eo7",
+            "managers": [
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 149,
+        "fields": {
+            "date": "2025-01-30",
+            "session": 8,
+            "description": "Sélection des CS Games",
+            "theme": "Sélections des CS Games !",
+            "contest_link": "https://open.kattis.com/contests/dhse3h",
+            "managers": [
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 150,
+        "fields": {
+            "date": "2024-11-27",
+            "session": 5,
+            "description": "Trees",
+            "theme": "Arbres",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 151,
+        "fields": {
+            "date": "2024-11-20",
+            "session": 5,
+            "description": "Pratique problèmes ICPC Régionaux antérieurs)",
+            "theme": "Pratique problèmes ICPC Régionaux antérieurs",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 152,
+        "fields": {
+            "date": "2024-10-09",
+            "session": 5,
+            "description": "Recherche binaire (Binary search)",
+            "theme": "Recherche binaire",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 153,
+        "fields": {
+            "date": "2024-10-02",
+            "session": 5,
+            "description": "Tri (Sorting)",
+            "theme": "Tri",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 154,
+        "fields": {
+            "date": "2024-09-25",
+            "session": 5,
+            "description": "Problemes de deux pointeurs",
+            "theme": "Two Pointer",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 155,
+        "fields": {
+            "date": "2024-09-18",
+            "session": 5,
+            "description": "Continuation des problèmes de Piles (stacks) et introduction au Files (queues)",
+            "theme": "Piles et Files",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 156,
+        "fields": {
+            "date": "2024-09-11",
+            "session": 5,
+            "description": "Continuation des problèmes d’array et introduction au Hachage (hashing) et Piles (stacks)",
+            "theme": "Arrays, Hachage et Piles",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 157,
+        "fields": {
+            "date": "2024-09-04",
+            "session": 5,
+            "description": "Introduction à la rencontre d’automne 2024.",
+            "theme": "Introduction Automne 2024",
+            "contest_link": "",
+            "managers": [
+                10,
+                7
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 158,
+        "fields": {
+            "date": "2024-03-20",
+            "session": 6,
+            "description": "Les problèmes de cette semaine utilisent des piles, des files et des files de priorité.",
+            "theme": "Piles et files",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 159,
+        "fields": {
+            "date": "2024-02-14",
+            "session": 6,
+            "description": "Nous nous intéressons cette semaine à des problèmes de stratégie ou de calcul liés à des jeux à deux ou plusieurs joueurs.",
+            "theme": "Jeux",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 160,
+        "fields": {
+            "date": "2024-02-07",
+            "session": 6,
+            "description": "Nous nous intéressons cette semaine à trois problèmes de recherche de sous-séquences croissantes optimales.",
+            "theme": "Séquences croissantes",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 161,
+        "fields": {
+            "date": "2024-01-24",
+            "session": 6,
+            "description": "Afin de sélectionner les membres de la délégation du DIRO pour les CS Games qui auront lieu au mois de mars prochain, nous avons organisé un concours interne.",
+            "theme": "Sélection des CS Games",
+            "contest_link": "https://open.kattis.com/contests/qi7iz2",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 162,
+        "fields": {
+            "date": "2023-11-27",
+            "session": 2,
+            "description": "Nous nous intéressons cette semaine à des problèmes impliquant divers calculs.",
+            "theme": "Mathématiques",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 163,
+        "fields": {
+            "date": "2023-11-13",
+            "session": 2,
+            "description": "Nous nous intéressons cette semaine à des problèmes qui consistent à calculer des chemins à travers des graphes respectant certaines propriétés.",
+            "theme": "Chemins dans des graphes",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 164,
+        "fields": {
+            "date": "2023-10-09",
+            "session": 2,
+            "description": "Nous étudions cette semaine des problèmes en lien avec de la combinatoire et/ou des graphes.",
+            "theme": "Combinatoire et graphes",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 165,
+        "fields": {
+            "date": "2023-10-02",
+            "session": 2,
+            "description": "Un aperçu des différentes stratégies applicables aux problèmes de programmation compétitive: recherche exhaustive, programmation dynamique, diviser pour régner, vorace.",
+            "theme": "Stratégies de résolution",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 166,
+        "fields": {
+            "date": "2023-06-21",
+            "session": 3,
+            "description": "Aujourd’hui a eu lieu la dernière rencontre du club pour la saison 2022–2023.",
+            "theme": "Fin de la première saison",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 167,
+        "fields": {
+            "date": "2023-06-14",
+            "session": 3,
+            "description": "Les problèmes de cette semaine sont tirés du concours régional NWERC 2022.",
+            "theme": "Problèmes du NWERC 2022",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 168,
+        "fields": {
+            "date": "2023-05-31",
+            "session": 3,
+            "description": "Nous étudions cette semaine une série de problèmes qui demande de déchiffrer ou de décrypter un ensemble de chiffrements.",
+            "theme": "Cryptanalyse",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 169,
+        "fields": {
+            "date": "2023-05-17",
+            "session": 3,
+            "description": "Nous débutons cette semaine les rencontres d’été du club, avec des problèmes choisis en référence au club RADAR nouvellement formé pendant l’hiver.",
+            "theme": "Radar",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 170,
+        "fields": {
+            "date": "2023-04-05",
+            "session": 4,
+            "description": "Nous étudierons cette semaine une série de problèmes de géométrie.",
+            "theme": "Géométrie",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 171,
+        "fields": {
+            "date": "2023-03-29",
+            "session": 4,
+            "description": "Nous étudierons cette semaine une série de problèmes pouvant être résolus avec diviser pour régner.",
+            "theme": "Diviser pour régner",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 172,
+        "fields": {
+            "date": "2023-03-15",
+            "session": 4,
+            "description": "En l’honneur de la journée de π, nous consacrerons cette séance à l’écriture de programmes pour approcher sa valeur à l’aide de méthodes diverses.",
+            "theme": "πrogrammation",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 173,
+        "fields": {
+            "date": "2023-03-08",
+            "session": 4,
+            "description": "Nous étudierons cette semaine une série de problèmes pouvant être résolus en employant une approche vorace.",
+            "theme": "Algorithmes voraces",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 174,
+        "fields": {
+            "date": "2023-02-15",
+            "session": 4,
+            "description": "Nous avons étudié cette semaine une série de problèmes sur les graphes.",
+            "theme": "Graphes",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 175,
+        "fields": {
+            "date": "2023-02-08",
+            "session": 4,
+            "description": "Nous avons terminé l’étude des problèmes de recherche exhaustive et discuterons de leur solution. Les solutions apparaîtront sur cette page prochainement.",
+            "theme": "Recherche exhaustive (suite)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 176,
+        "fields": {
+            "date": "2023-02-01",
+            "session": 4,
+            "description": "Nous avons étudions une série de problèmes qui font appel à diverses techniques de recherche exhaustive.",
+            "theme": "Recherche exhaustive",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 177,
+        "fields": {
+            "date": "2023-01-25",
+            "session": 4,
+            "description": "Nous avons discuté des solutions aux problèmes de la semaine passée. Les solutions apparaîtront sur cette page prochainement.",
+            "theme": "Mathématiques (suite)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 178,
+        "fields": {
+            "date": "2023-01-18",
+            "session": 4,
+            "description": "Pour commencer la session d’hiver, nous étudierons une belle série de problèmes qui mêlent algorithmique et mathématiques.",
+            "theme": "Mathématiques",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 179,
+        "fields": {
+            "date": "2022-12-08",
+            "session": 1,
+            "description": "Pour clore la session d’automne, nous avons présenté les solutions des problèmes de l’ICPC 2021 étudiés la semaine précédente.",
+            "theme": "Problèmes de l’ICPC 2021 (suite)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 180,
+        "fields": {
+            "date": "2022-12-01",
+            "session": 1,
+            "description": "Nous avons commencé à étudier une série de problèmes issus de l’édition de l’année passée de l’ICPC en Amérique du Nord.",
+            "theme": "Problèmes de l’ICPC 2021",
+            "contest_link": "https://nena21.kattis.com/contests/nena21/problems",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 181,
+        "fields": {
+            "date": "2022-11-24",
+            "session": 1,
+            "description": "L’objectif de cette rencontre était de se mettre dans des conditions similaires à celles d’un concours de programmation. Pendant deux heures, vous avez dû résoudre le plus de problèmes possible parmi 5 problèmes dévoilés le jour même.",
+            "theme": "Concours #1",
+            "contest_link": "https://open.kattis.com/contests/n25qzb",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 182,
+        "fields": {
+            "date": "2022-11-17",
+            "session": 1,
+            "description": "Nous passerons en revue ensemble les problèmes de programmation dynamique et leurs solutions, et nous discuterons du concours d’entraînement à venir la semaine prochaine.",
+            "theme": "Programmation dynamique (revue)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 183,
+        "fields": {
+            "date": "2022-11-10",
+            "session": 1,
+            "description": "Nous avons travaillé sur les problèmes de programmation dynamique annoncés la semaine précédente.",
+            "theme": "Programmation dynamique (suite)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 184,
+        "fields": {
+            "date": "2022-11-03",
+            "session": 1,
+            "description": "Nous avons repris nos rencontres hebdomadaires en commençant par discuter des solutions aux problèmes de graphes. Nous avons ensuite débuté une nouvelle série de problèmes sur la programmation dynamique.",
+            "theme": "Programmation dynamique",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 185,
+        "fields": {
+            "date": "2022-10-20",
+            "session": 1,
+            "description": "Nous avons travaillé sur les problèmes de graphes annoncés la semaine précédente.",
+            "theme": "Graphes (suite)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 186,
+        "fields": {
+            "date": "2022-10-13",
+            "session": 1,
+            "description": "Nous avons discuté des solutions aux problèmes sur les chaînes de caractères, puis une nouvelle série de problèmes sur les graphes a été annoncée.",
+            "theme": "Graphes",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 187,
+        "fields": {
+            "date": "2022-10-06",
+            "session": 1,
+            "description": "Nous avons poursuivi l’étude de la série de problèmes de la semaine précédente sur les chaînes de caractères, avec quelques problèmes supplémentaires pour celles et ceux qui en voulaient davantage!",
+            "theme": "Chaînes de caractères (suite)",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 188,
+        "fields": {
+            "date": "2022-09-29",
+            "session": 1,
+            "description": "Nous avons discuté de nos solutions pour la série de problèmes géométriques. Nous avons ensuite travaillé sur une nouvelle série de problèmes liés aux chaînes de caractères.",
+            "theme": "Chaînes de caractères",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 189,
+        "fields": {
+            "date": "2022-09-22",
+            "session": 1,
+            "description": "Cette première rencontre a été l’occasion de poursuivre la discussion sur les activités du club. La première série de problèmes y a également présentée.",
+            "theme": "Géométrie",
+            "contest_link": "",
+            "managers": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "board.meet",
+        "pk": 190,
+        "fields": {
+            "date": "2026-01-28",
+            "session": 9,
+            "description": "",
+            "theme": "Minimax",
+            "contest_link": "https://open.kattis.com/contests/auhsff",
+            "managers": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/circlebounce",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/diagonals",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/dormroomdivide",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/doublepassword",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/failthemall",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/hopscotch500",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/problemsetconstruction",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/riseandfall",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/shortestmissingsubsequences",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/tetrisgeneration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/treehopping",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://kattis.com/problems/xorisland",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                180
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/binary-search/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                152
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/circular-array-loop/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                155
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/combinations/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/contains-duplicate/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/design-a-stack-with-increment-operation/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                155
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/design-front-middle-back-queue/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/find-median-from-data-stream/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                152
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/fizz-buzz/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/flipping-an-image/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/koko-eating-bananas/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                152
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/merge-intervals/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                155
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/missing-number/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/rotate-image/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/search-a-2d-matrix/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                152
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/spiral-matrix-ii/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/top-k-frequent-elements/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://leetcode.com/problems/valid-parentheses/description/",
+        "fields": {
+            "platform": "LeetCode",
+            "solution_link": "",
+            "meets": [
+                155
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/dhse3h/problems/babybites",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/dhse3h/problems/coinstacks",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/dhse3h/problems/haypoints",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/dhse3h/problems/locustlocus",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/dhse3h/problems/powerstrings",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/dhse3h/problems/rings2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/aaah",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/ada",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/caveexploration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/interpreter",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/orchard",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/pet",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/e9nyny/problems/warringscoring",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/electricaloutlets",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/forcedchoice",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/mousepursuit",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/peggamefortwo",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/powerstrings",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/primaryarithmetic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/reversiblecyclic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/g32eo7/problems/speeding",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/artwork",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/autocorrect",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/carddivisibility",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/cardhand",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/compass",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/dogs",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/expectedflightdelay",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/exponial",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/gamerank",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/interception",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/raffle",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/stockbroker",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/ternarianweights",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/go6bes/problems/tower",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n25qzb/problems/anagramcounting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n25qzb/problems/cartrouble",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n25qzb/problems/metaprogramming",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n25qzb/problems/robotsonagrid",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n25qzb/problems/squaredeal",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/collidingtraffic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/galacticsabotage",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/playfair",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/pokechat",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/provincesandgold",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/secretsanta",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/slikar",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/n6g93d/problems/snowfall",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/qi7iz2/problems/circularcaramelcookie",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/qi7iz2/problems/landlocked",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/qi7iz2/problems/lineup",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/qi7iz2/problems/stringgame",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/qi7iz2/problems/tgif",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/qi7iz2/problems/trainsorting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/autocoinomatic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/bigintegers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/champernownesubsequence",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/connectingcomputers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/exactchange3",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/freesolo",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/gcdpairs",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/homeworkhelp",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/mousepursuit",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/rainbowbowlranges",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/reduction",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/ruffians",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/sleepingonthetrain",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/takingoutthetrash",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/traininground3",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/uszvgm/problems/wordgame2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/alienintegers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/allpairspath",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/avoidingasteroids",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/commonfactors",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/dimensionalanalysis",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/eyeofsauron",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/gcdandlcm",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/ilovestrings",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/mrcodeformatgrader",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/mult",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/pizzaparty",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/stackingup",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/stampcombinations",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/swordcounting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/tictacstate",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/w8rsxs/problems/vennintervals",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/zi8h24/problems/namegeneration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/contests/zi8h24/problems/namegeneration2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": []
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/aaah",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/ada",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/alienintegers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/allpairspath",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/alphabet",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                160
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/anagramcounting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                181
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/antipalindrome",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                154
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/artwork",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/autocoinomatic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/autocorrect",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/automatictrading",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186,
+                188
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/avion",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186,
+                188
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/avion/statistics#toplist_shortest_title",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/avoidingasteroids",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/babybites",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                149
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/babynames",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/bachetsgame",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                178
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/ballotboxes",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/batmanacci",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                171
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/beepers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                163
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/bigintegers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/billiard",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                170
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/bing",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186,
+                188
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/birds",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/bookclub",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                174
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/booking",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                153
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/bottleflip",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                167
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/breakingbad",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/builddeps",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                163
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/cantinaofbabel",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/carddivisibility",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/cardhand",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146,
+                176
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/cartrouble",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                181
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/catenyms",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                163,
+                174
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/caveexploration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/champernownesubsequence",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/circuitmath",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                158
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/circularcaramelcookie",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                161,
+                167
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/closestpair2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                171
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/closestsums",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                176
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/codeguessing",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                151
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/coinstacks",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                149
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/collidingtraffic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/commercials",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                182,
+                184
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/commonfactors",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/communicationssatellite",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                169
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/compass",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/conformity",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/connectingcomputers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/connectn",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                159
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/countingstars",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                169
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/crackingrsa",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                178
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/crackingthecode",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                168
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/dasblinkenlights",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                178
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/deduplicatingfiles",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/delimitersoup",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                155
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/diagonalcut",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                162
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/dimensionalanalysis",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/dogs",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/dragonballs",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                170
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/drunkvigenere",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                168
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/dyslectionary",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                153
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/electricaloutlets",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/elevatortrouble",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/entertainmentbox",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                158
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/erraticants",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                164
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/espresso",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                151
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/eta",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                167
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/eulerianpath",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                163
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/exactchange3",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/expectedflightdelay",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/exponial",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/eyeofsauron",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/failthemall",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                179
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/fenwick",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                150
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/firefly",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                152,
+                171
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/fizzbuzz",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/flexible",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                157,
+                164
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/flipfive",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                164
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/forcedchoice",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/forestforthetrees",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "https://victorio-dev.github.io/PythonSolutions/#view/kattis/Forest%20for%20the%20trees",
+            "meets": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/freesolo",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/galacticsabotage",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/gamerank",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/gcdandlcm",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/gcdpairs",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/gcds",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                162
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/gettingthrough",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/goldbach2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                162
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/golfbot",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                174
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/goodcoalition",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                182,
+                184
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/grass",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/grasshopper",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                163
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/grid",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/haypoints",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                149
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/height",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                153
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/heirsdilemma",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                176
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/highqualitytree",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                167
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/homeworkhelp",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/ilovestrings",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/increasingsubsequence",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                160
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/inquiryi",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                154
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/interception",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/interpreter",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/islandhopping",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                174
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/joinstrings",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                155
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/justforsidekicks",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                150
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/kitchen",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                176
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/landequality",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                151
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/landlocked",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                161
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/lastguess",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                167
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/leprechaunhunt",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                159
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/lineup",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                161
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/locustlocus",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                149
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/longincsubseq",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                160
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mali",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                153
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mandelbrot",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                170
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mazemovement",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                174
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/messages",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/metaprogramming",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                181
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/minimumscalar",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mjehuric",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                153
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mousepursuit",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145,
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mravi",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                150
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mrcodeformatgrader",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/mult",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/namegeneration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                144
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/namegeneration2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                144
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/narrowartgallery",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                182,
+                184
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/nesteddolls",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                160
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/oddgnome",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/onaveragetheyrepurple",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                159
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/orchard",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/outofsorts",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                152,
+                171
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/overthehill2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                168
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pagelayout",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                164
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pebblesolitaire",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                164,
+                184,
+                186,
+                187,
+                188
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pebblesolitaire2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186,
+                187
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pebblesolitaire/statistics#toplist_shortest_title",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/peggamefortwo",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pet",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pieceofcake2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                189
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pizzaparty",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/playfair",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148,
+                168
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pointinpolygon",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                170
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/pokechat",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/powerstrings",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                149,
+                148,
+                187
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/primaryarithmetic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/provincesandgold",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/radar",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                169
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/radiotransmission",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                169
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/raffle",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/railroad2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/rainbowbowlranges",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/reduction",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/remorse",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                169
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/restaurant",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                155,
+                158
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/reverserot",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                168
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/reversiblecyclic",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148,
+                179
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/rings2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                149
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/riseandfall",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                179
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/robotprotection",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                170
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/robotsonagrid",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                181
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/roompainting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                152,
+                171
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/rubiksrevenge",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                176
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/ruffians",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/secretmessage",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                157
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/secretsanta",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/segmentintersection",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                189
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/settlers2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                157,
+                159
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/shortestpath3",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                174
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/sleepingonthetrain",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/slikar",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/snim",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                159
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/snowfall",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/solitaire",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186,
+                187
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/sound",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                154
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/speeding",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                148
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/squaredeal",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                181
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stackingup",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stampcombinations",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stockbroker",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stockprices",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                158
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stopcounting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                162
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stopwatch",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                162
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stringfactoring",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                186,
+                187,
+                188
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/stringgame",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                161
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/subprime",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                151
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/subseqhard",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                154
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/supercomputer",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                150
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/swordcounting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/synchronizinglists",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                152
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/takingoutthetrash",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/teque",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                156
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/ternarianweights",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tetration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                178
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tetrisgeneration",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                179
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tgif",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                161
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/threepowers",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                178
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/throwns",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                155,
+                158
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tictacstate",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tictactoecounting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                179
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tower",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                146
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/traininground3",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/trainsorting",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                160,
+                161
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/triangleornaments",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                189
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/tritiling",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                182,
+                184
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/ultimatebinarywatch",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                151
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/vennintervals",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                143
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/virus",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                173
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/warringscoring",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                147
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/wheresmyinternet",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "https://victorio-dev.github.io/PythonSolutions/#view/kattis/Where%20is%20my%20internet",
+            "meets": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/wordgame2",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                145
+            ]
+        }
+    },
+    {
+        "model": "board.problem",
+        "pk": "https://open.kattis.com/problems/xormax",
+        "fields": {
+            "platform": "Kattis",
+            "solution_link": "",
+            "meets": [
+                178
+            ]
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 1,
+        "fields": {
+            "title": "ICPC 2025",
+            "start": "2025-11-25",
+            "end": null,
+            "summary": "International Collegiate Programming Contest"
+        }
+    },
+    {
+        "model": "events.media",
+        "pk": 1,
+        "fields": {
+            "event": 1,
+            "file": "calculum/events/2026/01/icpc_2025_qsayru"
+        }
+    }
+]

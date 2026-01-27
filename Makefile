@@ -1,97 +1,41 @@
-SRC=src
-LOCALPUB=public
-REMOTEPUB=calculum@srv.aediroum.ca:/srv/calculum/html
-RACOENV=.penv
-RACOFLAGS=--batch --auto --skip-installed --no-docs
+REMOTE=calculum@srv.aediroum.ca
+REMOTE_DIR=/srv/calculum
 
-define USAGE
-Build and publish the site.
+# Setup initial (UNE SEULE FOIS)
+setup:
+	@echo "⚠️  Setup initial - À faire UNE SEULE FOIS"
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
+		python3 -m venv venv && \
+		source venv/bin/activate && \
+		pip install -r requirements.txt && \
+		python manage.py migrate && \
+		python manage.py loaddata fixtures/calculum_data.json && \
+		python manage.py collectstatic --noinput && \
+		nohup python manage.py runserver 0.0.0.0:8000 > server.log 2>&1 &"
+	@echo "✅ Setup terminé. Utilise 'make deploy' pour les futures mises à jour."
 
-Building:
+# Déploiement normal (SANS loaddata)
+deploy:
+	@echo "🚀 Déploiement..."
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
+		git pull && \
+		source venv/bin/activate && \
+		pip install -r requirements.txt && \
+		python manage.py migrate && \
+		python manage.py collectstatic --noinput && \
+		pkill -f 'python manage.py runserver' || true && \
+		sleep 2 && \
+		nohup python manage.py runserver 0.0.0.0:8000 > server.log 2>&1 &"
+	@echo "✅ Déployé!"
 
-    pollen      Compile Pollen files.
-    clean       Remove compiled files.
+# Arrêter le serveur
+stop:
+	ssh $(REMOTE) "pkill -f 'python manage.py runserver'"
 
-Development:
+# Logs
+logs:
+	ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log"
 
-    local	Copy compiled and static files to the local public directory.
-    serve       Start a local web server.
-    watch       Watch for changes and rebuild.
-    draft       Combine 'serve' and 'watch'.
-
-Publishing:
-
-    diff        Compare local and remote public directories.
-    publish     Copy local public files to the remote server.
-endef
-export USAGE
-
-help:
-	@echo "$$USAGE"
-
-${RACOENV}/activate.sh:
-	@echo "Installing Racket dependencies in ${RACOENV}/"
-	raco pkg install ${RACOFLAGS} raco-pkg-env; \
-	raco pkg-env ${RACOENV}; \
-	. ${RACOENV}/activate.sh; \
-	raco pkg install ${RACOFLAGS} \
-	    gregor \
-	    pollen
-
-pollen: ${RACOENV}/activate.sh
-	. ${RACOENV}/activate.sh; \
-	raco pollen render ${SRC} 2>&1
-
-clean: ${RACOENV}/activate.sh
-	. ${RACOENV}/activate.sh; \
-	raco pollen reset ${SRC}
-	git clean -Xdf ${SRC}
-	rm -rvf ${LOCALPUB}
-
-local:
-	rsync --itemize-changes --archive --copy-links --checksum \
-	    --exclude=".*" --exclude="*.pm" --exclude="*.p" --exclude="*.rkt" \
-	    --exclude="*.ptree" --exclude="compiled" \
-	    ${SRC}/ ${LOCALPUB} \
-	    | grep --invert-match "^\." || true
-
-serve:
-	python3 -mhttp.server 1337 --directory ${LOCALPUB} 2> /dev/null
-
-watch:
-	@echo "Detecting operating system..."
-	@OS=$$(uname); \
-	if [ "$$OS" = "Linux" ]; then \
-		echo "Linux detected. Using inotifywait..."; \
-		inotifywait --quiet --monitor --recursive --event close_write ${SRC} | \
-		while read -r path; do \
-			${MAKE} --no-print-directory pollen; \
-			${MAKE} --no-print-directory local; \
-			timeout 0.1s cat > /dev/null; \
-		done; \
-	elif echo "$$OS" | grep -qE 'MINGW|CYGWIN'; then \
-		echo "Windows detected. Using chokidar-cli..."; \
-		chokidar "${SRC}/**/*.{html.pm,md,rkt,css}" --ignore "public/**/*" -c "${MAKE} --no-print-directory pollen && ${MAKE} --no-print-directory local"; \
-	else \
-		echo "Unknown OS. Exiting..."; \
-	fi
-
-
-draft: serve watch
-
-diff:
-	rsync --dry-run --itemize-changes --archive --delete --checksum \
-	    ${LOCALPUB}/ ${REMOTEPUB} | grep --invert-match "^\." \
-	    || echo "No changes to publish"
-
-publish:
-	rsync --compress --itemize-changes --archive --delete --checksum \
-	    ${LOCALPUB}/ ${REMOTEPUB} | grep --invert-match "^\." \
-	    || echo "No changes to publish"
-
-.PHONY: all pollen clean \
-	local serve watch draft \
-	diff publish
-.SILENT: ${RACOENV}/activate.sh all pollen clean \
-	local serve watch draft \
-	diff publish
+# Dev local
+runserver:
+	python manage.py runserver
