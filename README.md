@@ -41,12 +41,6 @@ cd calculum
 ```
 
 2. **Créer un environnement virtuel**
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate  # Windows
-```
 
 3. **Installer les dépendances**
 ```bash
@@ -57,8 +51,8 @@ pip install -r requirements.txt
 
 Créer un fichier `.env` à la racine:
 ```env
-DJANGO_SECRET_KEY=votre-clé-secrète
-DJANGO_DEBUG=True
+SECRET_KEY=votre-clé-secrète
+DEBUG=True
 DATABASE_URL=postgresql://user:password@localhost/calculum
 DOMAIN=127.0.0.1
 ```
@@ -125,8 +119,8 @@ Via l'admin:
 ## Déploiement
 
 1. Variables d'environnement requises:
-   - `DJANGO_SECRET_KEY`
-   - `DATABASE_URL` (auto-configuré par Railway)
+   - `SECRET_KEY`
+   - `DATABASE_URL` (Will be local if not defined)
    - `DOMAIN`
 
 2. Execution:

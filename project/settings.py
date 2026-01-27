@@ -30,11 +30,11 @@ def _env_bool(name: str, default: bool) -> bool:
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
-    'DJANGO_SECRET_KEY',
+    'SECRET_KEY',
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = _env_bool('DJANGO_DEBUG', False)
+DEBUG = _env_bool('DEBUG', False)
 
 domain = os.environ.get('DOMAIN', '').strip()
 
@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
+        os.environ.get('DATABASE_URL', 'postgresql://localhost/calculum')
     )
 }
 
