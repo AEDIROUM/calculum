@@ -207,6 +207,9 @@ marimo/_lsp/
 __marimo__/
 
 
+# Media files
+media/
+
 # Personal
 .history/
 temp/

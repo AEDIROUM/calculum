@@ -31,7 +31,6 @@ Le site comporte trois sections principales:
 ### Prérequis
 - Python 3.10+
 - PostgreSQL
-- Cloudinary (pour les médias)
 
 ### Setup Local
 
@@ -61,9 +60,6 @@ Créer un fichier `.env` à la racine:
 DJANGO_SECRET_KEY=votre-clé-secrète
 DJANGO_DEBUG=True
 DATABASE_URL=postgresql://user:password@localhost/calculum
-CLOUDINARY_CLOUD_NAME=votre-cloud-name
-CLOUDINARY_API_KEY=votre-api-key
-CLOUDINARY_API_SECRET=votre-api-secret
 DOMAIN=127.0.0.1
 ```
 
@@ -124,16 +120,13 @@ Par défaut: `AA-3189` à `18:00`
 
 Via l'admin:
 1. Créer un Event (titre + résumé)
-2. Ajouter des Media (images/vidéos via Cloudinary)
+2. Ajouter des Media (images/vidéos)
 
 ## Déploiement
 
 1. Variables d'environnement requises:
    - `DJANGO_SECRET_KEY`
    - `DATABASE_URL` (auto-configuré par Railway)
-   - `CLOUDINARY_CLOUD_NAME`
-   - `CLOUDINARY_API_KEY`
-   - `CLOUDINARY_API_SECRET`
    - `DOMAIN`
 
 2. Execution:
@@ -156,7 +149,7 @@ Via l'admin:
 
 - **Backend**: Django 5.0
 - **Database**: PostgreSQL
-- **Storage**: Cloudinary
+- **Storage**: Server
 - **Frontend**: HTML/CSS/JS vanilla
 - **Syntax Highlighting**: Highlight.js
 - **Deployment**: Railway + Gunicorn + WhiteNoise
