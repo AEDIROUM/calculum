@@ -13,13 +13,13 @@ setup:
 deploy:
 	@echo "🚀 Déploiement..."
 	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
+		pkill -f 'python manage.py runserver' || true && \
+		sleep 1 && \
 		git pull && \
 		source venv/bin/activate && \
 		pip install -r requirements.txt && \
 		python manage.py migrate && \
 		python manage.py collectstatic --noinput && \
-		pkill -f 'python manage.py runserver' || true && \
-		sleep 2 && \
 		nohup python manage.py runserver 0.0.0.0:8000 > server.log 2>&1 &"
 	@echo "✅ Déployé!"
 
