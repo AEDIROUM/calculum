@@ -3,14 +3,20 @@
 
 Site du club de programmation compétitive de l'Université de Montréal.
 
+## Frontend File Locations
+
+- **HTML Templates:**
+	- All main HTML templates are in `project/templates/`
+
+- **CSS Files:**
+	- All CSS files are in `project/static/css/`
+
+- **JavaScript Files:**
+	- All JavaScript files are in `project/static/js/` 
+    
+	- Additional admin JS: `project/static/admin/js/algorithm_codemirror.js`
+
 🔗 **En ligne :** https://calculum.aediroum.ca
-
-## Démarrage rapide
-
-```bash
-python manage.py runserver
-# Rendez-vous sur http://127.0.0.1:8000/admin
-```
 
 
 ## Contribuer
@@ -30,7 +36,7 @@ Tout le contenu est géré via **Django Admin** (`/admin`) :
 python manage.py makemigrations
 ```
 
-Le déploiement automatique vérifie que tout est ok, donc les migrations doivent être synchronisées avec les modèles.
+Le déploiement automatique vérifie que tout est ok.
 
 ## Stack technique
 
