@@ -44,3 +44,9 @@ logs:
 # Local development
 runserver:
 	@python manage.py runserver
+
+# Backup database to fixtures
+backup:
+	@echo "💾 Backing up database to fixtures..."
+	@python manage.py dumpdata --indent 2 > fixtures/calculum_data.json
+	@echo "✅ Backup complete: fixtures/calculum_data.json"
