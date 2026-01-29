@@ -18,13 +18,14 @@ setup:
 deploy:
 	@echo "🚀 Deploying..."
 	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
-		pkill -f 'gunicorn' || pkill -f 'python manage.py runserver' || true && \
+		pkill -f 'gunicorn.*project.wsgi' || true && \
+		sleep 1 && \
 		git pull origin main && \
 		source venv/bin/activate && \
 		pip install -r requirements.txt && \
 		python manage.py migrate && \
-		python manage.py collectstatic --noinput && \
-		nohup gunicorn project.wsgi:application --bind 0.0.0.0:8000 > server.log 2>&1 &"
+		python manage.py collectstatic --noinput"
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && nohup gunicorn project.wsgi:application --bind 0.0.0.0:8000 > server.log 2>&1 & sleep 1"
 	@echo "✅ Deployed!"
 
 # Pull latest code
