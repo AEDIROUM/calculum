@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.py'
+      - 'Makefile'
+      - 'requirements.txt'
+      - '.github/workflows/deploy.yml'
 
 jobs:
   deploy:
