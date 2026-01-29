@@ -1,49 +1,32 @@
 # Calculum
 
-Site web du club de programmation compétitive de l'Université de Montréal.
+Site du club de programmation compétitive de l'Université de Montréal.
 
-🔗 **Live:** https://calculum.vicnas.me
+🔗 **Live:** https://calculum.aediroum.ca
 
-## Quick Start
-
-**Requirements**: Python 3.10+
+## Getting Started
 
 ```bash
-# Setup
-make setup
-make runserver
+python manage.py runserver
+# Visit http://127.0.0.1:8000/admin
 ```
 
-Visit `http://127.0.0.1:8000/admin` to add content.
+## Contributing
 
-## What's Here
+### Add Content on the Website
 
-- **📋 Meets**: Competitions by session with problems & solutions
-- **📚 Cheatsheet**: Printable algorithm reference
-- **🎉 Events**: Club activities & gallery
+All content is managed through **Django Admin** (`/admin`):
 
-## Adding Content
+- **📚 Cheatsheet** → Add algorithms by category
+- **📋 Meets** → Create competitions with problems
+- **🎉 Events** → Post club events & media
 
-### Meets
-1. Create algorithm file: `board/meets/YYYY/MM/DD.py`
-2. Add Meet in admin with matching date
-3. Add Problems (link + platform)
-
-### Events
-1. Create Event in admin
-2. Add Media (images/videos)
-
-## Environment
-
-Create `.env`:
-```env
-SECRET_KEY=your-key-here
-DEBUG=True
-DOMAIN=127.0.0.1
-```
-
-Database defaults to SQLite (file-based). Use `DATABASE_URL` env variable to use PostgreSQL.
+Push to `main` branch to auto-deploy. Site checks health before deploying.
 
 ## Tech Stack
 
-Django 5.0 • SQLite • Vanilla HTML/CSS/JS • Gunicorn
+Django 5.0 • SQLite • Vanilla HTML/CSS/JS
+
+---
+
+**Contributions welcome!** Add algorithms, events, or fix bugs—all through the website admin panel.
