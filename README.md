@@ -12,14 +12,6 @@ python manage.py runserver
 # Rendez-vous sur http://127.0.0.1:8000/admin
 ```
 
-## Important
-
-**Si vous modifiez les modèles**, créez les migrations avant de push :
-```bash
-python manage.py makemigrations
-```
-
-Le déploiement automatique vérifie que tout est ok, donc les migrations doivent être synchronisées avec les modèles.
 
 ## Contribuer
 
@@ -31,7 +23,14 @@ Tout le contenu est géré via **Django Admin** (`/admin`) :
 - **📋 Meets** → Créer des compétitions avec des problèmes
 - **🎉 Événements** → Publier des événements du club & médias
 
-Poussez sur la branche `main` pour déployer automatiquement. Le site vérifie la santé avant de déployer.
+## Important
+
+**Si vous modifiez les modèles**, créez les migrations avant de push :
+```bash
+python manage.py makemigrations
+```
+
+Le déploiement automatique vérifie que tout est ok, donc les migrations doivent être synchronisées avec les modèles.
 
 ## Stack technique
 
