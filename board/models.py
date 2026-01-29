@@ -233,13 +233,7 @@ class Problem(models.Model):
         default=None
     )
     
-    def save(self, *args, **kwargs):
-        # Auto-fetch difficulty before saving
-        if 'kattis.com' in self.link:
-            self._fetch_kattis_difficulty(save_on_success=False)
-        elif 'leetcode.com' in self.link:
-            self._fetch_leetcode_difficulty(save_on_success=False)
-        super().save(*args, **kwargs)
+    # No auto-fetch on save; handled by management command
 
     def _fetch_kattis_difficulty(self, save_on_success=True):
         """Fetch difficulty from Kattis problem page"""
