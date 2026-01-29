@@ -28,8 +28,6 @@ deploy:
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py collectstatic --noinput" | tail -1
 	@echo "🧹 Cleaning up orphaned media files..."
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py cleanup_media_files 2>/dev/null" || echo "  ⊘ Cleanup skipped (command not installed yet)"
-	@echo "🔄 Updating problem difficulties..."
-	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py update_problem_difficulties" || echo "  ⊘ Difficulty update failed/skipped"
 	@echo "🌐 Starting server..."
 	@timeout 10 ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && nohup gunicorn project.wsgi:application --bind 0.0.0.0:8000 > server.log 2>&1 & sleep 1; exit 0" || true
 	@echo "✅ Deployed!"
@@ -52,3 +50,8 @@ backup:
 	@echo "💾 Backing up database to fixtures..."
 	@python manage.py dumpdata --indent 2 > fixtures/calculum_data.json
 	@echo "✅ Backup complete: fixtures/calculum_data.json"
+
+# Update problem difficulties on remote
+update:
+	@echo "🔄 Updating problem difficulties..."
+	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py update_problem_difficulties" || echo "  ⊘ Difficulty update failed/skipped"
