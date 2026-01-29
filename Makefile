@@ -15,7 +15,7 @@ init:
 # Setup initial sur le REMOTE (UNE SEULE FOIS)
 setup:
 	@echo "⚠️  Setup initial du remote - À faire UNE SEULE FOIS"
-	ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py migrate && python manage.py loaddata fixtures/calculum_data.json"
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && git pull origin main && source venv/bin/activate && pip uninstall psycopg2-binary -y && pip install -r requirements.txt && echo 'DATABASE_URL=sqlite:///$(REMOTE_DIR)/db.sqlite3' >> .env && rm -f db.sqlite3 && python manage.py migrate --skip-checks && python manage.py loaddata fixtures/calculum_data.json"
 	@echo "✅ Setup terminé sur le remote."
 
 # Pull les changements

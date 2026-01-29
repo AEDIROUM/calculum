@@ -5,6 +5,7 @@ from datetime import datetime
 
 class Session(models.Model):
     season = models.CharField(
+        max_length=10,
         choices=[
             ('autumn', 'Automne'),
             ('winter', 'Hiver'),
@@ -15,12 +16,14 @@ class Session(models.Model):
     year = models.IntegerField()
     
     local = models.CharField(
+        max_length=100,
         default='AA-3189'
     )
     
     time = models.TimeField()
     
     day = models.CharField(
+        max_length=10,
         choices=[
             ('monday', 'Lundi'),
             ('tuesday', 'Mardi'),
@@ -62,11 +65,13 @@ class Meet(models.Model):
     )
     
     theme = models.CharField(
+        max_length=200,
         default="",
         blank=True
     )
     
     contest_link = models.CharField(
+        max_length=500,
         default="",
         blank=True,
         null=False
@@ -223,10 +228,13 @@ class Meet(models.Model):
 
 class Problem(models.Model):
     link = models.CharField(
+        max_length=500,
         primary_key=True
     )
     
-    platform = models.CharField()
+    platform = models.CharField(
+        max_length=100
+    )
     
     meets = models.ManyToManyField(
         Meet,
@@ -235,6 +243,7 @@ class Problem(models.Model):
     )
     
     solution_link = models.CharField(
+        max_length=500,
         blank=True,
         default=""
     )
