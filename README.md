@@ -3,18 +3,18 @@
 
 Site du club de programmation compétitive de l'Université de Montréal.
 
-## Frontend File Locations
 
-- **HTML Templates:**
-	- All main HTML templates are in `project/templates/`
+## Emplacement des fichiers frontend
 
-- **CSS Files:**
-	- All CSS files are in `project/static/css/`
+- **Templates HTML :**
+	- Les templates HTML se trouvent dans `project/templates/`
 
-- **JavaScript Files:**
-	- All JavaScript files are in `project/static/js/` 
-    
-	- Additional admin JS: `project/static/admin/js/algorithm_codemirror.js`
+- **Fichiers CSS :**
+	- Les fichiers CSS se trouvent dans `project/static/css/`
+
+- **Fichiers JavaScript :**
+	- Les fichiers JavaScript se trouvent dans `project/static/js/`
+	- JS additionnel pour l'admin : `project/static/admin/js/algorithm_codemirror.js`
 
 🔗 **En ligne :** https://calculum.aediroum.ca
 
