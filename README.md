@@ -14,12 +14,12 @@ python manage.py runserver
 
 ## Important
 
-**Si vous modifiez les modèles**, créez les migrations avant de pousser :
+**Si vous modifiez les modèles**, créez les migrations avant de push :
 ```bash
 python manage.py makemigrations
 ```
 
-Le déploiement automatique vérifie la santé de Django, donc les migrations doivent être synchronisées avec les modèles.
+Le déploiement automatique vérifie que tout est ok, donc les migrations doivent être synchronisées avec les modèles.
 
 ## Contribuer
 
@@ -35,8 +35,9 @@ Poussez sur la branche `main` pour déployer automatiquement. Le site vérifie l
 
 ## Stack technique
 
-Django 5.0 • SQLite • HTML/CSS/JS pur
+Django 5.0 • SQLite • HTML/CSS/JS
 
 ---
 
 **Contributions bienvenues !** Ajoutez des algorithmes, des événements ou corrigez des bugs—tout se fait via le panneau d’administration du site.
+(Login nécessaire)
