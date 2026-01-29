@@ -6,6 +6,27 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/cheatsheet.css' %}">
 <script src="{% static 'js/cheatsheet.js' %}" defer></script>
+<style>
+	@media print {
+		.print-button { display: none; }
+		.cheatsheet-container { margin: 0; padding: 0; }
+		.category-section { page-break-inside: avoid; }
+		.algo-section { page-break-inside: avoid; }
+		body { margin: 0; padding: 0; }
+	}
+	
+	.cheatsheet-print {
+		columns: 2;
+		column-gap: 2rem;
+		column-fill: auto;
+	}
+	
+	@media print {
+		.cheatsheet-print {
+			columns: 1;
+		}
+	}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +39,7 @@
 	{% if has_algorithms %}
 		<button class="print-button" id="print-btn">🖨️ Imprimer</button>
 		
-		<div class="columns-2">
+		<div class="cheatsheet-print">
 			{% for category in categories %}
 				{% if category.algorithms.all %}
 				<div class="category-section">
@@ -27,7 +48,7 @@
 					<p class="category-description">{{ category.description }}</p>
 					{% endif %}
 					
-					{% for algo in category.algorithms.all %}
+					{% for algo in category.algorithms.all|dictsort:"title" %}
 					<div class="algo-section">
 						<h3>{{ algo.title }}</h3>
 						{% if algo.description %}
@@ -53,7 +74,7 @@
 			{% if uncategorized %}
 			<div class="category-section">
 				<h2 class="category-title">Autres</h2>
-				{% for algo in uncategorized %}
+				{% for algo in uncategorized|dictsort:"title" %}
 				<div class="algo-section">
 					<h3>{{ algo.title }}</h3>
 					{% if algo.description %}
