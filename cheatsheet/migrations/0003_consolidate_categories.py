@@ -3,6 +3,130 @@
 from django.db import migrations
 
 
+def consolidate_categories(apps, schema_editor):
+    """Consolidate 73 categories into 12 big themes"""
+    AlgorithmCategory = apps.get_model('cheatsheet', 'AlgorithmCategory')
+    Algorithm = apps.get_model('cheatsheet', 'Algorithm')
+    
+    # Mapping of old categories to new consolidated categories
+    category_mapping = {
+        'Arrays & Strings': 'Data Structures',
+        'Linked Lists': 'Data Structures',
+        'Stacks & Queues': 'Data Structures',
+        'Hash Tables': 'Data Structures',
+        'Trees': 'Data Structures',
+        'Heaps & Priority Queues': 'Data Structures',
+        'Tries': 'Data Structures',
+        'Union Find (DSU)': 'Data Structures',
+        'Segment Trees': 'Data Structures',
+        'Fenwick Tree (BIT)': 'Data Structures',
+        'Sparse Table': 'Data Structures',
+        'Suffix Arrays': 'Data Structures',
+        'AVL & Red-Black Trees': 'Data Structures',
+        'B-Trees': 'Data Structures',
+        
+        'Sorting Algorithms': 'Searching & Sorting',
+        'Binary Search': 'Searching & Sorting',
+        'Ternary Search': 'Searching & Sorting',
+        
+        'BFS & DFS': 'Graph Algorithms',
+        'Shortest Paths': 'Graph Algorithms',
+        'Minimum Spanning Tree': 'Graph Algorithms',
+        'Network Flow': 'Graph Algorithms',
+        'Strongly Connected Components': 'Graph Algorithms',
+        'Bipartite Matching': 'Graph Algorithms',
+        'Eulerian & Hamiltonian Paths': 'Graph Algorithms',
+        
+        'Linear DP': 'Dynamic Programming',
+        'Grid DP': 'Dynamic Programming',
+        'Knapsack Problems': 'Dynamic Programming',
+        'Tree DP': 'Dynamic Programming',
+        'Digit DP': 'Dynamic Programming',
+        'Bitmask DP': 'Dynamic Programming',
+        'DP Optimization': 'Dynamic Programming',
+        'Subsequence DP': 'Dynamic Programming',
+        
+        'String Matching': 'String Algorithms',
+        'String Hashing': 'String Algorithms',
+        'Manacher Algorithm': 'String Algorithms',
+        'Aho-Corasick': 'String Algorithms',
+        'Suffix Automaton': 'String Algorithms',
+        
+        'GCD & LCM': 'Mathematics',
+        'Prime Numbers': 'Mathematics',
+        'Modular Arithmetic': 'Mathematics',
+        'Combinatorics': 'Mathematics',
+        'Number Theory Misc': 'Mathematics',
+        
+        'Computational Geometry': 'Geometry & Linear Algebra',
+        'Matrix Operations': 'Geometry & Linear Algebra',
+        'Linear Algebra': 'Geometry & Linear Algebra',
+        'FFT & NTT': 'Geometry & Linear Algebra',
+        
+        'Probability & Statistics': 'Probability & Game Theory',
+        'Game Theory': 'Probability & Game Theory',
+        
+        'Interval Scheduling': 'Greedy & Optimization',
+        'Greedy Misc': 'Greedy & Optimization',
+        
+        'Divide & Conquer': 'Advanced Techniques',
+        'Master Theorem': 'Advanced Techniques',
+        'Two Pointers': 'Advanced Techniques',
+        'Sliding Window': 'Advanced Techniques',
+        'Prefix Sums': 'Advanced Techniques',
+        'Bit Manipulation': 'Advanced Techniques',
+        'Backtracking': 'Advanced Techniques',
+        'Branch & Bound': 'Advanced Techniques',
+        'Meet in the Middle': 'Advanced Techniques',
+        'Mo Algorithm': 'Advanced Techniques',
+        'Heavy-Light Decomposition': 'Advanced Techniques',
+        'Centroid Decomposition': 'Advanced Techniques',
+        'Sqrt Decomposition': 'Advanced Techniques',
+        'Monotonic Stack/Queue': 'Advanced Techniques',
+        'Coordinate Compression': 'Advanced Techniques',
+        'Randomized Algorithms': 'Advanced Techniques',
+        'Parallel Binary Search': 'Advanced Techniques',
+        'Offline Queries': 'Advanced Techniques',
+        
+        'Simulation': 'Problem Solving',
+        'Constructive Algorithms': 'Problem Solving',
+        'Ad-hoc Problems': 'Problem Solving',
+        'Interactive Problems': 'Problem Solving',
+    }
+    
+    # Create or get new categories
+    new_categories = {}
+    for new_cat_name in set(category_mapping.values()):
+        new_cat, _ = AlgorithmCategory.objects.get_or_create(
+            name=new_cat_name,
+            defaults={'description': ''}
+        )
+        new_categories[new_cat_name] = new_cat
+    
+    # Update algorithms to use new categories
+    for algo in Algorithm.objects.all():
+        if algo.category and algo.category.name in category_mapping:
+            new_cat_name = category_mapping[algo.category.name]
+            algo.category = new_categories[new_cat_name]
+            algo.save()
+    
+    # Delete old categories
+    old_cat_ids = set()
+    for old_cat_name in category_mapping.keys():
+        try:
+            old_cat = AlgorithmCategory.objects.get(name=old_cat_name)
+            old_cat_ids.add(old_cat.id)
+        except AlgorithmCategory.DoesNotExist:
+            pass
+    
+    AlgorithmCategory.objects.filter(id__in=old_cat_ids).delete()
+
+
+def reverse_consolidate(apps, schema_editor):
+    """Reverse the consolidation (optional)"""
+    pass
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -10,4 +134,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunPython(consolidate_categories, reverse_consolidate),
     ]
