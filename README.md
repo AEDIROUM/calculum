@@ -11,6 +11,15 @@ python manage.py runserver
 # Visit http://127.0.0.1:8000/admin
 ```
 
+## Important
+
+**If you edit models**, create migrations before pushing:
+```bash
+python manage.py makemigrations
+```
+
+The auto-deploy checks Django health, so migrations must be in sync with models.
+
 ## Contributing
 
 ### Add Content on the Website
