@@ -1,41 +1,42 @@
+
 # Calculum
 
 Site du club de programmation compétitive de l'Université de Montréal.
 
-🔗 **Live:** https://calculum.aediroum.ca
+🔗 **En ligne :** https://calculum.aediroum.ca
 
-## Getting Started
+## Démarrage rapide
 
 ```bash
 python manage.py runserver
-# Visit http://127.0.0.1:8000/admin
+# Rendez-vous sur http://127.0.0.1:8000/admin
 ```
 
 ## Important
 
-**If you edit models**, create migrations before pushing:
+**Si vous modifiez les modèles**, créez les migrations avant de pousser :
 ```bash
 python manage.py makemigrations
 ```
 
-The auto-deploy checks Django health, so migrations must be in sync with models.
+Le déploiement automatique vérifie la santé de Django, donc les migrations doivent être synchronisées avec les modèles.
 
-## Contributing
+## Contribuer
 
-### Add Content on the Website
+### Ajouter du contenu sur le site
 
-All content is managed through **Django Admin** (`/admin`):
+Tout le contenu est géré via **Django Admin** (`/admin`) :
 
-- **📚 Cheatsheet** → Add algorithms by category
-- **📋 Meets** → Create competitions with problems
-- **🎉 Events** → Post club events & media
+- **📚 Cheatsheet** → Ajouter des algorithmes par catégorie
+- **📋 Meets** → Créer des compétitions avec des problèmes
+- **🎉 Événements** → Publier des événements du club & médias
 
-Push to `main` branch to auto-deploy. Site checks health before deploying.
+Poussez sur la branche `main` pour déployer automatiquement. Le site vérifie la santé avant de déployer.
 
-## Tech Stack
+## Stack technique
 
-Django 5.0 • SQLite • Vanilla HTML/CSS/JS
+Django 5.0 • SQLite • HTML/CSS/JS pur
 
 ---
 
-**Contributions welcome!** Add algorithms, events, or fix bugs—all through the website admin panel.
+**Contributions bienvenues !** Ajoutez des algorithmes, des événements ou corrigez des bugs—tout se fait via le panneau d’administration du site.
