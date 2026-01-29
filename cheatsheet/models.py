@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class AlgorithmCategory(models.Model):
@@ -55,6 +56,13 @@ class Algorithm(models.Model):
         max_length=100,
         blank=True,
         help_text="e.g., O(n)"
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='algorithms'
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

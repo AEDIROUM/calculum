@@ -51,6 +51,9 @@
 					{% for algo in category.algorithms.all|dictsort:"title" %}
 					<div class="algo-section">
 						<h3>{{ algo.title }}</h3>
+						{% if algo.author %}
+						<p class="algo-author">by {{ algo.author.get_full_name|default:algo.author.username }}</p>
+						{% endif %}
 						{% if algo.description %}
 						<p class="algo-description">{{ algo.description }}</p>
 						{% endif %}
@@ -77,6 +80,9 @@
 				{% for algo in uncategorized|dictsort:"title" %}
 				<div class="algo-section">
 					<h3>{{ algo.title }}</h3>
+					{% if algo.author %}
+					<p class="algo-author">by {{ algo.author.get_full_name|default:algo.author.username }}</p>
+					{% endif %}
 					{% if algo.description %}
 					<p class="algo-description">{{ algo.description }}</p>
 					{% endif %}

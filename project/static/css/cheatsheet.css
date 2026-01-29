@@ -158,6 +158,13 @@
 	line-height: 1.5;
 }
 
+.algo-author {
+	color: #95a5a6;
+	font-size: 0.8rem;
+	font-style: italic;
+	margin: -0.5rem 0 0.5rem 0;
+}
+
 .complexity-info {
 	display: flex;
 	gap: 0.5rem;
