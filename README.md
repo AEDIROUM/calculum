@@ -6,7 +6,7 @@ Site web du club de programmation compétitive de l'Université de Montréal.
 
 ## Quick Start
 
-**Requirements**: Python 3.10+, PostgreSQL
+**Requirements**: Python 3.10+
 
 ```bash
 # Setup
@@ -42,8 +42,8 @@ DEBUG=True
 DOMAIN=127.0.0.1
 ```
 
-Database defaults to PostgreSQL locally, SQLite on remote if `DATABASE_URL` not set.
+Database defaults to SQLite (file-based). Use `DATABASE_URL` env variable to use PostgreSQL.
 
 ## Tech Stack
 
-Django 5.0 • PostgreSQL • Vanilla HTML/CSS/JS • Gunicorn
+Django 5.0 • SQLite • Vanilla HTML/CSS/JS • Gunicorn

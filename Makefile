@@ -1,15 +1,32 @@
 REMOTE=calculum@srv.aediroum.ca
 REMOTE_DIR=/srv/calculum
 
+# Initialisation du remote (UNE SEULE FOIS AVANT setup)
+init:
+	@echo "📦 Initialisation du remote..."
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
+		if [ -d .git ]; then git pull; else git init && git remote add origin https://github.com/AEDIROUM/calculum.git && git pull origin main; fi && \
+		python3 -m venv venv && \
+		source venv/bin/activate && \
+		pip install --upgrade pip && \
+		pip install -r requirements.txt"
+	@echo "✅ Remote initialisé."
+
 # Setup initial sur le REMOTE (UNE SEULE FOIS)
 setup:
 	@echo "⚠️  Setup initial du remote - À faire UNE SEULE FOIS"
 	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
 		source venv/bin/activate && \
-		createdb calculum 2>/dev/null || echo 'Database already exists' && \
+
 		python manage.py migrate && \
 		python manage.py loaddata fixtures/calculum_data.json"
 	@echo "✅ Setup terminé sur le remote."
+
+# Pull les changements
+pull:
+	@echo "📥 Pull sur le remote..."
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && git pull"
+	@echo "✅ Pull terminé."
 
 # Déploiement normal (SANS loaddata)
 deploy:
