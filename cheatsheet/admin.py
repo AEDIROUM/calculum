@@ -3,13 +3,14 @@ from django import forms
 from cheatsheet.models import Algorithm, AlgorithmCategory
 
 
-# Custom form with better code editing
+# Custom form with CodeMirror syntax highlighting
 class AlgorithmAdminForm(forms.ModelForm):
     class Meta:
         model = Algorithm
         fields = '__all__'
         widgets = {
             'code': forms.Textarea(attrs={
+                'class': 'code-editor',
                 'style': 'font-family: monospace; width: 100%; min-height: 400px;'
             }),
         }
@@ -46,3 +47,18 @@ class AlgorithmAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
+    
+    class Media:
+        css = {
+            'all': (
+                'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css',
+                'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css',
+            )
+        }
+        js = (
+            'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js',
+            'admin/js/algorithm_codemirror.js',
+        )
