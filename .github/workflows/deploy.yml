@@ -8,6 +8,7 @@ on:
       - '**.py'
       - '**.html'
       - '**.css'
+      - '**.js'
       - 'Makefile'
       - 'requirements.txt'
       - '.github/workflows/deploy.yml'
