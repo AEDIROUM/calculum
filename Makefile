@@ -15,11 +15,7 @@ init:
 # Setup initial sur le REMOTE (UNE SEULE FOIS)
 setup:
 	@echo "⚠️  Setup initial du remote - À faire UNE SEULE FOIS"
-	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
-		source venv/bin/activate && \
-
-		python manage.py migrate && \
-		python manage.py loaddata fixtures/calculum_data.json"
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py migrate && python manage.py loaddata fixtures/calculum_data.json"
 	@echo "✅ Setup terminé sur le remote."
 
 # Pull les changements
