@@ -75,6 +75,7 @@
 	font-weight: 500;
 	transition: all 0.2s ease;
 	border-bottom: 1px solid transparent;
+	word-break: break-word;
 }
 
 .guide-section a:hover {
@@ -136,7 +137,12 @@
 	}
 }
 
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
+	.noob-container {
+		padding: 0 1rem;
+	}
+	
 	.welcome-section {
 		padding: 1.5rem;
 	}
@@ -147,15 +153,97 @@
 
 	.subtitle {
 		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.guide-content {
+		margin-top: 1.5rem;
+	}
+	
+	.guide-section {
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.guide-section:hover {
+		transform: none;
+	}
+	
+	.guide-section h3 {
+		font-size: 1.2rem;
+		flex-wrap: wrap;
+	}
+	
+	.guide-section p {
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+	
+	.guide-section ul {
+		margin-left: 1.5rem;
+		line-height: 1.6;
+	}
+	
+	.guide-section li {
+		margin-bottom: 0.5rem;
+		font-size: 0.9rem;
+	}
+	
+	.info-box {
+		padding: 0.8rem;
+	}
+	
+	.info-box p {
+		font-size: 0.9rem;
 	}
 
 	.next-steps {
 		flex-direction: column;
 		gap: 1rem;
+		margin-top: 2rem;
+		padding-top: 1.5rem;
 	}
 
 	.action-button {
 		width: 100%;
 		text-align: center;
+		padding: 0.7rem 1.5rem;
+		font-size: 0.95rem;
+	}
+	
+	.action-button:hover {
+		transform: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.welcome-section {
+		padding: 1rem;
+	}
+	
+	.welcome-section h2 {
+		font-size: 1.4rem;
+	}
+	
+	.subtitle {
+		font-size: 1rem;
+	}
+	
+	.guide-section {
+		padding: 0.8rem;
+	}
+	
+	.guide-section h3 {
+		font-size: 1.1rem;
+	}
+	
+	.guide-section p,
+	.guide-section li {
+		font-size: 0.85rem;
+	}
+	
+	.action-button {
+		padding: 0.6rem 1.2rem;
+		font-size: 0.9rem;
 	}
 }

@@ -7,6 +7,7 @@ on:
     paths:
       - '**.py'
       - '**.html'
+      - '**.css'
       - 'Makefile'
       - 'requirements.txt'
       - '.github/workflows/deploy.yml'

@@ -23,6 +23,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 header h1 {
@@ -36,6 +37,7 @@ header h1 {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .new-member-btn {
@@ -79,6 +81,7 @@ nav {
 	margin-top: 1rem;
 	display: flex;
 	gap: 1.5rem;
+	flex-wrap: wrap;
 }
 
 nav a {
@@ -138,4 +141,88 @@ footer {
 .github-icon {
 	width: 20px;
 	height: 20px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+	header {
+		padding: 1rem;
+	}
+	
+	.header-content {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.8rem;
+	}
+	
+	header h1 {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	
+	.header-buttons {
+		justify-content: center;
+		gap: 0.5rem;
+	}
+	
+	.new-member-btn {
+		flex: 1;
+		text-align: center;
+		font-size: 0.85rem;
+		padding: 0.5rem 0.8rem;
+	}
+	
+	.admin-btn {
+		padding: 0.5rem 0.8rem;
+		font-size: 1rem;
+	}
+	
+	nav {
+		gap: 0.5rem;
+		margin-top: 0.8rem;
+		justify-content: center;
+	}
+	
+	nav a {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.9rem;
+	}
+	
+	main {
+		padding: 0 1rem;
+		margin: 1rem auto;
+	}
+	
+	footer {
+		padding: 1.5rem 1rem;
+	}
+	
+	.github-link {
+		padding: 0.6rem 1rem;
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 480px) {
+	header h1 {
+		font-size: 1.3rem;
+	}
+	
+	.new-member-btn {
+		font-size: 0.8rem;
+		padding: 0.4rem 0.6rem;
+	}
+	
+	nav {
+		gap: 0.3rem;
+	}
+	
+	nav a {
+		padding: 0.3rem 0.6rem;
+		font-size: 0.85rem;
+	}
+	
+	main {
+		padding: 0 0.8rem;
+	}
 }
