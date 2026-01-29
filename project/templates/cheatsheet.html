@@ -15,21 +15,70 @@
 		<p>Algorithmes de compétition - Calculum</p>
 	</div>
 	
-	{% if algos %}
+	{% if has_algorithms %}
 		<button class="print-button" id="print-btn">🖨️ Imprimer</button>
 		
 		<div class="columns-2">
-			{% for algo in algos %}
-			<div class="algo-section">
-				<h3>{{ algo.theme }}</h3>
-				<pre><code class="language-python">{{ algo.content }}</code></pre>
-			</div>
+			{% for category in categories %}
+				{% if category.algorithms.all %}
+				<div class="category-section">
+					<h2 class="category-title">{{ category.name }}</h2>
+					{% if category.description %}
+					<p class="category-description">{{ category.description }}</p>
+					{% endif %}
+					
+					{% for algo in category.algorithms.all %}
+					<div class="algo-section">
+						<h3>{{ algo.title }}</h3>
+						{% if algo.description %}
+						<p class="algo-description">{{ algo.description }}</p>
+						{% endif %}
+						{% if algo.time_complexity or algo.space_complexity %}
+						<div class="complexity-info">
+							{% if algo.time_complexity %}
+							<span class="complexity-badge time">Time: {{ algo.time_complexity }}</span>
+							{% endif %}
+							{% if algo.space_complexity %}
+							<span class="complexity-badge space">Space: {{ algo.space_complexity }}</span>
+							{% endif %}
+						</div>
+						{% endif %}
+						<pre><code class="language-{{ algo.language }}">{{ algo.code }}</code></pre>
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
 			{% endfor %}
+			
+			{% if uncategorized %}
+			<div class="category-section">
+				<h2 class="category-title">Autres</h2>
+				{% for algo in uncategorized %}
+				<div class="algo-section">
+					<h3>{{ algo.title }}</h3>
+					{% if algo.description %}
+					<p class="algo-description">{{ algo.description }}</p>
+					{% endif %}
+					{% if algo.time_complexity or algo.space_complexity %}
+					<div class="complexity-info">
+						{% if algo.time_complexity %}
+						<span class="complexity-badge time">Time: {{ algo.time_complexity }}</span>
+						{% endif %}
+						{% if algo.space_complexity %}
+						<span class="complexity-badge space">Space: {{ algo.space_complexity }}</span>
+						{% endif %}
+					</div>
+					{% endif %}
+					<pre><code class="language-{{ algo.language }}">{{ algo.code }}</code></pre>
+				</div>
+				{% endfor %}
+			</div>
+			{% endif %}
 		</div>
 	{% else %}
 		<div class="no-algos">
 			<h3>Aucun algorithme disponible</h3>
-			<p>Les algorithmes apparaîtront ici une fois ajoutés.</p>
+			<p>Les algorithmes apparaîtront ici une fois ajoutés dans l'administration.</p>
 		</div>
 	{% endif %}
 </div>

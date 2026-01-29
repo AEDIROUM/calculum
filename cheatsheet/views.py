@@ -1,23 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from board.models import Meet
+from cheatsheet.models import Algorithm, AlgorithmCategory
 
 
 def cheatsheet(request: HttpRequest) -> HttpResponse:
-    meets = Meet.objects.all().order_by('date')
+    """Display all algorithms organized by category"""
     
-    algos = []
-    for meet in meets:
-        algo_content = meet.get_algo_content()
-        # Only include files with actual code (not just comments/blanks)
-        if algo_content and algo_content.strip():
-            algos.append({
-                'theme': meet.theme or f"Rencontre {meet.date.strftime('%d/%m/%Y')}",
-                'content': algo_content
-            })
+    # Get categories with their algorithms
+    categories = AlgorithmCategory.objects.prefetch_related('algorithms').all()
     
-    return render(
-        request, 
-        'cheatsheet.html', 
-        context={'algos': algos}
-    )
+    # Also get algorithms without a category
+    uncategorized = Algorithm.objects.filter(category__isnull=True)
+    
+    context = {
+        'categories': categories,
+        'uncategorized': uncategorized,
+        'has_algorithms': Algorithm.objects.exists()
+    }
+    
+    return render(request, 'cheatsheet.html', context=context)

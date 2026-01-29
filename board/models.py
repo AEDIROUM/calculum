@@ -110,7 +110,6 @@ class Meet(models.Model):
         super().save(*args, **kwargs)
         
         # Auto-fetch problems from Kattis contest if contest_link exists
-        # Run in background to avoid blocking the save
         if self.contest_link and 'kattis.com/contests/' in self.contest_link:
             try:
                 self._fetch_kattis_problems()
@@ -182,47 +181,13 @@ class Meet(models.Model):
             # Silent fail - don't break the save if fetching fails
             print(f"Failed to fetch Kattis problems: {e}")
     
-    def get_algo_content(self):
-        """Read and return the algo file content, or None if only comments/blanks or file doesn't exist"""
-        import os
-        algo_path = os.path.join(
-            os.path.dirname(__file__),
-            'meets',
-            str(self.date.year),
-            f"{self.date.month:02d}",
-            f"{self.date.day:02d}.py"
-        )
-        try:
-            with open(algo_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Check if file has actual code (not just comments and blanks)
-            for line in content.split('\n'):
-                stripped = line.strip()
-                # Skip empty lines and comments
-                if stripped and not stripped.startswith('#'):
-                    return content
-            
-            # File only contains comments and blanks
-            return None
-        except FileNotFoundError:
-            return None
-    
     class Meta:
         ordering = ['-date']
     
     def __str__(self):
-        import os
-        algo_path = os.path.join(
-            'board/meets',
-            str(self.date.year),
-            f"{self.date.month:02d}",
-            f"{self.date.day:02d}.py"
-        )
         result = f"Rencontre {self.date.strftime('%d/%m/%Y')}"
         if self.theme:
             result += f" - {self.theme}"
-        result += f" [{algo_path}]"
         return result
 
 

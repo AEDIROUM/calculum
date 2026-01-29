@@ -92,16 +92,6 @@
 			{% endfor %}
 		</div>
 		{% endif %}
-		
-		{% if meet.get_algo_content %}
-		<button class="algo-toggle" data-meet-id="{{ meet.date }}">
-			<span class="toggle-icon">▶</span>
-			<span class="toggle-text">Afficher l'algorithme</span>
-		</button>
-		<div class="algo-content" id="algo-{{ meet.date }}">
-			<pre><code class="language-python">{{ meet.get_algo_content }}</code></pre>
-		</div>
-		{% endif %}
 	</div>
 	{% endfor %}
 {% else %}
