@@ -1,13 +1,15 @@
 REMOTE=calculum@srv.aediroum.ca
 REMOTE_DIR=/srv/calculum
 
-# Setup initial (UNE SEULE FOIS) - local
+# Setup initial sur le REMOTE (UNE SEULE FOIS)
 setup:
-	@echo "⚠️  Setup initial - À faire UNE SEULE FOIS"
-	createdb calculum 2>/dev/null || echo "Database 'calculum' already exists"
-	python manage.py migrate
-	python manage.py loaddata fixtures/calculum_data.json
-	@echo "✅ Setup terminé."
+	@echo "⚠️  Setup initial du remote - À faire UNE SEULE FOIS"
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
+		source venv/bin/activate && \
+		createdb calculum 2>/dev/null || echo 'Database already exists' && \
+		python manage.py migrate && \
+		python manage.py loaddata fixtures/calculum_data.json"
+	@echo "✅ Setup terminé sur le remote."
 
 # Déploiement normal (SANS loaddata)
 deploy:
