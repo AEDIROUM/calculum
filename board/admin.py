@@ -39,7 +39,8 @@ class ProblemAdmin(admin.ModelAdmin):
 	
 	# NEW: Add categories to the admin interface
 	filter_horizontal = ('meets', 'categories')
-	list_display = ('link_short', 'platform', 'difficulty', 'categories_list')
+	list_display = ('link_short', 'platform', 'categories_list')
+	# difficulty fields are not shown at all
 	list_filter = ('platform', 'categories')
 	
 	def get_ordering(self, request):
