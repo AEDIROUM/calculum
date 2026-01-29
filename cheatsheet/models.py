@@ -5,10 +5,9 @@ class AlgorithmCategory(models.Model):
     """Categories for organizing algorithms (e.g., Graphs, DP, Strings)"""
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    order = models.IntegerField(default=0, help_text="Display order (lower = first)")
     
     class Meta:
-        ordering = ['order', 'name']
+        ordering = ['name']
         verbose_name_plural = "Algorithm Categories"
     
     def __str__(self):
@@ -57,15 +56,11 @@ class Algorithm(models.Model):
         blank=True,
         help_text="e.g., O(n)"
     )
-    order = models.IntegerField(
-        default=0,
-        help_text="Display order within category (lower = first)"
-    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
-        ordering = ['category__order', 'order', 'title']
+        ordering = ['category__name', 'title']
     
     def __str__(self):
         if self.category:
