@@ -35,8 +35,3 @@ Le déploiement automatique vérifie que tout est ok, donc les migrations doiven
 ## Stack technique
 
 Django 5.0 • SQLite • HTML/CSS/JS
-
----
-
-**Contributions bienvenues !** Ajoutez des algorithmes, des événements ou corrigez des bugs—tout se fait via le panneau d’administration du site.
-(Login nécessaire)
