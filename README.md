@@ -23,7 +23,7 @@ Site du club de programmation compétitive de l'Université de Montréal.
 
 ### Ajouter du contenu sur le site
 
-Tout le contenu est géré via **Django Admin** (`/admin`) :
+Tout le contenu est géré via **Django Admin** :
 
 - **📚 Cheatsheet** → Ajouter des algorithmes par catégorie
 - **📋 Meets** → Créer des compétitions avec des problèmes
