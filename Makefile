@@ -29,7 +29,7 @@ deploy:
 	@echo "🧹 Cleaning up orphaned media files..."
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && python manage.py cleanup_media_files 2>/dev/null" || echo "  ⊘ Cleanup skipped (command not installed yet)"
 	@echo "🌐 Starting server..."
-	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && nohup gunicorn project.wsgi:application --bind 0.0.0.0:8000 > server.log 2>&1 & sleep 1"
+	@timeout 10 ssh $(REMOTE) "cd $(REMOTE_DIR) && source venv/bin/activate && nohup gunicorn project.wsgi:application --bind 0.0.0.0:8000 > server.log 2>&1 & sleep 1; exit 0" || true
 	@echo "✅ Deployed!"
 
 # Stop server
