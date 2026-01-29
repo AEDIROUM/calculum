@@ -1,43 +1,48 @@
 REMOTE=calculum@srv.aediroum.ca
 REMOTE_DIR=/srv/calculum
 
-# Initialisation du remote (UNE SEULE FOIS AVANT setup)
-init:
-	@echo "📦 Initialisation du remote..."
+# Initial setup on remote (run once)
+setup:
+	@echo "📦 Initial setup..."
 	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
-		if [ -d .git ]; then git pull; else git init && git remote add origin https://github.com/AEDIROUM/calculum.git && git pull origin main; fi && \
 		python3 -m venv venv && \
 		source venv/bin/activate && \
 		pip install --upgrade pip && \
-		pip install -r requirements.txt"
-	@echo "✅ Remote initialisé."
+		pip install -r requirements.txt && \
+		python manage.py migrate && \
+		python manage.py loaddata fixtures/calculum_data.json && \
+		python manage.py collectstatic --noinput"
+	@echo "✅ Setup complete"
 
-# Setup initial sur le REMOTE (UNE SEULE FOIS)
-setup:
-	@echo "⚠️  Setup initial du remote - À faire UNE SEULE FOIS"
-	ssh $(REMOTE) "cd $(REMOTE_DIR) && git reset --hard && git pull origin main && source venv/bin/activate && pip uninstall psycopg2-binary -y && pip install -r requirements.txt && echo 'DATABASE_URL=sqlite:///$(REMOTE_DIR)/db.sqlite3' >> .env && rm -f db.sqlite3 && python manage.py migrate --skip-checks && python manage.py loaddata fixtures/calculum_data.json"
-	@echo "✅ Setup terminé sur le remote."
-
-# Pull les changements
-pull:
-	@echo "📥 Pull sur le remote..."
-	ssh $(REMOTE) "cd $(REMOTE_DIR) && git pull origin main"
-	@echo "✅ Pull terminé."
-
-# Déploiement normal (SANS loaddata)
+# Deploy updates
 deploy:
-	@echo "🚀 Déploiement..."
-	ssh $(REMOTE) "cd $(REMOTE_DIR) && pkill -f 'python manage.py runserver' || true && sleep 1 && git pull origin main && source venv/bin/activate && pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput && nohup python manage.py runserver 0.0.0.0:8000 > server.log 2>&1 &"
-	@echo "✅ Déployé!"
+	@echo "🚀 Deploying..."
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && \
+		pkill -f 'gunicorn' || pkill -f 'python manage.py runserver' || true && \
+		git pull origin main && \
+		source venv/bin/activate && \
+		pip install -r requirements.txt && \
+		python manage.py migrate && \
+		python manage.py collectstatic --noinput && \
+		nohup gunicorn project.wsgi:application --bind 0.0.0.0:8000 > server.log 2>&1 &"
+	@echo "✅ Deployed!"
 
-# Arrêter le serveur
+# Pull latest code
+pull:
+	@echo "📥 Pulling latest code..."
+	ssh $(REMOTE) "cd $(REMOTE_DIR) && git pull origin main"
+	@echo "✅ Pull complete"
+
+# Stop server
 stop:
-	ssh $(REMOTE) "pkill -f 'python manage.py runserver'"
+	@echo "🛑 Stopping server..."
+	ssh $(REMOTE) "pkill -f 'gunicorn' || pkill -f 'python manage.py runserver' || echo 'No server running'"
+	@echo "✅ Stopped"
 
-# Logs
+# View logs
 logs:
 	ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log"
 
-# Dev local
+# Local development
 runserver:
 	python manage.py runserver
