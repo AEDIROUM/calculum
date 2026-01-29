@@ -70,6 +70,11 @@
 					{% if problem.extracted_title %}
 					<span class="problem-title">{{ problem.extracted_title }}</span>
 					{% endif %}
+					{% if problem.platform == 'Kattis' or problem.platform == 'LeetCode' %}
+						<span class="problem-difficulty">
+							{{ problem.get_difficulty }}
+						</span>
+					{% endif %}
 				</div>
 				<div class="problem-links">
 					{% if "http" in problem.link %}

@@ -215,6 +215,18 @@
 	text-transform: capitalize;
 }
 
+.problem-difficulty {
+	background: #222e;
+	color: #f1c40f;
+	border-radius: 4px;
+	font-size: 0.8em;
+	font-weight: 600;
+	padding: 0.1em 0.5em;
+	margin-left: 0.5em;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
 .problem-links {
 	display: flex;
 	gap: 0.5rem;
