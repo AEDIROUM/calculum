@@ -34,7 +34,7 @@ pull:
 # Stop server
 stop:
 	@echo "🛑 Stopping server..."
-	ssh $(REMOTE) "pkill -f 'gunicorn' || pkill -f 'python manage.py runserver' || echo 'No server running'"
+	ssh $(REMOTE) "pkill -f 'python manage.py runserver' || echo 'No server running'"
 	@echo "✅ Stopped"
 
 # View logs
