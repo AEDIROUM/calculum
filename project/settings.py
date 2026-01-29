@@ -35,7 +35,6 @@ SECRET_KEY = os.environ.get(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = _env_bool('DEBUG', False)
-DEBUG = True
 
 domain = os.environ.get('DOMAIN', '').strip()
 
