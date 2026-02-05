@@ -41,9 +41,6 @@
 		<div class="meet-header">
 			<div>
 				<div class="meet-title">Rencontre {{ meet.date|date:"d/m/Y" }}</div>
-				{% if meet.theme %}
-				<span class="meet-theme">{{ meet.theme }}</span>
-				{% endif %}
 				{% if meet.managers.all %}
 				<div class="meet-managers">
 					{% for manager in meet.managers.all %}
@@ -69,6 +66,26 @@
 					<span class="problem-platform">{{ problem.platform }}</span>
 					{% if problem.extracted_title %}
 					<span class="problem-title">{{ problem.extracted_title }}</span>
+					{% endif %}
+					
+					{# Display categories if any #}
+					{% if problem.categories.all %}
+					<div class="problem-categories">
+						{% for category in problem.categories.all %}
+						<span class="problem-category">{{ category.name }}</span>
+						{% endfor %}
+					</div>
+					{% endif %}
+					
+					{# Enhanced difficulty display with colors #}
+					{% if problem.platform == 'Kattis' or problem.platform == 'LeetCode' %}
+						{% with diff=problem.get_difficulty level=problem.get_difficulty_level %}
+						{% if diff != "—" %}
+						<span class="problem-difficulty difficulty-{{ level|default:'unknown' }}">
+							{{ diff }}
+						</span>
+						{% endif %}
+						{% endwith %}
 					{% endif %}
 				</div>
 				<div class="problem-links">

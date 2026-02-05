@@ -1,49 +1,43 @@
+
 # Calculum
 
-Site web du club de programmation compétitive de l'Université de Montréal.
+Site du club de programmation compétitive de l'Université de Montréal.
 
-🔗 **Live:** https://calculum.vicnas.me
 
-## Quick Start
+## Emplacement des fichiers frontend
 
-**Requirements**: Python 3.10+
+- **Templates HTML :**
+	- Les templates HTML se trouvent dans `project/templates/`
 
+- **Fichiers CSS :**
+	- Les fichiers CSS se trouvent dans `project/static/css/`
+
+- **Fichiers JavaScript :**
+	- Les fichiers JavaScript se trouvent dans `project/static/js/`
+	- JS additionnel pour l'admin : `project/static/admin/js/algorithm_codemirror.js`
+
+🔗 **En ligne :** https://calculum.aediroum.ca
+
+
+## Contribuer
+
+### Ajouter du contenu sur le site
+
+Tout le contenu est géré via **Django Admin** :
+
+- **📚 Cheatsheet** → Ajouter des algorithmes par catégorie
+- **📋 Meets** → Créer des compétitions avec des problèmes
+- **🎉 Événements** → Publier des événements du club & médias
+
+## Important
+
+**Si vous modifiez les modèles**, créez les migrations avant de push :
 ```bash
-# Setup
-make setup
-make runserver
+python manage.py makemigrations
 ```
 
-Visit `http://127.0.0.1:8000/admin` to add content.
+Le déploiement automatique vérifie que tout est ok.
 
-## What's Here
+## Stack technique
 
-- **📋 Meets**: Competitions by session with problems & solutions
-- **📚 Cheatsheet**: Printable algorithm reference
-- **🎉 Events**: Club activities & gallery
-
-## Adding Content
-
-### Meets
-1. Create algorithm file: `board/meets/YYYY/MM/DD.py`
-2. Add Meet in admin with matching date
-3. Add Problems (link + platform)
-
-### Events
-1. Create Event in admin
-2. Add Media (images/videos)
-
-## Environment
-
-Create `.env`:
-```env
-SECRET_KEY=your-key-here
-DEBUG=True
-DOMAIN=127.0.0.1
-```
-
-Database defaults to SQLite (file-based). Use `DATABASE_URL` env variable to use PostgreSQL.
-
-## Tech Stack
-
-Django 5.0 • SQLite • Vanilla HTML/CSS/JS • Gunicorn
+Django 5.0 • SQLite • HTML/CSS/JS

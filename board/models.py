@@ -64,11 +64,7 @@ class Meet(models.Model):
         default=''
     )
     
-    theme = models.CharField(
-        max_length=200,
-        default="",
-        blank=True
-    )
+    # REMOVED: theme field - use problem categories instead
     
     contest_link = models.CharField(
         max_length=500,
@@ -181,14 +177,18 @@ class Meet(models.Model):
             # Silent fail - don't break the save if fetching fails
             print(f"Failed to fetch Kattis problems: {e}")
     
+    def get_categories(self):
+        """Get all unique categories from problems in this meet"""
+        categories = set()
+        for problem in self.problems.all():
+            categories.update(problem.categories.all())
+        return sorted(categories, key=lambda c: c.name)
+    
     class Meta:
         ordering = ['-date']
     
     def __str__(self):
-        result = f"Rencontre {self.date.strftime('%d/%m/%Y')}"
-        if self.theme:
-            result += f" - {self.theme}"
-        return result
+        return f"Rencontre {self.date.strftime('%d/%m/%Y')}"
 
 
 class Problem(models.Model):
@@ -207,11 +207,146 @@ class Problem(models.Model):
         blank=True
     )
     
+    # Categories/themes for this problem (from cheatsheet app)
+    categories = models.ManyToManyField(
+        'cheatsheet.AlgorithmCategory',
+        related_name='problems',
+        blank=True,
+        help_text="Algorithm categories/themes for this problem"
+    )
+    
     solution_link = models.CharField(
         max_length=500,
         blank=True,
         default=""
     )
+    
+    difficulty = models.CharField(
+        max_length=100,
+        blank=True,
+        default=""
+    )
+    
+    difficulty_number = models.FloatField(
+        null=True,
+        blank=True,
+        default=None
+    )
+    
+    # No auto-fetch on save; handled by management command
+
+    def _fetch_kattis_difficulty(self, save_on_success=True):
+        """Fetch difficulty from Kattis problem page"""
+        import requests
+        from bs4 import BeautifulSoup
+        
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
+            }
+            response = requests.get(self.link, headers=headers, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            diff_card = soup.find('div', class_='metadata-difficulty-card')
+            if diff_card:
+                spans = diff_card.find_all('span')
+                if len(spans) >= 2:
+                    diff_num_text = spans[0].get_text(strip=True)
+                    diff_level_text = None
+                    for span in spans:
+                        if 'text-lg' in span.get('class', []):
+                            diff_level_text = span.get_text(strip=True)
+                            break
+                    if diff_num_text and diff_level_text:
+                        try:
+                            self.difficulty_number = float(diff_num_text)
+                            self.difficulty = f"{diff_num_text} {diff_level_text}"
+                            if save_on_success:
+                                self.save(update_fields=['difficulty', 'difficulty_number'])
+                            return True
+                        except (ValueError, TypeError):
+                            pass
+            return False
+        except Exception as e:
+            print(f"Error fetching Kattis difficulty for {self.link}: {str(e)}")
+            return False
+    
+    def _fetch_leetcode_difficulty(self, save_on_success=True):
+        """Fetch difficulty from LeetCode problem page"""
+        import requests
+        from bs4 import BeautifulSoup
+        import re
+        
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
+            }
+            response = requests.get(self.link, headers=headers, timeout=10)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            scripts = soup.find_all('script', type='application/json')
+            for script in scripts:
+                try:
+                    import json
+                    data = json.loads(script.string)
+                    if isinstance(data, dict):
+                        if 'difficulty' in data:
+                            difficulty = data['difficulty']
+                            self.difficulty = difficulty
+                            if save_on_success:
+                                self.save(update_fields=['difficulty'])
+                            return True
+                except:
+                    pass
+            text = soup.get_text()
+            for level in ['Hard', 'Medium', 'Easy']:
+                if level in text:
+                    if re.search(rf'Difficulty[:\s]+{level}', text):
+                        self.difficulty = level
+                        if save_on_success:
+                            self.save(update_fields=['difficulty'])
+                        return True
+            return False
+        except Exception as e:
+            print(f"Error fetching LeetCode difficulty for {self.link}: {str(e)}")
+            return False
+    
+    def get_difficulty(self):
+        """Get difficulty, fetching if necessary"""
+        if self.difficulty:
+            return self.difficulty
+        
+        # Try to fetch if not cached
+        if 'kattis.com' in self.link:
+            self._fetch_kattis_difficulty()
+        elif 'leetcode.com' in self.link:
+            self._fetch_leetcode_difficulty()
+        
+        return self.difficulty or "—"
+    
+    def get_difficulty_level(self):
+        """Extract difficulty level for styling (Easy, Medium, Hard, etc.)"""
+        if not self.difficulty:
+            return None
+        
+        difficulty_lower = self.difficulty.lower()
+        if 'easy' in difficulty_lower:
+            return 'easy'
+        elif 'medium' in difficulty_lower:
+            return 'medium'
+        elif 'hard' in difficulty_lower:
+            return 'hard'
+        
+        # For Kattis numeric difficulties
+        if self.difficulty_number:
+            if self.difficulty_number < 3.0:
+                return 'easy'
+            elif self.difficulty_number < 5.0:
+                return 'medium'
+            else:
+                return 'hard'
+        
+        return None
     
     def __str__(self):
         # Try to extract title from URL

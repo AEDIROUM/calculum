@@ -10,40 +10,173 @@
 {% block content %}
 <div class="presentation-container">
 	<section class="presentation-section">
-		<h2>À propos du Club</h2>
-		<p>Club d'algorithmique compétitive universitaire de l'Université de Montréal</p>
+		<h2>🎯 Bienvenue au Calculum</h2>
+		<p>Club d'algorithmique et de programmation compétitive de l'Université de Montréal</p>
 		
 		<div class="info-grid">
 			<div class="info-card">
-				<h3>📅 Horaire</h3>
-				<p>(TBD)</p>
+				   <h3>📅 Horaire</h3>
+				   {% if last_session %}
+					   <p>{{ last_session.time|time:"H:i"|default:"À déterminer" }}</p>
+				   {% else %}
+					   <p>À déterminer ensemble!</p>
+				   {% endif %}
+				   <p style="font-size: 0.9rem; margin-top: 0.5rem;">Consultez le sondage sur Discord</p>
 			</div>
 			<div class="info-card">
-				<h3>📍 Local</h3>
-				<p>AA-3192</p>
+				   <h3>📍 Local</h3>
+				   {% if last_session %}
+					   <p>{{ last_session.local|default:"À déterminer" }}</p>
+				   {% else %}
+					   <p>AA-3192</p>
+				   {% endif %}
+				   <p style="font-size: 0.9rem; margin-top: 0.5rem;">Pavillon André-Aisenstadt</p>
 			</div>
 		</div>
 
-		<h3>Notre Mission</h3>
-		<p>Le club se réunit chaque semaine autour de nouveaux casse-têtes informatiques qui feront appel à vos connaissances en algorithmique, en logique et en programmation.</p>
+		   <!-- Avertissement débutant retiré -->
 
-		<h3>Pourquoi Nous Rejoindre?</h3>
+		<h3>💡 C'est quoi, la programmation compétitive?</h3>
+		<p>La programmation compétitive est un terme assez vaste qui regroupe tous les casse-têtes informatiques. 
+		Malgré son nom, on ne fait pas <em>que</em> de la programmation et on ne fait pas <em>que</em> des compétitions — 
+		mais c'est le terme consacré!</p>
+		<p>Ces problèmes font appel à:</p>
 		<ul>
-			<li>Outre le plaisir à les résoudre, ces casse-têtes offrent un entraînement aux compétitions de programmation</li>
-			<li>Préparation pour: ICPC, CS Games, Hacker Cup, Advent of Code, etc.</li>
-			<li>Entraînement aux questions posées en entrevue par les grandes compagnies</li>
+			<li><strong>L'algorithmique</strong> — concevoir des algorithmes efficaces</li>
+			<li><strong>La programmation</strong> — implémenter ces algorithmes</li>
+			<li><strong>La logique</strong> — raisonner sur les problèmes</li>
+			<li><strong>Le travail d'équipe</strong> — pour les concours en équipe</li>
+			<li>... et bien d'autres compétences!</li>
 		</ul>
 
-		<h3>Pour Qui?</h3>
-		<p>Que vous soyez simple curieux, débutant ou déjà aguerri, soyez les bienvenus au Calculum!</p>
+		<h2>🧩 Types de problèmes</h2>
 
-		<h3>Nous Contacter</h3>
-		<p><strong>Email:</strong> calculum [at] iro.umontreal.ca</p>
-		<p><strong>Questions, commentaires, suggestions?</strong> N'hésitez pas à nous écrire!</p>
+		<h3>1. Casse-têtes algorithmiques</h3>
+		<p>Le type le plus classique! On vous donne un problème et vous devez écrire un programme qui résout 
+		<strong>n'importe quelle instance</strong> de ce problème, avec:</p>
+		<ul>
+			<li>Une taille maximale donnée</li>
+			<li>Un temps d'exécution limité</li>
+			<li>Une mémoire maximale</li>
+		</ul>
+		<p><strong>Le processus:</strong></p>
+		<ul>
+			<li>Trouver un algorithme suffisamment efficace et correct</li>
+			<li>Penser à la complexité (pas besoin d'analyse ultra-poussée!)</li>
+			<li>Programmer l'algorithme dans un vrai langage</li>
+			<li>Soumettre à un <strong>juge automatique</strong> qui teste votre code sur des tests inconnus</li>
+		</ul>
+		<p><strong>Plateformes:</strong> Kattis, Codeforces, LeetCode, AtCoder, etc.</p>
+		<p style="font-size: 0.95rem; color: #b0b0b0; margin-top: 0.5rem;">
+			<em>Variante:</em> Parfois on vous donne juste <strong>une instance</strong> à résoudre 
+			(comme dans l'Advent of Code). Vous devez juste donner la réponse pour cette instance, 
+			mais elle est assez compliquée pour nécessiter un programme!
+		</p>
+
+		<h3>2. Code Golf ⛳</h3>
+		<p>L'objectif n'est plus de faire le programme le plus rapide, mais le <strong>plus court possible</strong> 
+		— avec le moins de caractères!</p>
+		<p><strong>Stratégies:</strong></p>
+		<ul>
+			<li>Pas besoin d'algorithme ultra-efficace, juste qu'il soit simple</li>
+			<li>Trouver des constructions astucieuses dans le langage</li>
+			<li>Choisir le bon langage (certains sont plus "terse" que d'autres)</li>
+			<li>Il existe même des langages créés spécifiquement pour le code golf!</li>
+		</ul>
+		<p><strong>Plateforme:</strong> <a href="https://code.golf" target="_blank" style="color: #3498db;">code.golf</a></p>
+		<p style="font-size: 0.95rem; color: #b0b0b0;">
+			<em>Exemple classique:</em> Écrire une "quine" (programme qui imprime son propre code source) 
+			en le moins de caractères possible!
+		</p>
+
+		<h3>3. Affrontement de programmes ⚔️</h3>
+		<p>Contrairement aux deux premiers types, ici les programmes <strong>s'affrontent directement</strong> 
+		selon des règles du jeu établies!</p>
+		<p><strong>Exemples célèbres:</strong></p>
+		<ul>
+			<li><strong>Core War</strong> — Les programmes s'exécutent dans une machine virtuelle avec mémoire limitée. 
+			Le but: faire planter l'adversaire en écrivant dans sa zone mémoire!</li>
+			<li><strong>Halite</strong> — Jeu de stratégie en temps réel</li>
+			<li><strong>Battlecode (MIT)</strong> — Combat de robots en Java, avec prix de 30 000 $ pour les gagnants!</li>
+			<li><strong>Leek Wars</strong> — Sympa pour les débutants, vous gérez un artichaut qui combat</li>
+			<li><strong>LeetBattle</strong> — Affrontements basés sur des problèmes algorithmiques</li>
+		</ul>
+
+		<h2>🏆 Compétitions et événements</h2>
+
+		<h3>ICPC (International Collegiate Programming Contest)</h3>
+		<p>La compétition de référence en programmation compétitive universitaire!</p>
+		<ul>
+			<li><strong>Format:</strong> Équipes de 3 personnes + 1 coach</li>
+			<li><strong>Calendrier:</strong> Régionale en mars, puis finales mondiales</li>
+			<li><strong>Niveau:</strong> Tous les niveaux bienvenus — c'est le bon moment pour s'entraîner!</li>
+			<li>L'UdeM peut envoyer plusieurs équipes</li>
+		</ul>
+
+		<h3>CS Games</h3>
+		<p>Compétition inter-universitaire québécoise avec plusieurs épreuves (programmation, sécurité, IA, etc.)</p>
+		<ul>
+			<li><strong>Format:</strong> Équipes plus grandes</li>
+			<li>Événement sur plusieurs jours avec volet social</li>
+		</ul>
+
+		<h3>Autres compétitions populaires</h3>
+		<ul>
+			<li><strong>Advent of Code</strong> — 25 jours de problèmes en décembre</li>
+			<li><strong>Google Hash Code / Kick Start</strong></li>
+			<li><strong>Meta Hacker Cup</strong></li>
+			<li><strong>Battlecode (MIT)</strong> — Début janvier, 30 000 $ de prix!</li>
+			<li><strong>Concours locaux</strong> — On pourrait en organiser au DIRO!</li>
+		</ul>
+
+		<h2>🎓 Pourquoi rejoindre le club?</h2>
+		<ul>
+			<li><strong>Plaisir et défis</strong> — Résoudre des casse-têtes stimulants</li>
+			<li><strong>Préparation aux compétitions</strong> — ICPC, CS Games, Advent of Code, etc.</li>
+			<li><strong>Entrevues techniques</strong> — Entraînement aux questions des GAFAM et grandes compagnies</li>
+			<li><strong>Amélioration en programmation</strong> — Apprendre de nouvelles techniques et algorithmes</li>
+			<li><strong>Communauté</strong> — Rencontrer d'autres passionnés, échanger des stratégies</li>
+			<li><strong>Tous les niveaux</strong> — Du débutant complet à l'expert aguerri</li>
+		</ul>
+
+		<h2>📋 Activités du club</h2>
+		<ul>
+			<li><strong>Rencontres hebdomadaires</strong> — Résolution de problèmes ensemble</li>
+			<li><strong>Préparation aux concours</strong> — Sessions d'entraînement ciblées</li>
+			<li><strong>Séances thématiques</strong> — Structures de données, algorithmes, optimisation</li>
+			<li><strong>Mock contests</strong> — Simulations de compétitions</li>
+			<li><strong>Code reviews</strong> — Analyser et améliorer les solutions</li>
+			<li><strong>Guest speakers</strong> — Anciens compétiteurs, professionnels de l'industrie</li>
+			<li>... <strong>et vos idées!</strong> C'est un club participatif 🙌</li>
+		</ul>
+
+		<h2>🛠️ Langages et outils</h2>
+		<p>Les compétitions acceptent généralement tous les langages courants:</p>
+		<ul>
+			<li>C++ (très populaire pour sa vitesse)</li>
+			<li>Python (rapide à écrire, bon pour débuter)</li>
+			<li>Java</li>
+			<li>C, C#, JavaScript, Rust, Go...</li>
+		</ul>
+		<p>Vous pouvez utiliser le langage avec lequel vous êtes le plus à l'aise!</p>
+
+
 
 		<div class="cta-section">
+			<p style="font-size: 1.1rem; margin-bottom: 1rem;">
+				<strong>Prêt à commencer?</strong>
+			</p>
 			<p>👼 <a href="/noob" class="cta-button">Nouveau? Commencer Ici</a> 👼</p>
 			<p><a href="/meets" class="cta-button">Voir les Rencontres</a></p>
+			<p><a href="/events" class="cta-button">Événements à venir</a></p>
+		</div>
+
+		<div style="margin-top: 2rem; padding: 1.5rem; background: rgba(46, 204, 113, 0.1); border-left: 4px solid #2ecc71; border-radius: 4px;">
+			<p style="margin: 0; font-size: 1.05rem;">
+				<strong>💪 Dernier rappel:</strong> Que vous soyez simple curieux, débutant ou déjà aguerri, 
+				vous êtes les bienvenus au Calculum! C'est en pratiquant qu'on s'améliore, et on est là 
+				pour apprendre ensemble.
+			</p>
 		</div>
 	</section>
 </div>

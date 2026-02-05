@@ -96,3 +96,113 @@
 	transform: translateY(-3px);
 	box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+	.presentation-container {
+		padding: 0 1rem;
+	}
+	
+	.presentation-section {
+		padding: 1.5rem;
+	}
+	
+	.presentation-section h2 {
+		font-size: 1.6rem;
+		margin-bottom: 0.8rem;
+		padding-bottom: 0.4rem;
+	}
+	
+	.presentation-section h3 {
+		font-size: 1.2rem;
+		margin-top: 1.2rem;
+		margin-bottom: 0.6rem;
+	}
+	
+	.presentation-section p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 0.8rem;
+	}
+	
+	.presentation-section ul {
+		margin-left: 1.5rem;
+		line-height: 1.6;
+		margin-bottom: 0.8rem;
+	}
+	
+	.presentation-section li {
+		margin-bottom: 0.5rem;
+		font-size: 0.95rem;
+	}
+	
+	.info-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		margin: 1rem 0;
+	}
+	
+	.info-card {
+		padding: 1rem;
+	}
+	
+	.info-card h3 {
+		font-size: 1.1rem;
+	}
+	
+	.info-card p {
+		font-size: 1rem;
+	}
+	
+	.cta-section {
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
+	}
+	
+	.cta-button {
+		padding: 0.7rem 1.2rem;
+		font-size: 1rem;
+		display: block;
+		margin-bottom: 0.8rem;
+	}
+	
+	.cta-button:hover {
+		transform: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.presentation-section {
+		padding: 1rem;
+	}
+	
+	.presentation-section h2 {
+		font-size: 1.4rem;
+	}
+	
+	.presentation-section h3 {
+		font-size: 1.1rem;
+	}
+	
+	.presentation-section p,
+	.presentation-section li {
+		font-size: 0.9rem;
+	}
+	
+	.info-card {
+		padding: 0.8rem;
+	}
+	
+	.info-card h3 {
+		font-size: 1rem;
+	}
+	
+	.info-card p {
+		font-size: 0.95rem;
+	}
+	
+	.cta-button {
+		padding: 0.6rem 1rem;
+		font-size: 0.95rem;
+	}
+}
