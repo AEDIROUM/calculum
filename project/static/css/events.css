@@ -68,7 +68,29 @@
 	color: #e0e0e0;
 	line-height: 1.8;
 	margin-bottom: 1.5rem;
-	white-space: pre-wrap;
+}
+
+.event-summary p {
+	margin: 0 0 1rem 0;
+}
+
+.event-summary ul,
+.event-summary ol {
+	margin: 0 0 1rem 1.25rem;
+}
+
+.event-summary pre {
+	background: #1e1e1e;
+	padding: 0.75rem;
+	border-radius: 6px;
+	overflow: auto;
+	color: #f8f8f2;
+}
+
+.event-summary code {
+	background: #111;
+	padding: 0.15rem 0.35rem;
+	border-radius: 4px;
 }
 
 .event-media {

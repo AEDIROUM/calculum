@@ -16,12 +16,11 @@
 		<div class="info-grid">
 			<div class="info-card">
 				   <h3>📅 Horaire</h3>
-				   {% if last_session %}
-					   <p>{{ last_session.time|time:"H:i"|default:"À déterminer" }}</p>
-				   {% else %}
-					   <p>À déterminer ensemble!</p>
-				   {% endif %}
-				   <p style="font-size: 0.9rem; margin-top: 0.5rem;">Consultez le sondage sur Discord</p>
+			       {% if last_session %}
+				       <p>{{ last_session.get_day_display }} • {{ last_session.time|time:"H:i" }}</p>
+			       {% else %}
+				       <p>À déterminer ensemble!</p>
+			       {% endif %}
 			</div>
 			<div class="info-card">
 				   <h3>📍 Local</h3>

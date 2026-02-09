@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load markdown_extras %}
 
 {% block title %}Événements - Calculum{% endblock %}
 
@@ -37,7 +38,7 @@
 					{% endif %}
 				</div>
 				{% endif %}
-				<div class="event-summary">{{ event.summary }}</div>
+				<div class="event-summary">{{ event.summary|markdown_to_html }}</div>
 				
 				{% if event.medias.all %}
 				<div class="event-media">
