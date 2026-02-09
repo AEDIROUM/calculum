@@ -109,28 +109,28 @@
 
 .action-button {
 	display: inline-block;
-	background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-	color: #ffffff;
+	/* darker, muted button to fit the site's dark theme */
+	background: linear-gradient(135deg, #2a3a45 0%, #21323a 100%);
+	color: #e6eef3;
 	text-decoration: none;
 	padding: 0.8rem 1.8rem;
 	border-radius: 6px;
 	font-weight: 600;
 	font-size: 1rem;
-	transition: all 0.3s ease;
-	border: 2px solid rgba(0,0,0,0.25);
-	box-shadow: 0 6px 18px rgba(41,128,185,0.25), inset 0 -2px 0 rgba(0,0,0,0.15);
-	text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+	transition: all 0.22s ease;
+	border: 1px solid rgba(255,255,255,0.04);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 .action-button:hover {
-	background: linear-gradient(135deg, #2575a7 0%, #195379 100%);
-	transform: translateY(-3px);
-	box-shadow: 0 10px 28px rgba(37,117,167,0.32);
+	background: linear-gradient(135deg, #2f4852 0%, #26363d 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.65);
 }
 
 .action-button:focus,
 .action-button:focus-visible {
-	outline: 3px solid rgba(52,152,219,0.25);
+	outline: 3px solid rgba(100,140,160,0.12);
 	outline-offset: 3px;
 }
 

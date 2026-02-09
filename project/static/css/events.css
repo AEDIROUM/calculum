@@ -93,6 +93,26 @@
 	border-radius: 4px;
 }
 
+/* Ensure links inside rendered Markdown match site theme and remain readable */
+.event-summary a {
+	color: #5dade2;
+	text-decoration: underline;
+}
+
+.event-summary a:visited {
+	color: #85bfe8;
+}
+
+.event-summary a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.event-summary a:focus-visible {
+	outline: 3px solid rgba(52,152,219,0.25);
+	outline-offset: 3px;
+}
+
 .event-media {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
