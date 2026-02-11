@@ -27,7 +27,7 @@ urlpatterns = [
     path('edit/', admin.site.urls),
     path('meets', include('board.urls')),
     path('cheatsheet', include('cheatsheet.urls')),
-    path('events', include('events.urls')),
+    path('events/', include('events.urls')),  # FIXED: Added trailing slash for sub-routes
     path('', include('info.urls')),
 ]
 

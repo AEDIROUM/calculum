@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} - Calculum{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
+<style>
+.error-container {
+	max-width: 800px;
+	margin: 4rem auto;
+	text-align: center;
+}
+
+.error-icon {
+	font-size: 4rem;
+	margin-bottom: 1rem;
+}
+
+.error-title {
+	font-size: 2rem;
+	color: #e74c3c;
+	margin-bottom: 1rem;
+}
+
+.error-message {
+	font-size: 1.2rem;
+	color: #bdc3c7;
+	margin-bottom: 0.5rem;
+}
+
+.error-detail {
+	font-size: 0.9rem;
+	color: #7f8c8d;
+	margin-bottom: 2rem;
+	font-style: italic;
+}
+
+.error-actions {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 2rem;
+}
+
+.error-button {
+	background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+	color: white;
+	padding: 0.8rem 1.5rem;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.error-button:hover {
+	background: linear-gradient(135deg, #2980b9 0%, #1f618d 100%);
+	transform: translateY(-2px);
+	color: white;
+}
+
+.error-button.secondary {
+	background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+}
+
+.error-button.secondary:hover {
+	background: linear-gradient(135deg, #7f8c8d 0%, #6c7a89 100%);
+}
+
+@media (max-width: 768px) {
+	.error-container {
+		margin: 2rem auto;
+		padding: 0 1rem;
+	}
+	
+	.error-icon {
+		font-size: 3rem;
+	}
+	
+	.error-title {
+		font-size: 1.5rem;
+	}
+	
+	.error-message {
+		font-size: 1rem;
+	}
+	
+	.error-actions {
+		flex-direction: column;
+	}
+	
+	.error-button {
+		width: 100%;
+	}
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="error-container">
+	<div class="error-icon">⚠️</div>
+	<h1 class="error-title">{{ title }}</h1>
+	<p class="error-message">{{ message }}</p>
+	{% if detail %}
+	<p class="error-detail">{{ detail }}</p>
+	{% endif %}
+	
+	<div class="error-actions">
+		<a href="/events" class="error-button">← Retour aux événements</a>
+		{% if event %}
+		<a href="/events#{{ event.slug }}" class="error-button secondary">Voir {{ event.title }}</a>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
