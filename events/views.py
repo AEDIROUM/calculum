@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from events.models import Event
 
 
@@ -15,6 +16,7 @@ def events(request: HttpRequest) -> HttpResponse:
     )
 
 
+@csrf_exempt
 def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse:
     """
     Proxy view that uses nginx X-Accel-Redirect for robust proxying.
