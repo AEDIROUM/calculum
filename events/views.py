@@ -18,11 +18,11 @@ def events(request: HttpRequest) -> HttpResponse:
 def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse:
     """
     Proxy view that uses nginx X-Accel-Redirect for robust proxying.
-    Django controls access, nginx does the actual proxying.
+    Django controls access (slug lookup, is_active check).
+    nginx handles everything else: redirects, cookies, WebSockets, URL rewriting.
     """
     event = get_object_or_404(Event, slug=slug)
     
-    # Check if server is configured and active
     if not event.server_port:
         return render(request, 'event_error.html', {
             'event': event,
@@ -37,15 +37,11 @@ def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse
             'error_message': f'Le serveur pour "{event.title}" est actuellement inactif.',
         }, status=503)
     
-    # Use nginx internal redirect for robust proxying
-    # nginx handles: cookies, WebSockets, all HTTP methods, file uploads, etc.
-    internal_path = f'/internal-proxy/{event.server_port}/{path}'
+    # Pass slug in the internal path so nginx can rewrite redirects and URLs
+    internal_path = f'/internal-proxy/{slug}/{event.server_port}/{path}'
+    if request.META.get('QUERY_STRING'):
+        internal_path += f"?{request.META['QUERY_STRING']}"
     
     response = HttpResponse()
     response['X-Accel-Redirect'] = internal_path
-    
-    # Pass through query string
-    if request.META.get('QUERY_STRING'):
-        response['X-Accel-Redirect'] += f"?{request.META['QUERY_STRING']}"
-    
     return response

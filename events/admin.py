@@ -7,7 +7,8 @@ from events.models import Event, Media
 
 class EventAdmin(admin.ModelAdmin):
 	list_display = ('title', 'start', 'end', 'short_summary', 'server_status')
-	readonly_fields = ('rendered_summary', 'slug')
+	readonly_fields = ('rendered_summary',)
+	prepopulated_fields = {'slug': ('title',)}
 	fieldsets = (
 		(None, {'fields': ('title', 'slug', 'start', 'end')}),
 		('Summary', {'fields': ('summary', 'rendered_summary')}),
