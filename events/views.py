@@ -121,15 +121,5 @@ def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse
 
 def _copy_cookies(resp, django_resp: HttpResponse):
     """Copy Set-Cookie headers from backend to Django response."""
-    for cookie in resp.cookies.jar:
-        kwargs = {
-            'key': cookie.name,
-            'value': cookie.value,
-            'path': cookie.path if cookie.path else '/',
-            'secure': cookie.secure,
-        }
-        if cookie.domain:
-            kwargs['domain'] = cookie.domain
-        if cookie.expires:
-            kwargs['expires'] = cookie.expires
-        django_resp.set_cookie(**kwargs)
+    for name, value in resp.cookies.items():
+        django_resp.set_cookie(key=name, value=value)
