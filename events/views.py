@@ -58,9 +58,14 @@ def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse
                       f"Erreur inattendue pour « {event.title} ».", 502)
 
     # Redirects — rewrite Location
+    backend_origin = re.compile(rf'^https?://localhost:{event.server_port}')
     if upstream.status_code in (301, 302, 303, 307, 308):
         location = upstream.headers.get('Location', '')
-        if location.startswith('/'):
+        # Strip absolute backend origin → relative path
+        location = backend_origin.sub('', location)
+        if not location:
+            location = prefix + '/'
+        elif location.startswith('/'):
             location = prefix + location
         resp = HttpResponse(status=upstream.status_code)
         resp['Location'] = location
@@ -69,7 +74,7 @@ def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse
 
     # Body — rewrite URLs in HTML, JS, and CSS responses
     ct = upstream.headers.get('Content-Type', '')
-    body = _rewrite_body(upstream, ct, prefix)
+    body = _rewrite_body(upstream, ct, prefix, event.server_port)
 
     resp = HttpResponse(body, status=upstream.status_code, content_type=ct)
 
@@ -135,41 +140,38 @@ def _forward_cookies(upstream, resp: HttpResponse, prefix: str):
         resp.set_cookie(**kw)
 
 
-def _rewrite_body(upstream, ct: str, prefix: str):
+def _rewrite_body(upstream, ct: str, prefix: str, port: int):
     """Pick the right rewriter based on Content-Type."""
     if 'text/html' in ct:
-        return _rewrite_html(upstream.text, prefix)
+        return _rewrite_urls(upstream.text, prefix, port)
     if 'javascript' in ct:
-        return _rewrite_js(upstream.text, prefix)
+        return _rewrite_urls(upstream.text, prefix, port)
     if 'text/css' in ct:
-        return _rewrite_css(upstream.text, prefix)
+        return _rewrite_urls(upstream.text, prefix, port)
     return upstream.content
 
 
-def _rewrite_html(html: str, prefix: str) -> str:
-    """Rewrite absolute paths in HTML to route through the proxy."""
-    html = re.sub(r'((?:href|src|action)\s*=\s*")(/[^"]*)"', rf'\1{prefix}\2"', html)
-    html = re.sub(r"((?:href|src|action)\s*=\s*')(/[^']*?)'", rf"\1{prefix}\2'", html)
-    html = re.sub(r"url\(\s*'(/[^']*?)'\s*\)", rf"url('{prefix}\1')", html)
-    html = re.sub(r'url\(\s*"(/[^"]*?)"\s*\)', rf'url("{prefix}\1")', html)
-    return html
-
-
-def _rewrite_js(js: str, prefix: str) -> str:
-    """Rewrite absolute URL strings in JavaScript."""
-    # String literals: '/path', "/path", `/path`
-    js = re.sub(r"'(/[^'\n]+)'", rf"'{prefix}\1'", js)
-    js = re.sub(r'"(/[^"\n]+)"', rf'"{prefix}\1"', js)
-    js = re.sub(r'`(/[^`\n]+)`', rf'`{prefix}\1`', js)
-    return js
-
-
-def _rewrite_css(css: str, prefix: str) -> str:
-    """Rewrite url() paths in CSS."""
-    css = re.sub(r"url\(\s*'(/[^']*?)'\s*\)", rf"url('{prefix}\1')", css)
-    css = re.sub(r'url\(\s*"(/[^"]*?)"\s*\)', rf'url("{prefix}\1")', css)
-    css = re.sub(r'url\(\s*(/[^)\s]+)\s*\)', rf'url({prefix}\1)', css)
-    return css
+def _rewrite_urls(text: str, prefix: str, port: int) -> str:
+    """
+    Rewrite URLs in any text content (HTML, JS, CSS).
+    1. Replace absolute backend URLs (http(s)://localhost:PORT/...) with prefixed paths
+    2. Replace root-relative paths (/...) with prefixed paths
+    """
+    # Step 1: absolute backend URLs → prefixed path
+    text = re.sub(rf'https?://localhost:{port}(/[^"\s\'<>)]*)', rf'{prefix}\1', text)
+    text = re.sub(rf'https?://localhost:{port}(["\'])', rf'{prefix}/\1', text)
+    # Step 2: HTML attributes with root-relative paths
+    text = re.sub(r'((?:href|src|action)\s*=\s*")(/[^"]*)"', rf'\1{prefix}\2"', text)
+    text = re.sub(r"((?:href|src|action)\s*=\s*')(/[^']*?)'", rf"\1{prefix}\2'", text)
+    # Step 3: CSS url()
+    text = re.sub(r"url\(\s*'(/[^']*?)'\s*\)", rf"url('{prefix}\1')", text)
+    text = re.sub(r'url\(\s*"(/[^"]*?)"\s*\)', rf'url("{prefix}\1")', text)
+    text = re.sub(r'url\(\s*(/[^)\s]+)\s*\)', rf'url({prefix}\1)', text)
+    # Step 4: JS string literals with root-relative paths (not already prefixed)
+    text = re.sub(r"'(/(?!events/)[^'\n]+)'", rf"'{prefix}\1'", text)
+    text = re.sub(r'"(/(?!events/)[^"\n]+)"', rf'"{prefix}\1"', text)
+    text = re.sub(r'`(/(?!events/)[^`\n]+)`', rf'`{prefix}\1`', text)
+    return text
 
 
 def _error(request, event, title, message, status):
