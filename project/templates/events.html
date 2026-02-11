@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load markdown_extras %}
 
 {% block title %}Événements - Calculum{% endblock %}
 
@@ -19,9 +20,14 @@
 		{% for event in events %}
 		<div class="event-card {% if forloop.first %}most-recent{% endif %}">
 			<div class="event-header">
-				<h3 class="event-title">{{ event.title }}</h3>
-				{% if forloop.first %}
-				<span class="event-badge">Récent</span>
+				<div>
+					<h3 class="event-title">{{ event.title }}</h3>
+					{% if forloop.first %}
+					<span class="event-badge">Récent</span>
+					{% endif %}
+				</div>
+				{% if event.has_active_server %}
+				<a href="/events/{{ event.slug }}" class="server-button" target="_blank" rel="noopener">🖥️ Serveur Live</a>
 				{% endif %}
 			</div>
 			
@@ -37,7 +43,7 @@
 					{% endif %}
 				</div>
 				{% endif %}
-				<div class="event-summary">{{ event.summary }}</div>
+				<div class="event-summary">{{ event.summary|markdown_to_html }}</div>
 				
 				{% if event.medias.all %}
 				<div class="event-media">
