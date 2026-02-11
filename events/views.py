@@ -3,6 +3,9 @@ from django.http import HttpRequest, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from events.models import Event
 import requests as http_requests
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def events(request: HttpRequest) -> HttpResponse:    
@@ -107,7 +110,8 @@ def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse
         _copy_cookies(resp, django_resp)
         return django_resp
         
-    except Exception:
+    except Exception as e:
+        logger.error(f'Proxy error for {event.title} ({request.method} {target_url}): {e}')
         return render(request, 'event_error.html', {
             'event': event,
             'error_title': 'Erreur serveur',
