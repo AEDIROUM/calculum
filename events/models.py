@@ -43,6 +43,11 @@ class Event(models.Model):
         help_text='Hide this event from the public events page'
     )
     
+    rewrite_urls = models.BooleanField(
+        default=True,
+        help_text='Rewrite URLs in proxied responses. Disable if the backend is configured with the correct base URL.'
+    )
+    
     class Meta:
         ordering = ['-title']
     

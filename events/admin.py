@@ -13,8 +13,8 @@ class EventAdmin(admin.ModelAdmin):
 		(None, {'fields': ('title', 'slug', 'start', 'end')}),
 		('Summary', {'fields': ('summary', 'rendered_summary')}),
 		('Server Proxy', {
-			'fields': ('server_port', 'is_active'),
-			'description': 'Configure a proxied server for this event. The server will be accessible at /events/{slug}'
+			'fields': ('server_port', 'is_active', 'rewrite_urls'),
+			'description': 'Configure a proxied server for this event. The server will be accessible at /events/{slug}. Disable URL rewriting if the backend is configured with the correct base URL.'
 		}),
 		('Visibility', {
 			'fields': ('hidden',),

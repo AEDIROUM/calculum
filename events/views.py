@@ -57,24 +57,26 @@ def event_proxy(request: HttpRequest, slug: str, path: str = '') -> HttpResponse
         return _error(request, event, 'Erreur serveur',
                       f"Erreur inattendue pour « {event.title} ».", 502)
 
+    rewrite = event.rewrite_urls
+
     # Redirects — rewrite Location
-    backend_origin = re.compile(rf'^https?://localhost:{event.server_port}')
     if upstream.status_code in (301, 302, 303, 307, 308):
         location = upstream.headers.get('Location', '')
-        # Strip absolute backend origin → relative path
-        location = backend_origin.sub('', location)
-        if not location:
-            location = prefix + '/'
-        elif location.startswith('/'):
-            location = prefix + location
+        if rewrite:
+            backend_origin = re.compile(rf'^https?://localhost:{event.server_port}')
+            location = backend_origin.sub('', location)
+            if not location:
+                location = prefix + '/'
+            elif location.startswith('/'):
+                location = prefix + location
         resp = HttpResponse(status=upstream.status_code)
         resp['Location'] = location
         _forward_cookies(upstream, resp, prefix)
         return resp
 
-    # Body — rewrite URLs in HTML, JS, and CSS responses
+    # Body — rewrite URLs in text responses (skip if backend handles its own base URL)
     ct = upstream.headers.get('Content-Type', '')
-    body = _rewrite_body(upstream, ct, prefix, event.server_port)
+    body = _rewrite_body(upstream, ct, prefix, event.server_port) if rewrite else upstream.content
 
     resp = HttpResponse(body, status=upstream.status_code, content_type=ct)
 
