@@ -1,17 +1,15 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-import markdown
 
 from events.models import Event, Media
 
 
 class EventAdmin(admin.ModelAdmin):
 	list_display = ('title', 'start', 'end', 'short_summary', 'server_status')
-	readonly_fields = ('rendered_summary',)
 	prepopulated_fields = {'slug': ('title',)}
 	fieldsets = (
 		(None, {'fields': ('title', 'slug', 'start', 'end')}),
-		('Summary', {'fields': ('summary', 'rendered_summary')}),
+		('Summary', {'fields': ('summary',)}),
 		('Server Proxy', {
 			'fields': ('server_port', 'is_active', 'rewrite_urls'),
 			'description': 'Configure a proxied server for this event. The server will be accessible at /events/{slug}. Disable URL rewriting if the backend is configured with the correct base URL.'
@@ -20,13 +18,6 @@ class EventAdmin(admin.ModelAdmin):
 			'fields': ('hidden',),
 		}),
 	)
-
-	def rendered_summary(self, obj):
-		text = obj.summary or ''
-		html = markdown.markdown(text, extensions=['fenced_code', 'codehilite'])
-		return mark_safe(html)
-
-	rendered_summary.short_description = 'Rendered summary (Markdown)'
 
 	def short_summary(self, obj):
 		s = (obj.summary or '')
