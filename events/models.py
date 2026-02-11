@@ -38,6 +38,11 @@ class Event(models.Model):
         help_text='Enable/disable access to the proxied server'
     )
     
+    hidden = models.BooleanField(
+        default=True,
+        help_text='Hide this event from the public events page'
+    )
+    
     class Meta:
         ordering = ['-title']
     
