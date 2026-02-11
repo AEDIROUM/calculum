@@ -28,7 +28,8 @@ jobs:
           ssh-keyscan -H srv.aediroum.ca >> ~/.ssh/known_hosts 2>/dev/null || true
       
       - name: Run Django checks on server
-        run: ssh calculum@srv.aediroum.ca "cd /srv/calculum && source venv/bin/activate && git pull origin main && python manage.py check || exit 1"
+        run: |
+          ssh calculum@srv.aediroum.ca "cd /srv/calculum && source venv/bin/activate && git pull origin main && pip install --upgrade pip && pip install -r requirements.txt && python manage.py check || exit 1"
       
       - name: Deploy
         run: make deploy
