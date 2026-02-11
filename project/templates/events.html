@@ -27,7 +27,7 @@
 					{% endif %}
 				</div>
 				{% if event.has_active_server %}
-				<a href="/events/{{ event.slug }}" class="server-button" target="_blank" rel="noopener">🖥️ Serveur Live</a>
+				<a href="{% url 'event_proxy' slug=event.slug path='' %}" class="server-button" target="_blank" rel="noopener">🖥️ Serveur Live</a>
 				{% endif %}
 			</div>
 			

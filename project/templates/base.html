@@ -15,15 +15,15 @@
 		<div class="header-content">
 			<h1>Calculum UdeM</h1>
 			<div class="header-buttons">
-				<a href="/noob" class="new-member-btn" title="Êtes vous nouveau ?">👼 Êtes vous nouveau ?</a>
-				<a href="/edit/" target="_blank" class="admin-btn" title="Administration">🖊️</a>
+				<a href="{% url 'noob' %}" class="new-member-btn" title="Êtes vous nouveau ?">👼 Êtes vous nouveau ?</a>
+				<a href="{% url 'admin:index' %}" target="_blank" class="admin-btn" title="Administration">🖊️</a>
 			</div>
 		</div>
 		<nav>
 			<a href="/">Info</a>
-			<a href="/meets">Rencontres</a>
-			<a href="/events">Événements</a>
-			<a href="/cheatsheet">Aide-mémoire</a>
+			<a href="{% url 'meets' %}">Rencontres</a>
+			<a href="{% url 'events' %}">Événements</a>
+			<a href="{% url 'cheatsheet' %}">Aide-mémoire</a>
 		</nav>
 	</header>
 	<main>

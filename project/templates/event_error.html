@@ -107,9 +107,9 @@
 	{% endif %}
 	
 	<div class="error-actions">
-		<a href="/events" class="error-button">← Retour aux événements</a>
+		<a href="{% url 'events' %}" class="error-button">← Retour aux événements</a>
 		{% if event %}
-		<a href="/events#{{ event.slug }}" class="error-button secondary">Voir {{ event.title }}</a>
+		<a href="{% url 'events' %}#{{ event.slug }}" class="error-button secondary">Voir {{ event.title }}</a>
 		{% endif %}
 	</div>
 </div>
