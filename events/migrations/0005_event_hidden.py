@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='event',
             name='hidden',
-            field=models.BooleanField(default=True, help_text='Hide this event from the public events page'),
+            field=models.BooleanField(default=False, help_text='Hide this event from the public events page'),
         ),
     ]

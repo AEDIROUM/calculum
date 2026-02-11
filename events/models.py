@@ -39,7 +39,7 @@ class Event(models.Model):
     )
     
     hidden = models.BooleanField(
-        default=True,
+        default=False,
         help_text='Hide this event from the public events page'
     )
     

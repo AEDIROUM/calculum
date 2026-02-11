@@ -15,6 +15,9 @@ class EventAdmin(admin.ModelAdmin):
 			'fields': ('server_port', 'is_active'),
 			'description': 'Configure a proxied server for this event. The server will be accessible at /events/{slug}'
 		}),
+		('Visibility', {
+			'fields': ('hidden',),
+		}),
 	)
 
 	def rendered_summary(self, obj):
