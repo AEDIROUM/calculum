@@ -29,7 +29,7 @@ deploy:
 	@echo "🧹 Cleaning up orphaned media files..."
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && python manage.py cleanup_media_files 2>/dev/null" || echo "  ⊘ Cleanup skipped (command not installed yet)"
 	@echo "🌐 Starting server..."
-	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && nohup gunicorn project.wsgi:application \
+	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && nohup calculum-venv/venv/bin/gunicorn project.wsgi:application \
 		--bind 0.0.0.0:8000 \
 		--timeout 120 \
 		--workers 2 \
