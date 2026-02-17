@@ -32,4 +32,4 @@ jobs:
           ssh calculum@srv.aediroum.ca "cd /srv/calculum && source calculum-venv/venv/bin/activate && git pull origin main && pip install --upgrade pip && pip install -r requirements.txt && python manage.py check || exit 1"
       
       - name: Deploy
-        run: make deploy
+        run: timeout 120 make deploy
