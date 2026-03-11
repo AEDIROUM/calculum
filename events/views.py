@@ -15,7 +15,7 @@ _HOP_BY_HOP = frozenset({
 
 
 def events(request: HttpRequest) -> HttpResponse:
-    visible = Event.objects.prefetch_related('medias').filter(hidden=False).order_by('-title')
+    visible = Event.objects.prefetch_related('medias').filter(hidden=False).order_by('-start')
     return render(request, 'events.html', context={'events': visible})
 
 
