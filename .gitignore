@@ -216,4 +216,10 @@ temp/
 temp.*
 tmp/
 tmp.*
-html/ #Old server
+html/ #Old servergunicorn.pid
+server.log
+monitor.log
+restart.log
+get-pip.py
+project/staticfiles/
+html/
