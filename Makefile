@@ -70,4 +70,4 @@ debug:
 	@ssh $(REMOTE) "pkill -f 'gunicorn.*project.wsgi'" 2>/dev/null || true
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && DEBUG=True calculum-venv/venv/bin/gunicorn project.wsgi:application --bind 0.0.0.0:8000 --timeout 120 --workers 2 --max-requests 1000 --max-requests-jitter 50 --graceful-timeout 30 --access-logfile $(REMOTE_DIR)/server.log --error-logfile $(REMOTE_DIR)/server.log --log-level debug --daemon --pid $(REMOTE_DIR)/gunicorn.pid --log-file $(REMOTE_DIR)/server.log"
 	@echo "📋 Tailing logs (Ctrl+C to stop)..."
-	@ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log" | grep -v "/static/"
+	@ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log" | grep -v "/static/" | grep -v "jsi18n" | grep -v " 304 "
