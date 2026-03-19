@@ -11,18 +11,10 @@ admin.site.index_title = "Applications"
 admin.site.site_url = None
 
 
-class ProblemInline(admin.TabularInline):
-    model = Problem.meets.through
-    extra = 1
-    verbose_name = "Problem"
-    verbose_name_plural = "Problems"
-
-
 class MeetAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'session', 'contest_link', 'problem_count')
     list_filter = ('session',)
     search_fields = ('description', 'contest_link')
-    inlines = [ProblemInline]
 
     def problem_count(self, obj):
         return obj.problems.count()
@@ -72,7 +64,7 @@ class ProblemAdmin(admin.ModelAdmin):
     filter_horizontal = ('meets', 'categories')
     list_display = ('__str__', 'platform', 'difficulty_display', 'categories_list', 'meets_list')
     list_filter = ('platform', 'categories', HasDifficultyFilter)
-    ordering = ['platform', 'link']
+    ordering = ['-id']
 
     def difficulty_display(self, obj):
         if not obj.difficulty:
@@ -94,6 +86,10 @@ class ProblemAdmin(admin.ModelAdmin):
     meets_list.short_description = 'Meets'
 
     actions = ['fetch_difficulties', 'clear_categories']
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+        print(f"SAVED pk={obj.pk} categories={form.cleaned_data.get('categories')} meets={form.cleaned_data.get('meets')}")
 
     def fetch_difficulties(self, request, queryset):
         success, failed, skipped = 0, 0, 0
