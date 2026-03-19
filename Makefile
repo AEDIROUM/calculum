@@ -67,5 +67,5 @@ monitor-restart:
 
 debug:
 	@echo "🔄 Restarting with DEBUG=True..."
-	@ssh $(REMOTE) "systemctl --user stop calculum-monitor.service && pkill -f 'gunicorn.*project.wsgi'; sleep 2" 2>/dev/null; true
+	@ssh $(REMOTE) "systemctl --user stop calculum-monitor.service; pkill -f 'gunicorn.*project.wsgi'; pkill -f 'runserver'; sleep 1" 2>/dev/null; true
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && DEBUG=True python manage.py runserver 0.0.0.0:8000 --noreload"
