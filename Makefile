@@ -68,4 +68,4 @@ monitor-restart:
 debug:
 	@echo "🔄 Restarting with DEBUG=True..."
 	@ssh $(REMOTE) "systemctl --user stop calculum-monitor.service; pkill -f 'gunicorn.*project.wsgi'" 2>/dev/null || true
-	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && DEBUG=True calculum-venv/venv/bin/gunicorn project.wsgi:application --bind 0.0.0.0:8000 --timeout 120 --workers 2 --log-level debug --access-logfile - --error-logfile -" | grep -v "/static/" | grep -v "jsi18n"
+	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && DEBUG=True calculum-venv/venv/bin/python manage.py runserver"
