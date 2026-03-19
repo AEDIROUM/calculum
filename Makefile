@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 REMOTE=calculum@srv.aediroum.ca
 REMOTE_DIR=/srv/calculum
 
@@ -29,7 +30,7 @@ deploy:
 	@echo "🧹 Cleaning up orphaned media files..."
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && python manage.py cleanup_media_files 2>/dev/null" || echo "  ⊘ Cleanup skipped (command not installed yet)"
 	@echo "🌐 Starting server..."
-	@ssh $(REMOTE) "cd $(REMOTE_DIR) && calculum-venv/venv/bin/gunicorn project.wsgi:application --bind 0.0.0.0:8000 --timeout 120 --workers 2 --max-requests 1000 --max-requests-jitter 50 --graceful-timeout 30 --daemon --pid $(REMOTE_DIR)/gunicorn.pid --log-file $(REMOTE_DIR)/server.log"
+	@ssh $(REMOTE) "cd $(REMOTE_DIR) && calculum-venv/venv/bin/gunicorn project.wsgi:application --bind 0.0.0.0:8000 --timeout 120 --workers 2 --max-requests 1000 --max-requests-jitter 50 --graceful-timeout 30 --access-logfile $(REMOTE_DIR)/server.log --error-logfile $(REMOTE_DIR)/server.log --log-level debug --daemon --pid $(REMOTE_DIR)/gunicorn.pid --log-file $(REMOTE_DIR)/server.log"
 	@echo "🔄 Restarting monitor service for safety..."
 	@ssh $(REMOTE) "systemctl --user restart calculum-monitor.service"
 	@echo "✅ Deployed!"
@@ -41,7 +42,7 @@ stop:
 
 # View logs
 logs:
-	@ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log"
+	@ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log" | grep -v "/static/"
 
 # Monitor service status
 monitor-status:
@@ -64,6 +65,9 @@ monitor-restart:
 	@ssh $(REMOTE) "systemctl --user restart calculum-monitor.service"
 	@echo "✅ Monitor restarted"
 
-# Local development
-runserver:
-	@python manage.py runserver
+debug:
+	@echo "🔄 Restarting with DEBUG=True..."
+	@ssh $(REMOTE) "pkill -f 'gunicorn.*project.wsgi'" 2>/dev/null || true
+	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && DEBUG=True calculum-venv/venv/bin/gunicorn project.wsgi:application --bind 0.0.0.0:8000 --timeout 120 --workers 2 --max-requests 1000 --max-requests-jitter 50 --graceful-timeout 30 --access-logfile $(REMOTE_DIR)/server.log --error-logfile $(REMOTE_DIR)/server.log --log-level debug --daemon --pid $(REMOTE_DIR)/gunicorn.pid --log-file $(REMOTE_DIR)/server.log"
+	@echo "📋 Tailing logs (Ctrl+C to stop)..."
+	@ssh $(REMOTE) "tail -f $(REMOTE_DIR)/server.log" | grep -v "/static/"
