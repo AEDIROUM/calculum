@@ -22,7 +22,7 @@ class MeetAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'session', 'contest_link', 'problem_count')
     list_filter = ('session',)
     search_fields = ('description', 'contest_link')
-    # inlines = [ProblemInline]
+    inlines = [ProblemInline]
 
     def problem_count(self, obj):
         return obj.problems.count()
