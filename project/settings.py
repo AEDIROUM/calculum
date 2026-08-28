@@ -36,26 +36,65 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = _env_bool('DEBUG', False)
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': BASE_DIR / 'cache',
+    }
+}
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'default': {
+            'format': '{asctime} {levelname} {name}: {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
+            'formatter': 'default',
+        },
+        'file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR / 'logs' / 'app.log',
+            'maxBytes': 5 * 1024 * 1024,  # 5 MB
+            'backupCount': 5,
+            'formatter': 'default',
         },
     },
     'root': {
-        'handlers': ['console'],
+        'handlers': ['file'],
         'level': 'DEBUG' if DEBUG else 'WARNING',
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['file'],
             'level': 'DEBUG' if DEBUG else 'WARNING',
+            'propagate': False,
+        },
+        # Bots constantly probe with bogus Host headers or scan for
+        # nonexistent paths. BotShieldMiddleware blocks most of this
+        # before Django even routes it; this quiets what's left so a
+        # spike in bot traffic doesn't drown out real errors, and the
+        # rotating file handler above means nothing grows unbounded
+        # regardless of traffic.
+        'django.security.DisallowedHost': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'ERROR',
             'propagate': False,
         },
     },
 }
+os.makedirs(BASE_DIR / 'logs', exist_ok=True)
+os.makedirs(BASE_DIR / 'cache', exist_ok=True)
 domain = os.environ.get('DOMAIN', '').strip()
 
 ALLOWED_HOSTS = [domain]
@@ -84,6 +123,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'project.middleware.BotShieldMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
