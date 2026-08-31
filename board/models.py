@@ -288,7 +288,7 @@ class Problem(models.Model):
             self._fetch_kattis_difficulty()
         elif 'leetcode.com' in self.link:
             self._fetch_leetcode_difficulty()
-        return self.difficulty or "—"
+        return self.difficulty or "-"
 
     def get_difficulty_level(self):
         """Return easy/medium/hard for styling"""

@@ -67,11 +67,7 @@
 						<div class="problem-categories">{% for category in problem.categories.all %}{{ category.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</div>
 						{% endif %}
 					</td>
-					<td data-label="Difficulté">
-						{% if problem.platform == 'Kattis' or problem.platform == 'LeetCode' %}
-							{% with diff=problem.get_difficulty %}{% if diff != "-" %}{{ diff }}{% else %}-{% endif %}{% endwith %}
-						{% else %}-{% endif %}
-					</td>
+					<td data-label="Difficulté">{{ problem.get_difficulty }}</td>
 					<td data-label="Liens">
 						{% if "http" in problem.link %}<a href="{{ problem.link }}" class="btn-sm" target="_blank" rel="noopener">Problème</a>{% endif %}
 						{% if problem.solution_link and "http" in problem.solution_link %}<a href="{{ problem.solution_link }}" class="btn-sm" target="_blank" rel="noopener">Solution</a>{% endif %}
