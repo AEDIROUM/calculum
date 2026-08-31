@@ -18,20 +18,21 @@
 }
 
 .error-title {
-	font-size: 2rem;
-	color: #e74c3c;
+	font-family: var(--serif);
+	font-size: 1.75rem;
+	color: var(--bad);
 	margin-bottom: 1rem;
 }
 
 .error-message {
-	font-size: 1.2rem;
-	color: #bdc3c7;
+	font-size: 1.1rem;
+	color: var(--ink-dim);
 	margin-bottom: 0.5rem;
 }
 
 .error-detail {
 	font-size: 0.9rem;
-	color: #7f8c8d;
+	color: var(--ink-dim);
 	margin-bottom: 2rem;
 	font-style: italic;
 }
@@ -45,27 +46,25 @@
 }
 
 .error-button {
-	background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-	color: white;
-	padding: 0.8rem 1.5rem;
-	border-radius: 6px;
+	background: var(--accent);
+	color: #fff;
+	padding: 0.6rem 1.3rem;
+	border-radius: 4px;
 	text-decoration: none;
 	font-weight: 600;
-	transition: all 0.2s ease;
 }
 
 .error-button:hover {
-	background: linear-gradient(135deg, #2980b9 0%, #1f618d 100%);
-	transform: translateY(-2px);
-	color: white;
+	background: var(--accent-dim);
+	color: #fff;
 }
 
 .error-button.secondary {
-	background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+	background: var(--ink-dim);
 }
 
 .error-button.secondary:hover {
-	background: linear-gradient(135deg, #7f8c8d 0%, #6c7a89 100%);
+	background: var(--ink);
 }
 
 @media (max-width: 768px) {
