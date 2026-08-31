@@ -60,12 +60,6 @@
 		margin-bottom: 0.5rem;
 	}
 
-	.complexity-badge {
-		border: 1px solid #000 !important;
-		background: white !important;
-		color: #000 !important;
-	}
-
 	.print-button {
 		display: none !important;
 	}
@@ -166,30 +160,15 @@
 }
 
 .complexity-info {
-	display: flex;
-	gap: .4rem;
-	margin-bottom: .6rem;
-	flex-wrap: wrap;
-}
-
-.complexity-badge {
-	font-size: .72rem;
-	padding: .22rem .55rem;
-	border-radius: 12px;
-	font-weight: 600;
 	font-family: var(--mono);
-	background: #fff;
-	border: 1px solid var(--rule-strong);
+	font-size: .78rem;
+	color: var(--ink-dim);
+	margin-bottom: .5rem;
 }
 
-.complexity-badge.time {
-	color: var(--good);
-	border-color: var(--good);
-}
-
-.complexity-badge.space {
-	color: var(--accent);
-	border-color: var(--accent);
+.complexity-info .sep {
+	margin: 0 .35rem;
+	color: var(--rule-strong);
 }
 
 .algo-section pre {

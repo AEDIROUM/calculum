@@ -12,19 +12,19 @@
 </head>
 <body>
 	<header>
-		<div class="header-content">
-			<h1>Calculum UdeM</h1>
-			<div class="header-buttons">
+		<div class="header-inner">
+			<div class="header-actions">
 				<a href="{% url 'noob' %}" class="new-member-btn" title="Êtes vous nouveau ?">Êtes vous nouveau ?</a>
 				<a href="{% url 'admin:index' %}" target="_blank" class="admin-btn" title="Administration">Admin</a>
 			</div>
+			<h1><img src="{% static 'favicon.ico' %}" alt="" width="20" height="20">Calculum UdeM</h1>
+			<nav>
+				<a href="/">Info</a><span class="sep">·</span>
+				<a href="{% url 'meets' %}">Rencontres</a><span class="sep">·</span>
+				<a href="{% url 'events' %}">Événements</a><span class="sep">·</span>
+				<a href="{% url 'cheatsheet' %}">Aide-mémoire</a>
+			</nav>
 		</div>
-		<nav>
-			<a href="/">Info</a>
-			<a href="{% url 'meets' %}">Rencontres</a>
-			<a href="{% url 'events' %}">Événements</a>
-			<a href="{% url 'cheatsheet' %}">Aide-mémoire</a>
-		</nav>
 	</header>
 	<main>
 		{% block content %}{% endblock %}

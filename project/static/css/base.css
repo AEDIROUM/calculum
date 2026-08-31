@@ -37,43 +37,55 @@ a { color: var(--accent); }
 a:hover { color: var(--accent-dim); }
 
 header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
 	background: var(--paper);
-	border-bottom: 1px solid var(--rule);
-	padding: .75rem 1.5rem .55rem;
+	border-bottom: 3px double var(--rule-strong);
+	padding: .45rem 1.25rem .35rem;
 }
 
-.header-content {
+.header-inner {
 	max-width: var(--container);
 	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1rem;
-	flex-wrap: wrap;
+	position: relative;
 }
 
 header h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .4rem;
 	font-family: var(--serif);
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: 700;
 	letter-spacing: .01em;
 	color: var(--ink);
+	text-align: center;
+	margin-bottom: .2rem;
 }
 
-.header-buttons {
+header h1 img {
+	width: 1.1em;
+	height: 1.1em;
+}
+
+.header-actions {
+	position: absolute;
+	top: 0;
+	right: 0;
 	display: flex;
-	gap: .6rem;
+	gap: .5rem;
 	align-items: center;
-	flex-wrap: wrap;
 }
 
 .new-member-btn {
 	background: var(--accent);
 	color: #fff;
 	text-decoration: none;
-	padding: .45rem .9rem;
+	padding: .3rem .7rem;
 	border-radius: 4px;
-	font-size: .85rem;
+	font-size: .78rem;
 	font-weight: 600;
 	transition: background .15s ease;
 	white-space: nowrap;
@@ -84,27 +96,27 @@ header h1 {
 .admin-btn {
 	color: var(--ink-dim);
 	text-decoration: none;
-	padding: .45rem .6rem;
+	padding: .3rem .4rem;
 	border-radius: 4px;
-	font-size: 1.1rem;
+	font-size: .82rem;
 	transition: color .15s ease;
 }
 
 .admin-btn:hover { color: var(--ink); }
 
 nav {
-	max-width: var(--container);
-	margin: .4rem auto 0;
 	display: flex;
-	gap: 1.4rem;
 	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: 1rem;
+	row-gap: .2rem;
+	font-size: .88rem;
 }
 
 nav a {
 	color: var(--ink-dim);
 	text-decoration: none;
-	padding: .2rem 0;
-	font-size: .92rem;
+	padding-bottom: .15rem;
 	border-bottom: 2px solid transparent;
 }
 
@@ -114,6 +126,10 @@ nav a.active {
 	color: var(--ink);
 	border-bottom-color: var(--accent);
 	font-weight: 600;
+}
+
+nav .sep {
+	color: var(--rule-strong);
 }
 
 main {
@@ -151,34 +167,133 @@ footer {
 	height: 18px;
 }
 
+/* ===================================================== shared components === */
+h2 {
+	font-family: var(--serif);
+	font-size: 1.15rem;
+	font-weight: 700;
+	margin-bottom: .5rem;
+	border-bottom: 1px solid var(--rule);
+	padding-bottom: .25rem;
+}
+
+.card {
+	border: 1px solid var(--rule);
+	background: #fff;
+	padding: .6rem 1rem;
+	margin-bottom: .6rem;
+	border-radius: 4px;
+}
+
+.card-title {
+	font-size: .74rem;
+	font-weight: 700;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	color: var(--ink-dim);
+	margin-bottom: .3rem;
+	border-bottom: 1px solid var(--rule);
+	padding-bottom: .15rem;
+}
+
+.btn-sm {
+	display: inline-block;
+	background: var(--paper);
+	color: var(--ink);
+	border: 1px solid var(--rule-strong);
+	padding: .12rem .55rem;
+	font-size: .74rem;
+	font-weight: 600;
+	text-decoration: none;
+	white-space: nowrap;
+	border-radius: 3px;
+}
+
+.btn-sm:hover { background: var(--paper-2); }
+
+.table-wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+table {
+	width: 100%;
+	min-width: 460px;
+	border-collapse: collapse;
+	font-size: .88rem;
+}
+
+th {
+	text-align: left;
+	padding: .3rem .6rem;
+	font-weight: 700;
+	font-size: .72rem;
+	letter-spacing: .03em;
+	text-transform: uppercase;
+	color: var(--ink-dim);
+	border-bottom: 2px solid var(--rule-strong);
+	white-space: nowrap;
+}
+
+td {
+	padding: .35rem .6rem;
+	border-bottom: 1px solid var(--rule);
+	vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+
+/* Below this width, a multi-column table stops fitting without
+   horizontal scroll, so it's presented as a stack of labelled rows
+   instead of asking the reader to scroll sideways. */
+@media (max-width: 640px) {
+	table.stacked { min-width: 0; }
+	table.stacked thead { display: none; }
+	table.stacked, table.stacked tbody, table.stacked tr, table.stacked td { display: block; width: 100%; }
+	table.stacked tr { border-bottom: 1px solid var(--rule); padding: .4rem 0; }
+	table.stacked tr:last-child { border-bottom: none; }
+	table.stacked td {
+		border-bottom: none; padding: .15rem 0; white-space: normal;
+	}
+	table.stacked td::before {
+		content: attr(data-label); display: block; font-size: .7rem;
+		color: var(--ink-dim); text-transform: uppercase; letter-spacing: .03em;
+	}
+}
+
+.pager {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	margin-top: .75rem;
+	padding-top: .75rem;
+	border-top: 1px solid var(--rule);
+	font-size: .88rem;
+}
+
+.pager a { text-decoration: none; }
+.pager-current { color: var(--ink-dim); }
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 	header {
-		padding: .9rem 1rem .7rem;
+		padding: .8rem 1rem .55rem 1rem;
 	}
 
-	.header-content {
-		flex-direction: column;
-		align-items: stretch;
-		gap: .6rem;
+	.header-actions {
+		position: static;
+		justify-content: center;
+		margin-bottom: .4rem;
 	}
 
 	header h1 {
-		font-size: 1.25rem;
-		text-align: center;
-	}
-
-	.header-buttons {
-		justify-content: center;
+		font-size: 1.1rem;
 	}
 
 	nav {
-		gap: .5rem;
-		justify-content: center;
-	}
-
-	nav a {
-		font-size: .85rem;
+		column-gap: .7rem;
+		font-size: .82rem;
 	}
 
 	main {

@@ -11,7 +11,7 @@
 {% block content %}
 <div class="board-header">
 	<h2>Rencontres</h2>
-	
+
 	{% if sessions %}
 	<div class="session-selector">
 		<label for="session-select">Session:</label>
@@ -27,90 +27,73 @@
 </div>
 
 {% if selected_session %}
-<div class="session-info-card">
-	<h3>{{ selected_session.get_season_display }} {{ selected_session.year }}</h3>
-	<div class="session-details">
-		{{ selected_session.local }} · {{ selected_session.get_day_display }} · {{ selected_session.time|time:"H:i" }}
-	</div>
+<div class="card">
+	<div class="card-title">{{ selected_session.get_season_display }} {{ selected_session.year }}</div>
+	{{ selected_session.local }} &middot; {{ selected_session.get_day_display }} &middot; {{ selected_session.time|time:"H:i" }}
 </div>
 {% endif %}
 
 {% if has_meets %}
 	{% for meet in meets %}
-	<div class="meet-card {% if forloop.first %}most-recent{% endif %}">
+	<div class="card meet-card {% if forloop.first and page.number == 1 %}most-recent{% endif %}">
 		<div class="meet-header">
 			<div>
-				<div class="meet-title">Rencontre {{ meet.date|date:"d/m/Y" }}</div>
+				<span class="meet-title">Rencontre {{ meet.date|date:"d/m/Y" }}</span>
 				{% if meet.managers.all %}
-				<div class="meet-managers">
-					{% for manager in meet.managers.all %}
-					<span class="meet-manager">Animée par: {{ manager.first_name }} {{ manager.last_name }}</span>
-					{% endfor %}
-				</div>
+				<span class="meet-managers">
+					{% for manager in meet.managers.all %}Animée par {{ manager.first_name }} {{ manager.last_name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+				</span>
 				{% endif %}
 			</div>
 			{% if meet.contest_link %}
-			<a href="{{ meet.contest_link }}" class="contest-button" target="_blank" rel="noopener">Contest</a>
+			<a href="{{ meet.contest_link }}" class="btn-sm" target="_blank" rel="noopener">Contest</a>
 			{% endif %}
 		</div>
 		{% if meet.description %}
 		<p class="meet-description">{{ meet.description }}</p>
 		{% endif %}
-		
+
 		{% if meet.sorted_problems %}
-		<div class="problems-section">
-			<h4>Problèmes</h4>
-			{% for problem in meet.sorted_problems %}
-			<div class="problem-item">
-				<div class="problem-info">
-					<span class="problem-platform">{{ problem.platform }}</span>
-					{% if problem.extracted_title %}
-					<span class="problem-title">{{ problem.extracted_title }}</span>
-					{% endif %}
-					
-					{# Display categories if any #}
-					{% if problem.categories.all %}
-					<div class="problem-categories">
-						{% for category in problem.categories.all %}
-						<span class="problem-category">{{ category.name }}</span>
-						{% endfor %}
-					</div>
-					{% endif %}
-					
-					{# Enhanced difficulty display with colors #}
-					{% if problem.platform == 'Kattis' or problem.platform == 'LeetCode' %}
-						{% with diff=problem.get_difficulty level=problem.get_difficulty_level %}
-						{% if diff != "—" %}
-						<span class="problem-difficulty difficulty-{{ level|default:'unknown' }}">
-							{{ diff }}
-						</span>
+		<div class="table-wrap">
+		<table class="stacked">
+			<thead>
+				<tr><th>Plateforme</th><th>Problème</th><th>Difficulté</th><th>Liens</th></tr>
+			</thead>
+			<tbody>
+				{% for problem in meet.sorted_problems %}
+				<tr>
+					<td data-label="Plateforme">{{ problem.platform }}</td>
+					<td data-label="Problème">
+						{% if problem.extracted_title %}{{ problem.extracted_title }}{% else %}&mdash;{% endif %}
+						{% if problem.categories.all %}
+						<div class="problem-categories">{% for category in problem.categories.all %}{{ category.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</div>
 						{% endif %}
-						{% endwith %}
-					{% endif %}
-				</div>
-				<div class="problem-links">
-					{% if "http" in problem.link %}
-					<a href="{{ problem.link }}" class="problem-link" target="_blank" rel="noopener">Problème</a>
-					{% else %}
-					<span class="problem-link no-link">{{ problem.link }}</span>
-					{% endif %}
-					
-					{% if problem.solution_link %}
-						{% if "http" in problem.solution_link %}
-						<a href="{{ problem.solution_link }}" class="solution-link has-solution" target="_blank" rel="noopener">Solution</a>
-						{% else %}
-						<span class="solution-link has-solution no-link">{{ problem.solution_link }}</span>
-						{% endif %}
-					{% else %}
-					<span class="solution-link no-solution">Pas de solution</span>
-					{% endif %}
-				</div>
-			</div>
-			{% endfor %}
+					</td>
+					<td data-label="Difficulté">
+						{% if problem.platform == 'Kattis' or problem.platform == 'LeetCode' %}
+							{% with diff=problem.get_difficulty %}{% if diff != "—" %}{{ diff }}{% else %}&mdash;{% endif %}{% endwith %}
+						{% else %}&mdash;{% endif %}
+					</td>
+					<td data-label="Liens">
+						{% if "http" in problem.link %}<a href="{{ problem.link }}" class="btn-sm" target="_blank" rel="noopener">Problème</a>{% endif %}
+						{% if problem.solution_link and "http" in problem.solution_link %}<a href="{{ problem.solution_link }}" class="btn-sm" target="_blank" rel="noopener">Solution</a>{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 		</div>
 		{% endif %}
 	</div>
 	{% endfor %}
+
+	{% if page.paginator.num_pages > 1 %}
+	<nav class="pager">
+		{% if page.has_previous %}<a href="?session={{ selected_session.id }}&page={{ page.previous_page_number }}">&larr; Plus récent</a>{% endif %}
+		<span class="pager-current">Page {{ page.number }} / {{ page.paginator.num_pages }}</span>
+		{% if page.has_next %}<a href="?session={{ selected_session.id }}&page={{ page.next_page_number }}">Plus ancien &rarr;</a>{% endif %}
+	</nav>
+	{% endif %}
 {% else %}
 	<div class="no-meets">
 		<h3>Aucune rencontre pour cette session</h3>

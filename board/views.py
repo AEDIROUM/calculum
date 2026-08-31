@@ -1,8 +1,11 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from board.models import Meet, Session
 from datetime import datetime
 import re
+
+MEETS_PER_PAGE = 5
 
 
 def meets(request: HttpRequest) -> HttpResponse:
@@ -43,10 +46,11 @@ def meets(request: HttpRequest) -> HttpResponse:
             selected_session = sessions.first()
     
     # Get meets for selected session
+    page = None
     session_meets = []
     if selected_session:
         session_meets = meets.filter(session=selected_session)
-        
+
         # Extract problem titles and sort problems by __str__
         for meet in session_meets:
             problems = list(meet.problems.all())
@@ -60,7 +64,11 @@ def meets(request: HttpRequest) -> HttpResponse:
             # Sort problems by their __str__
             problems.sort(key=lambda p: str(p))
             meet.sorted_problems = problems
-    
+
+        paginator = Paginator(session_meets, MEETS_PER_PAGE)
+        page = paginator.get_page(request.GET.get('page'))
+        session_meets = page.object_list
+
     return render(
         request,
         'board.html',
@@ -68,6 +76,7 @@ def meets(request: HttpRequest) -> HttpResponse:
             'sessions': sessions,
             'selected_session': selected_session,
             'meets': session_meets,
+            'page': page,
             'has_meets': len(session_meets) > 0
         }
     )
