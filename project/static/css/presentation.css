@@ -5,25 +5,25 @@
 
 .hero {
 	text-align: center;
-	padding: 2.4rem 1.5rem 1.6rem;
+	padding: .6rem 1.5rem 1.1rem;
 }
 
 .hero h2 {
 	font-family: var(--serif);
-	font-size: 2.8rem;
+	font-size: 2.2rem;
 	color: var(--ink);
 	border-bottom: none;
-	margin-bottom: .7rem;
+	margin-bottom: .5rem;
 	padding-bottom: 0;
 	letter-spacing: .01em;
 }
 
 .hero .tagline {
 	color: var(--ink-dim);
-	font-size: 1.15rem;
+	font-size: 1.05rem;
 	max-width: 52ch;
 	margin: 0 auto;
-	line-height: 1.6;
+	line-height: 1.55;
 }
 
 .next-meet {
@@ -31,22 +31,22 @@
 	border: 1px solid var(--rule-strong);
 	border-left: 3px solid var(--accent);
 	border-radius: 8px;
-	padding: 1.3rem 1.6rem;
+	padding: .9rem 1.4rem;
 	text-align: center;
-	margin: 2rem 0;
+	margin: 0 0 1.1rem;
 }
 
 .next-meet-label {
-	font-size: .76rem;
+	font-size: .72rem;
 	text-transform: uppercase;
 	letter-spacing: .08em;
 	color: var(--accent);
 	font-weight: 700;
-	margin-bottom: .4rem;
+	margin-bottom: .3rem;
 }
 
 .next-meet-details {
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	color: var(--ink);
 	font-weight: 600;
 }
@@ -54,7 +54,7 @@
 .highlight-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 1.1rem;
+	gap: .9rem;
 }
 
 .highlight-tile {
@@ -62,49 +62,49 @@
 	border: 1px solid var(--rule);
 	border-top: 2px solid var(--accent);
 	border-radius: 6px;
-	padding: 1.3rem 1.3rem 1.4rem;
+	padding: .9rem 1rem 1rem;
 }
 
 .highlight-num {
 	font-family: var(--mono);
-	font-size: .78rem;
+	font-size: .74rem;
 	color: var(--rule-strong);
-	margin-bottom: .5rem;
+	margin-bottom: .35rem;
 }
 
 .highlight-tile h3 {
-	font-size: 1.1rem;
+	font-size: 1.05rem;
 	color: var(--ink);
-	margin-bottom: .5rem;
+	margin-bottom: .35rem;
 }
 
 .highlight-tile p {
 	color: var(--ink-dim);
-	font-size: .9rem;
-	line-height: 1.55;
+	font-size: .88rem;
+	line-height: 1.5;
 }
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 	.hero {
-		padding: 1.6rem 1rem 1.2rem;
+		padding: .3rem 1rem .9rem;
 	}
 
 	.hero h2 {
-		font-size: 1.9rem;
+		font-size: 1.7rem;
 	}
 
 	.hero .tagline {
-		font-size: .95rem;
+		font-size: .92rem;
 	}
 
 	.next-meet {
-		padding: .9rem 1.1rem;
-		margin: 1.3rem 0;
+		padding: .8rem 1rem;
+		margin: 0 0 .9rem;
 	}
 
 	.next-meet-details {
-		font-size: 1.05rem;
+		font-size: 1rem;
 	}
 
 	.highlight-grid {
