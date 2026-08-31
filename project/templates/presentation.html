@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="{% static 'css/presentation.css' %}">
 {% endblock %}
 
+{% block main_class %}home{% endblock %}
+
 {% block content %}
 <div class="presentation-container">
 	<section class="hero">
@@ -25,14 +27,17 @@
 
 	<div class="highlight-grid">
 		<div class="highlight-tile">
+			<div class="highlight-num">01</div>
 			<h3>Casse-têtes</h3>
 			<p>Problèmes algorithmiques jugés automatiquement sur Kattis, Codeforces, LeetCode et AtCoder.</p>
 		</div>
 		<div class="highlight-tile">
+			<div class="highlight-num">02</div>
 			<h3>Compétitions</h3>
 			<p>ICPC en équipe de 3, CS Games interuniversitaire, Advent of Code et bien d'autres.</p>
 		</div>
 		<div class="highlight-tile">
+			<div class="highlight-num">03</div>
 			<h3>Communauté</h3>
 			<p>Rencontres hebdomadaires, code reviews et préparation aux entrevues techniques, entre passionnés.</p>
 		</div>
