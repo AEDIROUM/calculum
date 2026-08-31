@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="board-header">
-	<h2>📋 Rencontres</h2>
+	<h2>Rencontres</h2>
 	
 	{% if sessions %}
 	<div class="session-selector">
@@ -30,7 +30,7 @@
 <div class="session-info-card">
 	<h3>{{ selected_session.get_season_display }} {{ selected_session.year }}</h3>
 	<div class="session-details">
-		📍 {{ selected_session.local }} • {{ selected_session.get_day_display }} • 🕐 {{ selected_session.time|time:"H:i" }}
+		{{ selected_session.local }} · {{ selected_session.get_day_display }} · {{ selected_session.time|time:"H:i" }}
 	</div>
 </div>
 {% endif %}
@@ -50,7 +50,7 @@
 				{% endif %}
 			</div>
 			{% if meet.contest_link %}
-			<a href="{{ meet.contest_link }}" class="contest-button" target="_blank" rel="noopener">🏆 Contest</a>
+			<a href="{{ meet.contest_link }}" class="contest-button" target="_blank" rel="noopener">Contest</a>
 			{% endif %}
 		</div>
 		{% if meet.description %}

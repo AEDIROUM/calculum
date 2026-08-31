@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 1.5rem;
+	margin-bottom: .9rem;
 	flex-wrap: wrap;
 	gap: 1rem;
 }
@@ -46,9 +46,9 @@
 	background: var(--paper-2);
 	border: 1px solid var(--rule);
 	color: var(--ink);
-	padding: 1rem 1.25rem;
+	padding: .6rem 1.1rem;
 	border-radius: 4px;
-	margin-bottom: 1.5rem;
+	margin-bottom: .9rem;
 }
 
 .session-info-card h3 {
@@ -66,8 +66,8 @@
 	background: #fff;
 	border: 1px solid var(--rule);
 	border-left: 3px solid var(--accent);
-	padding: 1.1rem 1.25rem;
-	margin-bottom: 1.1rem;
+	padding: .75rem 1rem;
+	margin-bottom: .7rem;
 	border-radius: 4px;
 }
 
@@ -79,7 +79,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: .75rem;
+	margin-bottom: .4rem;
 	flex-wrap: wrap;
 	gap: .5rem;
 }
@@ -150,7 +150,7 @@
 .contest-button:hover { background: #94531a; color: #fff; }
 
 .problems-section {
-	margin: .8rem 0;
+	margin: .5rem 0;
 }
 
 .problems-section h4 {
@@ -163,8 +163,8 @@
 
 .problem-item {
 	background: var(--paper-2);
-	padding: .8rem 1rem;
-	margin-bottom: .45rem;
+	padding: .55rem .85rem;
+	margin-bottom: .3rem;
 	border-radius: 4px;
 	display: flex;
 	justify-content: space-between;

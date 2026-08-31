@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -13,10 +14,14 @@ _HOP_BY_HOP = frozenset({
     'te', 'trailers', 'transfer-encoding', 'upgrade',
 })
 
+EVENTS_PER_PAGE = 5
+
 
 def events(request: HttpRequest) -> HttpResponse:
     visible = Event.objects.prefetch_related('medias').filter(hidden=False).order_by('-start')
-    return render(request, 'events.html', context={'events': visible})
+    paginator = Paginator(visible, EVENTS_PER_PAGE)
+    page = paginator.get_page(request.GET.get('page'))
+    return render(request, 'events.html', context={'events': page, 'page': page})
 
 
 @csrf_exempt

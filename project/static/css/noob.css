@@ -6,7 +6,7 @@
 .welcome-section {
 	background: #fff;
 	border: 1px solid var(--rule);
-	padding: 1.75rem;
+	padding: 1.15rem 1.4rem;
 	border-radius: 6px;
 }
 
@@ -31,8 +31,8 @@
 }
 
 .guide-section {
-	margin-bottom: 1.5rem;
-	padding: 1.1rem 1.25rem;
+	margin-bottom: .8rem;
+	padding: .75rem 1rem;
 	background: var(--paper-2);
 	border-left: 3px solid var(--accent);
 	border-radius: 4px;
@@ -90,8 +90,8 @@
 }
 
 .next-steps {
-	margin-top: 2rem;
-	padding-top: 1.5rem;
+	margin-top: 1.1rem;
+	padding-top: .9rem;
 	border-top: 1px solid var(--rule);
 	display: flex;
 	gap: 1.2rem;
