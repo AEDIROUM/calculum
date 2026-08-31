@@ -9,24 +9,36 @@
 
 {% block content %}
 <div class="presentation-container">
-	<section class="presentation-section">
-		<div class="intro-row">
-			<div>
-				<h2>Bienvenue au Calculum</h2>
-				<p>Club d'algorithmique et de programmation compétitive de l'Université de Montréal. Casse-têtes, concours (ICPC, CS Games) et entraide, tous les niveaux bienvenus.</p>
-			</div>
-			<div class="info-inline">
-				<div><span class="info-label">Horaire</span>{% if last_session %}{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }}{% else %}À déterminer{% endif %}</div>
-				<div><span class="info-label">Local</span>{% if last_session %}{{ last_session.local|default:"À déterminer" }}{% else %}AA-3192{% endif %}</div>
-			</div>
-		</div>
-
+	<section class="hero">
+		<h2>Calculum</h2>
+		<p class="tagline">Le club d'algorithmique et de programmation compétitive de l'Université de Montréal.</p>
 		<div class="cta-section">
 			<a href="{% url 'noob' %}" class="cta-button">Nouveau? Commencer ici</a>
 			<a href="{% url 'meets' %}" class="cta-button cta-secondary">Voir les rencontres</a>
 			<a href="{% url 'events' %}" class="cta-button cta-secondary">Événements à venir</a>
 		</div>
 	</section>
+
+	<div class="info-inline">
+		<div><span class="info-label">Horaire</span>{% if last_session %}{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }}{% else %}À déterminer{% endif %}</div>
+		<div><span class="info-label">Local</span>{% if last_session %}{{ last_session.local|default:"À déterminer" }}{% else %}AA-3192{% endif %}</div>
+		<div><span class="info-label">Niveau</span>Débutant à expert</div>
+	</div>
+
+	<div class="highlight-grid">
+		<div class="highlight-tile">
+			<h3>Casse-têtes</h3>
+			<p>Problèmes algorithmiques jugés automatiquement sur Kattis, Codeforces, LeetCode et AtCoder.</p>
+		</div>
+		<div class="highlight-tile">
+			<h3>Compétitions</h3>
+			<p>ICPC en équipe de 3, CS Games interuniversitaire, Advent of Code et bien d'autres.</p>
+		</div>
+		<div class="highlight-tile">
+			<h3>Communauté</h3>
+			<p>Rencontres hebdomadaires, code reviews et préparation aux entrevues techniques, entre passionnés.</p>
+		</div>
+	</div>
 </div>
 
 {% block extra_scripts %}

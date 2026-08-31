@@ -1,43 +1,41 @@
 .presentation-container {
-	max-width: 700px;
+	max-width: 900px;
 	margin: 0 auto;
 }
 
-.presentation-section {
-	background: var(--paper-2);
-	border: 1px solid var(--rule);
-	padding: 1.15rem 1.4rem;
-	border-radius: 6px;
+.hero {
+	text-align: center;
+	padding: 2.2rem 1.5rem 1.8rem;
+	border-bottom: 1px solid var(--rule);
+	margin-bottom: 1.5rem;
 }
 
-.intro-row {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 1.5rem;
-	flex-wrap: wrap;
-}
-
-.intro-row h2 {
+.hero h2 {
 	font-family: var(--serif);
-	font-size: 1.4rem;
-	margin-bottom: .4rem;
+	font-size: 2.1rem;
 	color: var(--ink);
+	border-bottom: none;
+	margin-bottom: .5rem;
+	padding-bottom: 0;
 }
 
-.intro-row p {
+.hero .tagline {
 	color: var(--ink-dim);
-	line-height: 1.5;
+	font-size: 1.05rem;
 	max-width: 46ch;
+	margin: 0 auto 1.4rem;
+	line-height: 1.5;
 }
 
 .info-inline {
 	display: flex;
-	gap: 1.5rem;
-	flex-shrink: 0;
-	font-size: .92rem;
+	justify-content: center;
+	gap: 2.5rem;
+	flex-wrap: wrap;
+	text-align: center;
+	margin-bottom: 1.6rem;
+	font-size: .95rem;
 	color: var(--ink);
-	white-space: nowrap;
 }
 
 .info-inline .info-label {
@@ -46,14 +44,37 @@
 	text-transform: uppercase;
 	letter-spacing: .04em;
 	color: var(--ink-dim);
-	margin-bottom: .15rem;
+	margin-bottom: .2rem;
+}
+
+.highlight-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.highlight-tile {
+	background: var(--paper-2);
+	border: 1px solid var(--rule);
+	border-radius: 6px;
+	padding: 1.1rem 1.2rem;
+}
+
+.highlight-tile h3 {
+	font-size: 1rem;
+	color: var(--accent);
+	margin-bottom: .4rem;
+}
+
+.highlight-tile p {
+	color: var(--ink-dim);
+	font-size: .88rem;
+	line-height: 1.5;
 }
 
 .cta-section {
-	margin-top: 1rem;
-	padding-top: .9rem;
-	border-top: 1px solid var(--rule);
 	display: flex;
+	justify-content: center;
 	gap: .6rem;
 	flex-wrap: wrap;
 }
@@ -63,10 +84,10 @@
 	background: var(--accent);
 	color: #fff;
 	text-decoration: none;
-	padding: .5rem 1.1rem;
+	padding: .55rem 1.2rem;
 	border-radius: 4px;
 	font-weight: 600;
-	font-size: .9rem;
+	font-size: .92rem;
 }
 
 .cta-button:hover {
@@ -77,6 +98,7 @@
 .cta-button.cta-secondary {
 	background: var(--paper);
 	color: var(--ink);
+	border: 1px solid var(--rule-strong);
 }
 
 .cta-button.cta-secondary:hover {
@@ -85,17 +107,27 @@
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-	.presentation-section {
-		padding: 1.1rem;
+	.hero {
+		padding: 1.6rem 1rem 1.4rem;
 	}
 
-	.intro-row {
-		flex-direction: column;
-		gap: .6rem;
+	.hero h2 {
+		font-size: 1.6rem;
+	}
+
+	.hero .tagline {
+		font-size: .95rem;
+		margin-bottom: 1.1rem;
 	}
 
 	.info-inline {
-		gap: 1.2rem;
+		gap: 1.5rem;
+		margin-bottom: 1.2rem;
+	}
+
+	.highlight-grid {
+		grid-template-columns: 1fr;
+		gap: .8rem;
 	}
 
 	.cta-section {
