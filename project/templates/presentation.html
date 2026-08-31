@@ -11,18 +11,16 @@
 <div class="presentation-container">
 	<section class="hero">
 		<h2>Calculum</h2>
-		<p class="tagline">Le club d'algorithmique et de programmation compétitive de l'Université de Montréal.</p>
-		<div class="cta-section">
-			<a href="{% url 'noob' %}" class="cta-button">Nouveau? Commencer ici</a>
-			<a href="{% url 'meets' %}" class="cta-button cta-secondary">Voir les rencontres</a>
-			<a href="{% url 'events' %}" class="cta-button cta-secondary">Événements à venir</a>
-		</div>
+		<p class="tagline">Le club d'algorithmique et de programmation compétitive de l'Université de Montréal. Casse-têtes, concours et entraide, tous les niveaux bienvenus.</p>
 	</section>
 
-	<div class="info-inline">
-		<div><span class="info-label">Horaire</span>{% if last_session %}{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }}{% else %}À déterminer{% endif %}</div>
-		<div><span class="info-label">Local</span>{% if last_session %}{{ last_session.local|default:"À déterminer" }}{% else %}AA-3192{% endif %}</div>
-		<div><span class="info-label">Niveau</span>Débutant à expert</div>
+	<div class="next-meet">
+		<div class="next-meet-label">Prochaine rencontre</div>
+		{% if last_session %}
+		<div class="next-meet-details">{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }} &middot; {{ last_session.local|default:"local à déterminer" }}</div>
+		{% else %}
+		<div class="next-meet-details">Horaire à déterminer</div>
+		{% endif %}
 	</div>
 
 	<div class="highlight-grid">
