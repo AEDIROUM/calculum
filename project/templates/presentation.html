@@ -10,63 +10,52 @@
 {% block content %}
 <div class="presentation-container">
 	<section class="presentation-section">
-		<h2>Bienvenue au Calculum</h2>
-		<p>Club d'algorithmique et de programmation compétitive de l'Université de Montréal.</p>
-
-		<div class="info-grid">
-			<div class="info-card">
-				<h3>Horaire</h3>
-				{% if last_session %}
-					<p>{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }}</p>
-				{% else %}
-					<p>À déterminer ensemble.</p>
-				{% endif %}
+		<div class="intro-row">
+			<div>
+				<h2>Bienvenue au Calculum</h2>
+				<p>Club d'algorithmique et de programmation compétitive de l'Université de Montréal. Casse-têtes, concours et entraide, tous les niveaux bienvenus.</p>
 			</div>
-			<div class="info-card">
-				<h3>Local</h3>
-				{% if last_session %}
-					<p>{{ last_session.local|default:"À déterminer" }}</p>
-				{% else %}
-					<p>AA-3192</p>
-				{% endif %}
-				<p style="font-size: 0.9rem; margin-top: 0.5rem;">Pavillon André-Aisenstadt</p>
+			<div class="info-inline">
+				<div><span class="info-label">Horaire</span>{% if last_session %}{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }}{% else %}À déterminer{% endif %}</div>
+				<div><span class="info-label">Local</span>{% if last_session %}{{ last_session.local|default:"À déterminer" }}{% else %}AA-3192{% endif %}</div>
 			</div>
 		</div>
 
-		<h3>C'est quoi, la programmation compétitive?</h3>
-		<p>On vous donne des casse-têtes informatiques à résoudre, seul ou en équipe, en écrivant du code. Ça mêle algorithmique, programmation, logique et parfois travail d'équipe.</p>
-		<p>Trois grands types de problèmes:</p>
-		<ul>
-			<li><strong>Casse-têtes algorithmiques</strong>: on vous donne un problème et vous devez le résoudre pour n'importe quelle instance, avec des contraintes de temps et de mémoire. Un juge automatique teste votre code. Plateformes: Kattis, Codeforces, LeetCode, AtCoder.</li>
-			<li><strong>Code golf</strong>: écrire le programme le plus court possible, sur des sites comme code.golf.</li>
-			<li><strong>Affrontement de programmes</strong>: vos programmes s'affrontent directement selon des règles établies (Core War, Battlecode, Leek Wars, etc.)</li>
-		</ul>
+		<div class="presentation-columns">
+			<div>
+				<h3>La programmation compétitive</h3>
+				<p>Résoudre des problèmes algorithmiques, seul ou en équipe, sous contrainte de temps. Trois formats principaux:</p>
+				<ul>
+					<li><strong>Casse-têtes</strong> jugés automatiquement &mdash; Kattis, Codeforces, LeetCode, AtCoder</li>
+					<li><strong>Code golf</strong> &mdash; le programme le plus court possible</li>
+					<li><strong>Affrontement de programmes</strong> &mdash; Core War, Battlecode, Leek Wars</li>
+				</ul>
 
-		<h2>Compétitions</h2>
-		<ul>
-			<li><strong>ICPC</strong>: la référence en programmation compétitive universitaire. Équipes de 3 avec un coach, régionale en mars puis finales mondiales. Tous les niveaux sont bienvenus.</li>
-			<li><strong>CS Games</strong>: compétition inter-universitaire québécoise avec plusieurs épreuves (programmation, sécurité, IA) et un volet social.</li>
-			<li><strong>Autres</strong>: Advent of Code, Google Hash Code, Meta Hacker Cup, Battlecode.</li>
-		</ul>
+				<h3>Compétitions</h3>
+				<ul>
+					<li><strong>ICPC</strong> &mdash; équipes de 3, régionale en mars, finales mondiales</li>
+					<li><strong>CS Games</strong> &mdash; compétition interuniversitaire québécoise</li>
+					<li><strong>Autres</strong> &mdash; Advent of Code, Hash Code, Hacker Cup</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Pourquoi nous rejoindre?</h3>
+				<ul>
+					<li>Des casse-têtes stimulants entre passionnés</li>
+					<li>Préparation aux concours et entrevues techniques</li>
+					<li>Nouvelles techniques et algorithmes</li>
+					<li>Tous les niveaux, du débutant à l'expert</li>
+				</ul>
 
-		<h2>Pourquoi rejoindre le club?</h2>
-		<ul>
-			<li>Résoudre des casse-têtes stimulants avec d'autres passionnés</li>
-			<li>Se préparer aux compétitions et aux entrevues techniques</li>
-			<li>Apprendre de nouvelles techniques et algorithmes</li>
-			<li>Tous les niveaux sont bienvenus, du débutant complet à l'expert</li>
-		</ul>
-
-		<h2>Activités</h2>
-		<p>Rencontres hebdomadaires, préparation aux concours, séances thématiques, mock contests, code reviews et invités de l'industrie. Le langage n'a pas d'importance: C++, Python, Java et bien d'autres sont acceptés partout.</p>
+				<h3>Activités</h3>
+				<p>Rencontres hebdomadaires, préparation aux concours, mock contests, code reviews. Le langage n'a pas d'importance: C++, Python, Java et bien d'autres.</p>
+			</div>
+		</div>
 
 		<div class="cta-section">
-			<p style="font-size: 1.1rem; margin-bottom: 1rem;">
-				<strong>Prêt à commencer?</strong>
-			</p>
-			<p><a href="{% url 'noob' %}" class="cta-button">Nouveau? Commencer ici</a></p>
-			<p><a href="{% url 'meets' %}" class="cta-button">Voir les rencontres</a></p>
-			<p><a href="{% url 'events' %}" class="cta-button">Événements à venir</a></p>
+			<a href="{% url 'noob' %}" class="cta-button">Nouveau? Commencer ici</a>
+			<a href="{% url 'meets' %}" class="cta-button cta-secondary">Voir les rencontres</a>
+			<a href="{% url 'events' %}" class="cta-button cta-secondary">Événements à venir</a>
 		</div>
 	</section>
 </div>

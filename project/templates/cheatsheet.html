@@ -8,19 +8,18 @@
 <script src="{% static 'js/cheatsheet.js' %}" defer></script>
 <style>
 	@media print {
-		.print-button { display: none; }
 		.cheatsheet-container { margin: 0; padding: 0; }
 		.category-section { page-break-inside: avoid; }
 		.algo-section { page-break-inside: avoid; }
 		body { margin: 0; padding: 0; }
 	}
-	
+
 	.cheatsheet-print {
 		columns: 2;
 		column-gap: 2rem;
 		column-fill: auto;
 	}
-	
+
 	@media print {
 		.cheatsheet-print {
 			columns: 1;
@@ -31,14 +30,7 @@
 
 {% block content %}
 <div class="cheatsheet-container">
-	<div class="cheatsheet-header">
-		<h2>Aide-mémoire</h2>
-		<p>Algorithmes de compétition - Calculum</p>
-	</div>
-	
 	{% if has_algorithms %}
-		<button class="print-button" id="print-btn">Imprimer</button>
-		
 		<div class="cheatsheet-print">
 			{% for category in categories %}
 				{% if category.algorithms.all %}

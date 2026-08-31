@@ -16,13 +16,6 @@
 		padding: 0;
 	}
 
-	.cheatsheet-header {
-		page-break-after: avoid;
-		border-bottom: 1px solid #000;
-		margin-bottom: 1rem;
-		padding-bottom: 0.5rem;
-	}
-
 	.cheatsheet-print {
 		columns: 1;
 		column-gap: 0;
@@ -59,51 +52,12 @@
 		margin-top: 0.8rem;
 		margin-bottom: 0.5rem;
 	}
-
-	.print-button {
-		display: none !important;
-	}
 }
 
 .cheatsheet-container {
 	max-width: 1000px;
 	margin: 0 auto;
 }
-
-.cheatsheet-header {
-	text-align: center;
-	margin-bottom: .9rem;
-	padding-bottom: .5rem;
-	border-bottom: 1px solid var(--rule);
-}
-
-.cheatsheet-header h2 {
-	font-family: var(--serif);
-	font-size: 1.6rem;
-	color: var(--ink);
-	margin-bottom: .35rem;
-}
-
-.cheatsheet-header p {
-	color: var(--ink-dim);
-	font-size: .88rem;
-}
-
-.print-button {
-	background: var(--accent);
-	color: #fff;
-	border: none;
-	padding: .45rem 1.1rem;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: .85rem;
-	margin-bottom: .9rem;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.print-button:hover { background: var(--accent-dim); }
 
 .category-section {
 	margin-bottom: 1.3rem;
@@ -207,20 +161,6 @@
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-	.cheatsheet-header {
-		margin-bottom: 1.1rem;
-		padding-bottom: .6rem;
-	}
-
-	.cheatsheet-header h2 {
-		font-size: 1.3rem;
-	}
-
-	.print-button {
-		width: 100%;
-		max-width: 300px;
-	}
-
 	.category-section {
 		margin-bottom: 1.5rem;
 	}
