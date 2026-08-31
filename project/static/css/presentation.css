@@ -4,7 +4,7 @@
 }
 
 .presentation-section {
-	background: #fff;
+	background: var(--paper-2);
 	border: 1px solid var(--rule);
 	padding: 1.15rem 1.4rem;
 	border-radius: 6px;

@@ -64,15 +64,15 @@
 				<tr>
 					<td data-label="Plateforme">{{ problem.platform }}</td>
 					<td data-label="Problème">
-						{% if problem.extracted_title %}{{ problem.extracted_title }}{% else %}&mdash;{% endif %}
+						{% if problem.extracted_title %}{{ problem.extracted_title }}{% else %}-{% endif %}
 						{% if problem.categories.all %}
 						<div class="problem-categories">{% for category in problem.categories.all %}{{ category.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</div>
 						{% endif %}
 					</td>
 					<td data-label="Difficulté">
 						{% if problem.platform == 'Kattis' or problem.platform == 'LeetCode' %}
-							{% with diff=problem.get_difficulty %}{% if diff != "—" %}{{ diff }}{% else %}&mdash;{% endif %}{% endwith %}
-						{% else %}&mdash;{% endif %}
+							{% with diff=problem.get_difficulty %}{% if diff != "-" %}{{ diff }}{% else %}-{% endif %}{% endwith %}
+						{% else %}-{% endif %}
 					</td>
 					<td data-label="Liens">
 						{% if "http" in problem.link %}<a href="{{ problem.link }}" class="btn-sm" target="_blank" rel="noopener">Problème</a>{% endif %}

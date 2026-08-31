@@ -42,19 +42,21 @@
 					
 					{% for algo in category.algorithms.all|dictsort:"title" %}
 					<div class="algo-section">
-						<h3>{{ algo.title }}</h3>
+						<div class="algo-heading">
+							<h3>{{ algo.title }}</h3>
+							{% if algo.time_complexity or algo.space_complexity %}
+							<div class="complexity-info">
+								{% if algo.time_complexity %}<span>temps {{ algo.time_complexity }}</span>{% endif %}
+								{% if algo.time_complexity and algo.space_complexity %}<span class="sep">&middot;</span>{% endif %}
+								{% if algo.space_complexity %}<span>espace {{ algo.space_complexity }}</span>{% endif %}
+							</div>
+							{% endif %}
+						</div>
 						{% if algo.author %}
 						<p class="algo-author">by {{ algo.author.get_full_name|default:algo.author.username }}</p>
 						{% endif %}
 						{% if algo.description %}
 						<p class="algo-description">{{ algo.description }}</p>
-						{% endif %}
-						{% if algo.time_complexity or algo.space_complexity %}
-						<div class="complexity-info">
-							{% if algo.time_complexity %}<span>temps {{ algo.time_complexity }}</span>{% endif %}
-							{% if algo.time_complexity and algo.space_complexity %}<span class="sep">&middot;</span>{% endif %}
-							{% if algo.space_complexity %}<span>espace {{ algo.space_complexity }}</span>{% endif %}
-						</div>
 						{% endif %}
 						<pre><code class="language-{{ algo.language }}">{{ algo.code }}</code></pre>
 					</div>
@@ -68,19 +70,21 @@
 				<h2 class="category-title">Autres</h2>
 				{% for algo in uncategorized|dictsort:"title" %}
 				<div class="algo-section">
-					<h3>{{ algo.title }}</h3>
+					<div class="algo-heading">
+						<h3>{{ algo.title }}</h3>
+						{% if algo.time_complexity or algo.space_complexity %}
+						<div class="complexity-info">
+							{% if algo.time_complexity %}<span>temps {{ algo.time_complexity }}</span>{% endif %}
+							{% if algo.time_complexity and algo.space_complexity %}<span class="sep">&middot;</span>{% endif %}
+							{% if algo.space_complexity %}<span>espace {{ algo.space_complexity }}</span>{% endif %}
+						</div>
+						{% endif %}
+					</div>
 					{% if algo.author %}
 					<p class="algo-author">by {{ algo.author.get_full_name|default:algo.author.username }}</p>
 					{% endif %}
 					{% if algo.description %}
 					<p class="algo-description">{{ algo.description }}</p>
-					{% endif %}
-					{% if algo.time_complexity or algo.space_complexity %}
-					<div class="complexity-info">
-						{% if algo.time_complexity %}<span>temps {{ algo.time_complexity }}</span>{% endif %}
-						{% if algo.time_complexity and algo.space_complexity %}<span class="sep">&middot;</span>{% endif %}
-						{% if algo.space_complexity %}<span>espace {{ algo.space_complexity }}</span>{% endif %}
-					</div>
 					{% endif %}
 					<pre><code class="language-{{ algo.language }}">{{ algo.code }}</code></pre>
 				</div>

@@ -38,7 +38,7 @@
 }
 
 .event-card {
-	background: #fff;
+	background: var(--paper-2);
 	border: 1px solid var(--rule);
 	border-radius: 4px;
 	overflow: hidden;
@@ -61,7 +61,7 @@
 }
 
 .event-card.most-recent .event-header {
-	background: #f3e6de;
+	background: #2e2418;
 }
 
 .event-title {
@@ -72,7 +72,7 @@
 }
 
 .event-badge {
-	background: #fff;
+	background: var(--paper-2);
 	color: var(--ink-dim);
 	border: 1px solid var(--rule-strong);
 	padding: .2rem .6rem;

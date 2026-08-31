@@ -67,57 +67,63 @@
 
 .category-title {
 	font-family: var(--serif);
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	color: var(--ink);
 	margin-bottom: .35rem;
-	padding-bottom: .35rem;
-	border-bottom: 2px solid var(--accent);
+	padding-bottom: .3rem;
+	border-bottom: 1px solid var(--rule-strong);
 }
 
 .category-description {
 	color: var(--ink-dim);
-	font-size: .88rem;
-	margin-bottom: .8rem;
+	font-size: .84rem;
+	margin-bottom: .7rem;
 	font-style: italic;
 }
 
 .algo-section {
-	background: #fff;
+	background: var(--paper-2);
 	border: 1px solid var(--rule);
-	border-left: 3px solid var(--accent);
-	padding: .6rem .85rem;
-	margin-bottom: .65rem;
+	padding: .55rem .8rem;
+	margin-bottom: .55rem;
 	border-radius: 4px;
 	break-inside: avoid;
 	page-break-inside: avoid;
 }
 
+.algo-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: .6rem;
+	flex-wrap: wrap;
+	margin-bottom: .3rem;
+}
+
 .algo-section h3 {
 	color: var(--ink);
-	font-size: .95rem;
-	margin-bottom: .6rem;
+	font-size: .92rem;
 	font-weight: 600;
 }
 
 .algo-description {
 	color: var(--ink-dim);
-	font-size: .84rem;
-	margin-bottom: .6rem;
-	line-height: 1.5;
+	font-size: .82rem;
+	margin-bottom: .5rem;
+	line-height: 1.45;
 }
 
 .algo-author {
 	color: var(--ink-dim);
-	font-size: .78rem;
+	font-size: .76rem;
 	font-style: italic;
-	margin: -.35rem 0 .5rem 0;
 }
 
 .complexity-info {
 	font-family: var(--mono);
-	font-size: .78rem;
+	font-size: .76rem;
 	color: var(--ink-dim);
-	margin-bottom: .5rem;
+	white-space: nowrap;
 }
 
 .complexity-info .sep {
@@ -127,9 +133,9 @@
 
 .algo-section pre {
 	margin: 0;
-	background: var(--paper-2);
+	background: var(--paper);
 	border: 1px solid var(--rule);
-	padding: .7rem;
+	padding: .6rem .7rem;
 	border-radius: 4px;
 	overflow-x: auto;
 }
