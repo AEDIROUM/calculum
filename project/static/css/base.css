@@ -1,15 +1,15 @@
 :root {
-	--paper: #faf9f5;
-	--paper-2: #f1efe5;
-	--ink: #21231f;
-	--ink-dim: #5c6058;
-	--rule: #ddd8c8;
-	--rule-strong: #b8b19b;
-	--accent: #1f5c4e;
-	--accent-dim: #3d7a6b;
-	--good: #3d7a4a;
-	--warn: #b5651d;
-	--bad: #a13d3d;
+	--paper: #f3f5f8;
+	--paper-2: #e6e9f0;
+	--ink: #1a1e27;
+	--ink-dim: #565f6f;
+	--rule: #d6dbe4;
+	--rule-strong: #a7b0c0;
+	--accent: #3452c4;
+	--accent-dim: #28409e;
+	--good: #1f8a5c;
+	--warn: #b0650f;
+	--bad: #c23b3b;
 	--serif: Georgia, "Times New Roman", "Liberation Serif", serif;
 	--sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 	--mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;

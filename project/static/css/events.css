@@ -61,7 +61,7 @@
 }
 
 .event-card.most-recent .event-header {
-	background: #f7ece1;
+	background: #f3e6de;
 }
 
 .event-title {
@@ -95,7 +95,7 @@
 	white-space: nowrap;
 }
 
-.server-button:hover { background: #2e5c38; color: #fff; }
+.server-button:hover { background: #17603f; color: #fff; }
 
 .event-body {
 	padding: .8rem 1rem;
