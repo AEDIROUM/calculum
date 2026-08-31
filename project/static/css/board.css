@@ -75,6 +75,18 @@
 	margin-top: .1rem;
 }
 
+/* Fixed proportions so columns line up across every meet's own table,
+   since each meet renders a separate <table> that would otherwise
+   size its columns to its own content only. */
+.problems-table {
+	table-layout: fixed;
+}
+
+.problems-table th:nth-child(1), .problems-table td:nth-child(1) { width: 13%; }
+.problems-table th:nth-child(2), .problems-table td:nth-child(2) { width: 45%; }
+.problems-table th:nth-child(3), .problems-table td:nth-child(3) { width: 16%; }
+.problems-table th:nth-child(4), .problems-table td:nth-child(4) { width: 26%; }
+
 .no-meets {
 	text-align: center;
 	padding: 2.5rem 1rem;

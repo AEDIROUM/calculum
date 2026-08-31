@@ -13,42 +13,11 @@
 		<div class="intro-row">
 			<div>
 				<h2>Bienvenue au Calculum</h2>
-				<p>Club d'algorithmique et de programmation compétitive de l'Université de Montréal. Casse-têtes, concours et entraide, tous les niveaux bienvenus.</p>
+				<p>Club d'algorithmique et de programmation compétitive de l'Université de Montréal. Casse-têtes, concours (ICPC, CS Games) et entraide, tous les niveaux bienvenus.</p>
 			</div>
 			<div class="info-inline">
 				<div><span class="info-label">Horaire</span>{% if last_session %}{{ last_session.get_day_display }}, {{ last_session.time|time:"H:i" }}{% else %}À déterminer{% endif %}</div>
 				<div><span class="info-label">Local</span>{% if last_session %}{{ last_session.local|default:"À déterminer" }}{% else %}AA-3192{% endif %}</div>
-			</div>
-		</div>
-
-		<div class="presentation-columns">
-			<div>
-				<h3>La programmation compétitive</h3>
-				<p>Résoudre des problèmes algorithmiques, seul ou en équipe, sous contrainte de temps. Trois formats principaux:</p>
-				<ul>
-					<li><strong>Casse-têtes</strong> jugés automatiquement: Kattis, Codeforces, LeetCode, AtCoder</li>
-					<li><strong>Code golf</strong>: le programme le plus court possible</li>
-					<li><strong>Affrontement de programmes</strong>: Core War, Battlecode, Leek Wars</li>
-				</ul>
-
-				<h3>Compétitions</h3>
-				<ul>
-					<li><strong>ICPC</strong>: équipes de 3, régionale en mars, finales mondiales</li>
-					<li><strong>CS Games</strong>: compétition interuniversitaire québécoise</li>
-					<li><strong>Autres</strong>: Advent of Code, Hash Code, Hacker Cup</li>
-				</ul>
-			</div>
-			<div>
-				<h3>Pourquoi nous rejoindre?</h3>
-				<ul>
-					<li>Des casse-têtes stimulants entre passionnés</li>
-					<li>Préparation aux concours et entrevues techniques</li>
-					<li>Nouvelles techniques et algorithmes</li>
-					<li>Tous les niveaux, du débutant à l'expert</li>
-				</ul>
-
-				<h3>Activités</h3>
-				<p>Rencontres hebdomadaires, préparation aux concours, mock contests, code reviews. Le langage n'a pas d'importance: C++, Python, Java et bien d'autres.</p>
 			</div>
 		</div>
 

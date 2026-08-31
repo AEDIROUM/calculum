@@ -40,9 +40,7 @@
 			<div>
 				<span class="meet-title">Rencontre {{ meet.date|date:"d/m/Y" }}</span>
 				{% if meet.managers.all %}
-				<span class="meet-managers">
-					{% for manager in meet.managers.all %}Animée par {{ manager.first_name }} {{ manager.last_name }}{% if not forloop.last %}, {% endif %}{% endfor %}
-				</span>
+				<span class="meet-managers">Animée par {% for manager in meet.managers.all %}{{ manager.first_name }} {{ manager.last_name }}{% if not forloop.last %}, {% endif %}{% endfor %}</span>
 				{% endif %}
 			</div>
 			{% if meet.contest_link %}
@@ -55,7 +53,7 @@
 
 		{% if meet.sorted_problems %}
 		<div class="table-wrap">
-		<table class="stacked">
+		<table class="stacked problems-table">
 			<thead>
 				<tr><th>Plateforme</th><th>Problème</th><th>Difficulté</th><th>Liens</th></tr>
 			</thead>

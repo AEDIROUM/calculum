@@ -70,6 +70,17 @@ header h1 img {
 	height: 1.1em;
 }
 
+.gh-corner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: var(--ink-dim);
+	line-height: 0;
+	padding: .15rem;
+}
+
+.gh-corner:hover { color: var(--accent); }
+
 .header-actions {
 	position: absolute;
 	top: 0;
@@ -138,33 +149,6 @@ main {
 	width: 100%;
 	margin: 0 auto;
 	padding: 1.15rem 1.5rem 1.4rem;
-}
-
-footer {
-	border-top: 1px solid var(--rule);
-	padding: .9rem;
-	margin-top: 1rem;
-	text-align: center;
-}
-
-.github-link {
-	display: inline-flex;
-	align-items: center;
-	gap: .5rem;
-	color: var(--ink-dim);
-	text-decoration: none;
-	padding: .4rem .9rem;
-	border-radius: 4px;
-	font-size: .88rem;
-	font-weight: 500;
-	transition: color .15s ease;
-}
-
-.github-link:hover { color: var(--ink); }
-
-.github-icon {
-	width: 18px;
-	height: 18px;
 }
 
 /* ===================================================== shared components === */
@@ -281,6 +265,8 @@ tr:last-child td { border-bottom: none; }
 		padding: .8rem 1rem .55rem 1rem;
 	}
 
+	.gh-corner { display: none; }
+
 	.header-actions {
 		position: static;
 		justify-content: center;
@@ -298,9 +284,5 @@ tr:last-child td { border-bottom: none; }
 
 	main {
 		padding: 1.25rem 1rem 1.5rem;
-	}
-
-	footer {
-		padding: 1.2rem 1rem;
 	}
 }
