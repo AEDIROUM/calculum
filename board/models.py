@@ -247,34 +247,48 @@ class Problem(models.Model):
             return False
 
     def _fetch_leetcode_difficulty(self, save_on_success=True):
-        """Fetch difficulty from LeetCode problem page"""
-        import requests
-        from bs4 import BeautifulSoup
-        import re
-        import json
+        """Fetch difficulty via LeetCode's GraphQL API.
 
+        A plain page fetch gets served Cloudflare's JS challenge page
+        instead of the problem, since leetcode.com/problems/... is
+        behind bot protection that requests/BeautifulSoup can't pass.
+        The GraphQL endpoint isn't gated the same way and returns the
+        difficulty directly.
+        """
+        import re
+        import requests
+
+        match = re.search(r'/problems/([^/?]+)', self.link)
+        if not match:
+            return False
+        slug = match.group(1)
+
+        query = """
+        query questionData($titleSlug: String!) {
+          question(titleSlug: $titleSlug) {
+            difficulty
+          }
+        }
+        """
         try:
-            headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'}
-            response = requests.get(self.link, headers=headers, timeout=10)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36',
+                'Content-Type': 'application/json',
+                'Referer': self.link,
+            }
+            response = requests.post(
+                'https://leetcode.com/graphql',
+                json={'query': query, 'variables': {'titleSlug': slug}},
+                headers=headers,
+                timeout=10,
+            )
             response.raise_for_status()
-            soup = BeautifulSoup(response.text, 'html.parser')
-            for script in soup.find_all('script', type='application/json'):
-                try:
-                    data = json.loads(script.string)
-                    if isinstance(data, dict) and 'difficulty' in data:
-                        self.difficulty = data['difficulty']
-                        if save_on_success:
-                            self.save(update_fields=['difficulty'])
-                        return True
-                except Exception:
-                    pass
-            text = soup.get_text()
-            for level in ['Hard', 'Medium', 'Easy']:
-                if re.search(rf'Difficulty[:\s]+{level}', text):
-                    self.difficulty = level
-                    if save_on_success:
-                        self.save(update_fields=['difficulty'])
-                    return True
+            question = response.json().get('data', {}).get('question')
+            if question and question.get('difficulty'):
+                self.difficulty = question['difficulty']
+                if save_on_success:
+                    self.save(update_fields=['difficulty'])
+                return True
             return False
         except Exception as e:
             print(f"Error fetching LeetCode difficulty for {self.link}: {str(e)}")
