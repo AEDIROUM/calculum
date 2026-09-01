@@ -6,26 +6,6 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/cheatsheet.css' %}">
 <script src="{% static 'js/cheatsheet.js' %}" defer></script>
-<style>
-	@media print {
-		.cheatsheet-container { margin: 0; padding: 0; }
-		.category-section { page-break-inside: avoid; }
-		.algo-section { page-break-inside: avoid; }
-		body { margin: 0; padding: 0; }
-	}
-
-	.cheatsheet-print {
-		columns: 2;
-		column-gap: 2rem;
-		column-fill: auto;
-	}
-
-	@media print {
-		.cheatsheet-print {
-			columns: 1;
-		}
-	}
-</style>
 {% endblock %}
 
 {% block content %}

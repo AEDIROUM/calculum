@@ -89,6 +89,12 @@
 	border-radius: 4px;
 	break-inside: avoid;
 	page-break-inside: avoid;
+	/* Inside a CSS multicol container (.cheatsheet-print), a block's
+	   intrinsic content width (namely the code block below) can push
+	   past the column box instead of respecting it, since multicol
+	   items don't automatically get a min-width like flex/grid items
+	   do. Without this, overflow-x on the pre never kicks in. */
+	min-width: 0;
 }
 
 .algo-heading {
@@ -133,6 +139,7 @@
 
 .algo-section pre {
 	margin: 0;
+	max-width: 100%;
 	background: var(--paper);
 	border: 1px solid var(--rule);
 	padding: .6rem .7rem;
