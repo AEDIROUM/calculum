@@ -30,7 +30,7 @@ deploy:
 	@echo "🧹 Cleaning up orphaned media files..."
 	@ssh $(REMOTE) "cd $(REMOTE_DIR) && source calculum-venv/venv/bin/activate && python manage.py cleanup_media_files 2>/dev/null" || echo "  ⊘ Cleanup skipped (command not installed yet)"
 	@echo "🌐 Starting server..."
-	@ssh $(REMOTE) "cd $(REMOTE_DIR) && calculum-venv/venv/bin/gunicorn project.wsgi:application --bind 0.0.0.0:8000 --timeout 120 --workers 2 --max-requests 1000 --max-requests-jitter 50 --graceful-timeout 30 --access-logfile $(REMOTE_DIR)/server.log --error-logfile $(REMOTE_DIR)/server.log --log-level debug --daemon --pid $(REMOTE_DIR)/gunicorn.pid --log-file $(REMOTE_DIR)/server.log"
+	@ssh $(REMOTE) "cd $(REMOTE_DIR) && calculum-venv/venv/bin/gunicorn project.wsgi:application --bind '[::]:8000' --timeout 120 --workers 2 --max-requests 1000 --max-requests-jitter 50 --graceful-timeout 30 --access-logfile $(REMOTE_DIR)/server.log --error-logfile $(REMOTE_DIR)/server.log --log-level debug --daemon --pid $(REMOTE_DIR)/gunicorn.pid --log-file $(REMOTE_DIR)/server.log"
 	@echo "🔄 Restarting monitor service for safety..."
 	@ssh $(REMOTE) "systemctl --user restart calculum-monitor.service"
 	@echo "✅ Deployed!"
