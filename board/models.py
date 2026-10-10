@@ -234,7 +234,10 @@ class Problem(models.Model):
                             break
                     if diff_num_text and diff_level_text:
                         try:
-                            self.difficulty_number = float(diff_num_text)
+                            # Kattis shows either a single value ("2.5") or,
+                            # for less-rated problems, a range ("1.9 - 3.8").
+                            bounds = [float(n) for n in diff_num_text.replace('–', '-').split('-')]
+                            self.difficulty_number = sum(bounds) / len(bounds)
                             self.difficulty = f"{diff_num_text} {diff_level_text}"
                             if save_on_success:
                                 self.save(update_fields=['difficulty', 'difficulty_number'])
